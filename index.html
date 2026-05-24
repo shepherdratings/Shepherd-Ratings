@@ -3,40 +3,258 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shepherd Ratings • Media Guidance Inspired by Catholic Teaching</title>
+    <title>Shepherd Rating Code • Catholic-Inspired Media Guidance</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap');
-        :root { --gold: #d4af77; --deep: #2c1e16; }
-        body { font-family: 'Roboto', sans-serif; margin:0; background:#f8f1e3; color:#2c1e16; }
-        header { background: var(--deep); color:white; padding:1rem; position:sticky; top:0; z-index:100; }
-        nav a { color:white; margin:0 15px; text-decoration:none; font-weight:500; }
-        .hero { background: linear-gradient(rgba(44,30,22,0.85),rgba(44,30,22,0.85)), url('https://picsum.photos/id/1015/2000/1200') center/cover; color:white; text-align:center; padding:120px 20px; }
-        h1 { font-family: 'Playfair Display', serif; font-size:3.5rem; margin:0; }
-        .section { padding:60px 20px; max-width:1100px; margin:auto; }
-        .code-box { background:white; border:3px solid #d4af77; padding:30px; border-radius:12px; line-height:1.6; }
-        table { width:100%; border-collapse:collapse; margin:20px 0; }
-        th, td { padding:12px; text-align:left; border-bottom:1px solid #ddd; }
-        .rating { padding:4px 12px; border-radius:20px; font-weight:bold; color:white; }
-        .A1 { background:#28a745; }
-        .A2 { background:#ffc107; color:#2c1e16; }
-        .B { background:#fd7e14; }
-        .C { background:#dc3545; }
-        footer { background:#2c1e16; color:white; text-align:center; padding:30px; }
+        
+        :root {
+            --gold: #d4af77;
+            --deep: #2c1e16;
+            --light: #f8f1e3;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: var(--light);
+            color: #2c1e16;
+            line-height: 1.7;
+        }
+        
+        header {
+            background: var(--deep);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        
+        .intro-box {
+            background: white;
+            border: 4px solid var(--gold);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            font-size: 1.25rem;
+            text-align: center;
+        }
+        
+        .code-section {
+            background: white;
+            border: 4px solid var(--gold);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+        
+        .code-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--deep);
+        }
+        
+        .copy-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        pre {
+            background: #f4ede3;
+            padding: 1.5rem;
+            border-radius: 12px;
+            overflow-x: auto;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            max-height: 70vh;
+            border: 2px solid #d4af77;
+        }
+        
+        .copy-btn {
+            background: var(--deep);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .copy-btn:hover {
+            background: var(--gold);
+            color: #2c1e16;
+            transform: translateY(-2px);
+        }
+        
+        .success {
+            animation: pop 0.4s ease;
+        }
+        
+        footer {
+            background: var(--deep);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-top: 3rem;
+        }
+        
+        @keyframes pop {
+            0% { transform: scale(0.9); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Shepherd Rating Code</h1>
+        <p class="subtitle">Motion Picture Guidance Inspired by Catholic Teaching</p>
+    </header>
 
-<header>
-    <nav style="max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;">
-        <h2 style="margin:0;font-family:'Playfair Display',serif;color:#d4af77;">Shepherd Ratings</h2>
-        <div>
-            <a href="#code">The Code</a>
-            <a href="#imdb">Top IMDb</a>
-            <a href="#current">Current Top 10</a>
+    <div class="container">
+        
+        <!-- Intro Section -->
+        <div class="intro-box">
+            <p>In a world with infinite media choices, choosing content that uplifts the mind and soul is challenging. This code is based on Catholic teaching and has been made to help people choose what to watch. Simply copy the code below, put it into your AI chat and ask it to rate whatever movie, show, song you're going to listen to and it will give it a quick rating to help you discern if it is good for you and your family. God bless.</p>
         </div>
-    </nav>
-</header>
 
-<div class="hero">
-    <h1>Shepherd Ratings</h1>
-    <p style="font-size:1.4rem;max-width:700px;margin:20px auto;">Media Guidance Inspired
+        <!-- The Full Code Section -->
+        <div class="code-section">
+            <div class="copy-header">
+                <h2>The Full Shepherd Ratings Code</h2>
+                <button onclick="copyCode()" class="copy-btn" id="copyButton">
+                    📋 Copy Full Code
+                </button>
+            </div>
+            
+            <pre id="shepherdCode"><strong>Motion Picture Guidance Inspired by Catholic Teaching</strong>
+
+Preamble
+	Media producers and creators recognize the profound influence of film, music, and other media on the human person, society, and culture. Films and music are gifts from God that can serve truth, beauty, and the common good. They have the potential to elevate the soul, foster virtue, and reflect the dignity of every human being made in the image and likeness of God.
+	While films and music are primarily works of art and entertainment, creators bear a moral responsibility to respect the dignity of the person, uphold the natural law, promote justice and charity, and avoid leading audiences into moral confusion or sin. 
+	In the spirit of the Gospel, films and music should strive to illuminate the struggle between good and evil, offer paths to redemption, and celebrate the true, the good, and the beautiful.
+
+“The eye is the lamp of the body. So, if your eye is healthy, your whole body will be full of light; but if your eye is unhealthy, your whole body will be full of darkness. If then the light in you is darkness, how great is the darkness!” (Mt 6:22-23) "Bad company ruins good morals."(1 Cor 15:33).
+
+General Principles
+1. No film should degrade the dignity of the human person or lower the moral standards of those who view it. Sympathy should never rest with evil, injustice, or sin in a way that glorifies wrongdoing without showing its consequences or the possibility of conversion.
+2. Correct standards of life—rooted in truth, respect for the human person, the sanctity of marriage and family, and the common good—shall be presented, subject to the legitimate requirements of drama, art, and entertainment.
+3. Natural and human law shall not be ridiculed, nor shall sympathy be created for their violation. Films should illuminate the moral order and the dignity of every person, regardless of race, ethnicity, gender, or background.
+
+Particular Applications
+I—Crimes Against the Law and Human Dignity
+Crime and violence shall not be presented so as to inspire imitation or glorify evil. Evil must be shown in its true ugliness, with attention to justice and the possibility of repentance.
+1. Murder, brutality, and revenge shall not be depicted in excessive or gratuitous detail, nor justified as morally acceptable ends.
+2. Methods of crime should not be instructional.
+3. Illegal drug use and trafficking shall not be glamorized.
+4. Portrayals of violence must serve the story’s moral arc and never desensitize viewers to the sacredness of human life.
+
+II—Sex, Chastity, and the Dignity of the Person
+The sanctity of marriage between one man and one woman, the gift of human sexuality ordered toward love and life, and the dignity of every person shall be upheld. Films must not objectify the human body or reduce persons to objects of lust.
+1. Adultery, fornication, or other violations of chastity may appear as plot elements but must never be presented as morally acceptable or desirable.
+2. Scenes of passion must serve the story and avoid explicit or arousing depictions that could lead viewers into sin.
+3. Seduction, rape, or sexual exploitation shall be treated with gravity, never for comedy or titillation, and must clearly show their moral evil.
+4. Pornography, objectification, or any depiction intended to arouse disordered sexual desire is forbidden.
+5. Sex hygiene and related topics, if treated, must respect modesty and the sacredness of the body.
+6. Nudity or undressing scenes are permitted only when artistically essential, non-exploitative, and presented with restraint and respect for human dignity (not in a lecherous or gratuitous manner).
+
+III—Vulgarity and Profanity
+Low, crude, or vulgar language and behavior should be subject to good taste. Gratuitous profanity or blasphemy (especially misuse of the holy name of God) is to be avoided, as it offends the dignity of the Creator and the sensibilities of the audience.
+
+IV—Costume and Modesty
+Dress and presentation of the human body shall respect modesty and the dignity of the person. Indecent exposure or costumes designed solely to provoke lust are forbidden.
+
+V—Dances and Movements
+Dances or movements that are explicitly sexual or designed to incite lust are to be avoided. Artistic dance that expresses beauty or emotion is permitted when it respects the dignity of the dancer and viewer.
+
+VI—Religion
+Religious faith, beliefs, and persons shall be treated with respect and never denigrated as foolish or unimportant. Ridicule of any religion is forbidden. Clergy and sacred rites may be portrayed realistically but never in a way that mocks the sacred. 
+
+VII—Dignity and Representation of Women
+Films shall uphold the equal dignity of men and women as created in the image of God. Women should be portrayed as full persons with inherent dignity, agency, and moral worth—not merely as objects of desire or supporting figures in male narratives. Stories should avoid reducing women to stereotypes or objects of male gaze. Where possible, films are encouraged to include meaningful interactions among women characters that explore their own aspirations, relationships, struggles, or vocations beyond their connection to male characters.
+
+VIII—National and Racial Feelings
+All peoples, races, ethnicities, and cultures shall be represented fairly and with respect. Racism, ethnic stereotyping, or any denigration of human dignity based on origin is forbidden. Films should promote solidarity and the universal dignity of every human person.
+
+IX—Locations and Settings
+Bedrooms and private settings must be treated with delicacy and respect for modesty and chastity.
+
+X—Repellent Subjects
+Subjects such as suicide, euthanasia, abortion, excessive cruelty, or the degradation of human life must be handled with extreme care. When included, they must clearly illustrate the moral evil involved and never be presented sympathetically or without consequences.
+
+Ratings
+Ratings will be broken into 4 categories:
+
+A1: Fully aligns with Christian principles - no significant moral concerns. Good for the whole family. (Similar to G rated)
+A2: Fully aligns with Christian principles but contains mature themes best suited for adults (parental guidance advised for children). (Similar to PG/PG-13 rated)
+B: Beware. Contains morally objectionable elements that require caution and discernment for all adults. Not recommended for any children or repeated viewing. (Similar to R Rated)
+C: Condemned. Seriously violates core Christian principles and will lead viewers into sin and moral confusion. Do not watch.
+
+Rating Product:
+Output the Title with it's associated rating, then a "Quick Summary" section 280 character or less synopsis - no need to post the number of characters. Follow this up with a longer more in depth breakdown of each section.
+
+Conclusion
+	We have undoubtably made mistakes in this code and application of this code will be debated. We ask for yours and God's forgiveness for mistakes we have and will continue to make. We pray God will grace us with the sight to see our errors and for the courage and wisdom to correct those mistakes quickly. 
+	We pray this code will help everyone fill their eyes and ears with media and stories that bring them into closer union with God and build up the Kingdom of Heaven in every family, community, and country around the world.
+	"Let your light shine before others, so that they may see your good works and give glory to your Father in heaven." (Mt 5:16)
+
+God's is the kingdom, the power, and the glory, now and forever. Amen.</pre>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Shepherd Rating Code • Inspired by Catholic Teaching</p>
+        <p style="margin-top: 1rem; opacity: 0.8;">“Let your light shine before others, so that they may see your good works and give glory to your Father in heaven.” (Mt 5:16)</p>
+    </footer>
+
+    <script>
+        function copyCode() {
+            const codeText = document.getElementById('shepherdCode').innerText;
+            navigator.clipboard.writeText(codeText).then(() => {
+                const btn = document.getElementById('copyButton');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '✅ Copied!';
+                btn.classList.add('success');
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.classList.remove('success');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
