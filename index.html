@@ -3,177 +3,1326 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shepherd Rating Code • Catholic-Inspired Media Guidance</title>
+    <title>Shepherd Ratings • Catholic Media Guidance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Inter:wght@300;400;500;600&amp;display=swap');
         
         :root {
-            --gold: #d4af77;
-            --deep: #2c1e16;
-            --light: #f8f1e3;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            --primary: #1e3a5f;
         }
         
         body {
-            font-family: 'Roboto', sans-serif;
-            background: var(--light);
-            color: #2c1e16;
-            line-height: 1.7;
+            font-family: 'Inter', system_ui, sans-serif;
         }
         
-        header {
-            background: var(--deep);
-            color: white;
-            padding: 2rem 1rem;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        .heading-serif {
+            font-family: 'Playfair Display', Georgia, serif;
         }
-        
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.2rem;
-            color: var(--gold);
-            margin-bottom: 0.5rem;
+
+        .shepherd-bg {
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
         }
-        
-        .subtitle {
-            font-size: 1.3rem;
-            opacity: 0.9;
-        }
-        
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-        
-        .intro-box {
-            background: white;
-            border: 4px solid var(--gold);
-            border-radius: 16px;
-            padding: 2.5rem;
-            margin-bottom: 3rem;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            font-size: 1.25rem;
-            text-align: center;
-        }
-        
-        .code-section {
-            background: white;
-            border: 4px solid var(--gold);
-            border-radius: 16px;
-            padding: 2rem;
-            margin-bottom: 3rem;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-        
-        .code-section h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.4rem;
-            text-align: center;
-            margin-bottom: 1.5rem;
-            color: var(--deep);
-        }
-        
-        .copy-header {
-            display: flex;
-            justify-content: space-between;
+
+        .rating-badge {
+            font-weight: 600;
+            padding: 0.35rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.95rem;
+            display: inline-flex;
             align-items: center;
-            margin-bottom: 1rem;
+            gap: 0.25rem;
+            flex-shrink: 0;
         }
-        
-        pre {
-            background: #f4ede3;
-            padding: 1.5rem;
-            border-radius: 12px;
-            overflow-x: auto;
-            font-size: 1.05rem;
-            line-height: 1.6;
-            white-space: pre-wrap;
-            max-height: 70vh;
-            border: 2px solid #d4af77;
-        }
-        
-        .copy-btn {
-            background: var(--deep);
+
+        .rating-A1 {
+            background-color: #166534;
             color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 50px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
         
-        .copy-btn:hover {
-            background: var(--gold);
-            color: #2c1e16;
+        .rating-A2 {
+            background-color: #4ade80;
+            color: #166534;
+        }
+        
+        .rating-B {
+            background-color: #eab308;
+            color: #713f12;
+        }
+        
+        .rating-C {
+            background-color: #ef4444;
+            color: white;
+        }
+
+        .nav-link {
+            transition: color 0.2s ease;
+        }
+        
+        .nav-link:hover {
+            color: #4ade80;
+        }
+
+        .movie-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .movie-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .quiz-option {
+            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 0.65rem;
+            padding: 1rem 0.85rem;
+            min-height: 7.25rem;
+        }
+        
+        .quiz-option:hover {
             transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+        }
+
+        .quiz-option.selected {
+            border-color: #4ade80;
+            background-color: #f0fdf4;
+        }
+
+        .section-header {
+            position: relative;
+            display: inline-block;
         }
         
-        .success {
-            animation: pop 0.4s ease;
+        .section-header:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(to right, #4ade80, transparent);
         }
-        
-        footer {
-            background: var(--deep);
-            color: white;
-            text-align: center;
-            padding: 3rem 1rem;
-            margin-top: 3rem;
-        }
-        
-        @keyframes pop {
-            0% { transform: scale(0.9); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
+
+        .shepherd-crook {
+            width: 42px;
+            height: 42px;
         }
     </style>
 </head>
-<body>
-    <header>
-        <h1>Shepherd Rating Code</h1>
-        <p class="subtitle">Motion Picture Guidance Inspired by Catholic Teaching</p>
+<body class="bg-zinc-50 text-zinc-800">
+    <!-- Navbar -->
+    <nav class="bg-white border-b border-zinc-200 sticky top-0 z-50">
+        <div class="max-w-screen-xl mx-auto">
+            <div class="px-8 py-5 flex items-center justify-between">
+                <div class="flex items-center gap-x-3">
+                    <!-- Logo -->
+                    <div class="flex items-center gap-x-3">
+                        <div class="w-11 h-11 bg-emerald-800 rounded-2xl flex items-center justify-center shadow-inner">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shepherd-crook w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.25">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 01-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 01-2 2 2 2 0 01-2-2 2 2 0 012-2 2 2 0 012 2z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <span class="font-bold text-3xl tracking-tighter heading-serif text-emerald-900">Shepherd</span>
+                            <span class="font-semibold text-3xl tracking-tighter text-emerald-700">Ratings</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
+                    <a href="#quiz" class="nav-link text-zinc-600 hover:text-emerald-700">What is the Rating?</a>
+                    <a href="#code" class="nav-link text-zinc-600 hover:text-emerald-700">The Code</a>
+                    <a href="#browse" class="nav-link text-zinc-600 hover:text-emerald-700">Browse Ratings</a>
+                </div>
+
+                <!-- Auth buttons removed for focused prototype -->
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="shepherd-bg text-white">
+        <div class="max-w-screen-xl mx-auto px-8 pt-16 pb-20">
+            <div class="max-w-2xl">
+                <div class="inline-flex items-center gap-x-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-3xl text-sm font-medium mb-6">
+                    <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                    <span>Now featuring Top 10 IMDb classics</span>
+                </div>
+                
+                <h1 class="text-6xl md:text-7xl font-bold tracking-tighter leading-none heading-serif mb-6">
+                    See media<br>through the<br>eyes of faith.
+                </h1>
+                
+                <p class="max-w-md text-xl text-emerald-100 mb-10">
+                    A Catholic lens for movies, television, and music. 
+                    Clear guidance rooted in truth, beauty, and human dignity.
+                </p>
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="#quiz" 
+                       class="inline-flex items-center justify-center gap-x-3 bg-white text-emerald-900 hover:bg-emerald-50 font-semibold px-8 py-4 rounded-3xl text-lg transition-all active:scale-[0.985]">
+                        <span>Try the Rating Quiz</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    
+                    <a href="#code" 
+                       class="inline-flex items-center justify-center gap-x-3 border border-white/40 hover:bg-white/10 font-medium px-8 py-4 rounded-3xl text-lg transition-all">
+                        Learn the Code
+                    </a>
+                </div>
+                
+                <div class="mt-8 flex items-center gap-x-4 text-sm text-emerald-200">
+                    <div class="flex -space-x-2">
+                        <div class="w-7 h-7 bg-white rounded-full border-2 border-emerald-800 overflow-hidden"><img src="https://i.pravatar.cc/28?img=32" class="w-full h-full object-cover"></div>
+                        <div class="w-7 h-7 bg-white rounded-full border-2 border-emerald-800 overflow-hidden"><img src="https://i.pravatar.cc/28?img=47" class="w-full h-full object-cover"></div>
+                        <div class="w-7 h-7 bg-white rounded-full border-2 border-emerald-800 overflow-hidden"><img src="https://i.pravatar.cc/28?img=28" class="w-full h-full object-cover"></div>
+                    </div>
+                    <span>Joined by 500+ faithful this month</span>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <div class="container">
-        
-        <!-- Intro Section -->
-        <div class="intro-box">
-            <p>In a world with infinite media choices, choosing content that uplifts the mind and soul is challenging. This code is based on Catholic teaching and has been made to help people choose what to watch. Simply copy the code below, put it into your AI chat and ask it to rate whatever movie, show, song you're going to listen to and it will give it a quick rating to help you discern if it is good for you and your family. God bless.</p>
+    <!-- Stats Bar -->
+    <div class="border-b bg-white">
+        <div class="max-w-screen-xl mx-auto px-8 py-5 grid grid-cols-2 md:grid-cols-3 gap-y-3 text-center">
+            <div>
+                <div class="text-3xl font-semibold text-emerald-800">200+</div>
+                <div class="text-sm text-zinc-500">Films Rated</div>
+            </div>
+            <div>
+                <div class="text-3xl font-semibold text-emerald-800">50</div>
+                <div class="text-sm text-zinc-500">TV Series</div>
+            </div>
+            <div>
+                <div class="text-3xl font-semibold text-emerald-800">100+</div>
+                <div class="text-sm text-zinc-500">Albums &amp; Artists</div>
+            </div>
         </div>
+    </div>
 
-        <!-- The Full Code Section -->
-        <div class="code-section">
-            <div class="copy-header">
-                <h2>The Full Shepherd Ratings Code</h2>
-                <button onclick="copyCode()" class="copy-btn" id="copyButton">
-                    📋 Copy Full Code
+    <!-- What is the Rating? Quiz Section -->
+    <section id="quiz" class="max-w-screen-xl mx-auto px-8 pt-16 pb-12">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-10">
+            <div>
+                <span class="px-4 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold tracking-[1.5px] rounded-3xl">INTERACTIVE</span>
+                <h2 class="text-5xl font-bold tracking-tighter heading-serif text-emerald-900 mt-3">What is the Rating?</h2>
+                <p class="mt-3 text-xl text-zinc-600 max-w-md">Test your discernment. Guess the Shepherd Rating for these films.</p>
+            </div>
+            <div class="mt-6 md:mt-0 flex gap-2">
+                <button onclick="startNewQuiz()" 
+                        class="flex items-center gap-x-2 px-5 py-3 bg-white border border-zinc-300 hover:bg-zinc-50 text-sm font-semibold rounded-3xl transition-colors">
+                    <i class="fa-solid fa-sync-alt"></i>
+                    <span>New Random Film</span>
+                </button>
+                
+                <!-- TMDB Poster Refresh Button (Development only - remove in production) -->
+                <button onclick="refreshCurrentPosterFromTMDB()" 
+                        class="flex items-center gap-x-2 px-4 py-3 bg-emerald-100 hover:bg-emerald-200 text-emerald-800 text-sm font-semibold rounded-3xl transition-colors border border-emerald-200"
+                        title="Fetch latest poster from TMDB (requires token in code)">
+                    <i class="fa-solid fa-image"></i>
+                    <span class="hidden md:inline">Refresh Poster (TMDB)</span>
                 </button>
             </div>
+        </div>
+
+        <!-- Quiz Container -->
+        <div class="max-w-3xl mx-auto">
+            <div id="quiz-container" class="bg-white rounded-3xl border border-zinc-200 shadow-sm overflow-hidden">
+                
+                <!-- Quiz Header - Stacked layout: Large poster on top, title/year below -->
+                <div class="px-8 pt-8 pb-6 bg-zinc-50 border-b">
+                    <div class="flex flex-col items-center text-center gap-y-4">
+                        <!-- Larger centered poster -->
+                        <div id="movie-poster-placeholder" 
+                             class="w-40 h-56 sm:w-48 sm:h-72 flex-shrink-0 rounded-3xl overflow-hidden border border-zinc-200 shadow-lg bg-zinc-100 flex items-center justify-center">
+                            <!-- Poster image inserted by JavaScript -->
+                        </div>
+                        
+                        <!-- Title and year below poster -->
+                        <div>
+                            <div id="movie-title" class="text-3xl font-semibold tracking-tight"></div>
+                            <div id="movie-year" class="text-emerald-700 font-medium mt-1"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8">
+                    <!-- Question -->
+                    <div class="mb-8">
+                        <p class="text-lg font-medium text-zinc-700">What Shepherd Rating would you give this film?</p>
+                        <p class="text-sm text-zinc-500 mt-1">Choose the rating that best reflects Catholic moral guidance.</p>
+                    </div>
+
+                    <!-- Rating Options -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8" id="rating-options">
+                        <!-- Populated by JS -->
+                    </div>
+
+                    <!-- Feedback Area -->
+                    <div id="feedback-area" class="hidden">
+                        <div class="rounded-2xl border p-6 bg-zinc-50">
+                            <!-- New prominent row at the top: Correct or Incorrect -->
+                            <div id="result-status" class="mb-4 text-center text-xl font-bold"></div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div id="correct-badge" class="rating-badge flex-shrink-0 text-base px-4 py-1"></div>
+                                
+                                <div class="flex-1">
+                                    <div id="feedback-text" class="text-zinc-700 leading-relaxed"></div>
+                                    
+                                    <div class="mt-4 pt-4 border-t">
+                                        <div class="text-xs uppercase tracking-widest text-emerald-700 font-semibold mb-2">WHY THIS RATING</div>
+                                        <div id="why-text" class="text-sm text-zinc-600"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-3 mt-6">
+                        <button onclick="submitGuess()" id="submit-btn"
+                                class="flex-1 py-4 bg-emerald-800 hover:bg-emerald-900 active:bg-emerald-950 text-white font-semibold rounded-3xl transition-all disabled:opacity-50">
+                            Submit My Guess
+                        </button>
+                        
+                        <button onclick="nextFilm()" id="next-btn"
+                                class="px-8 py-4 bg-white border border-emerald-200 text-emerald-700 hover:bg-emerald-50 font-semibold rounded-3xl transition-colors hidden">
+                            Next Film <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
             
-            <pre id="shepherdCode"><strong>Motion Picture Guidance Inspired by Catholic Teaching</strong>
+            <p class="text-center text-xs text-zinc-400 mt-4">This is a prototype. Real version will pull from our growing database of 1,200+ titles. Posters are for demonstration — replace with official high-quality images in production.</p>
+        </div>
+    </section>
+
+    <!-- The Shepherd Ratings Code -->
+    <section id="code" class="bg-white border-y border-zinc-100 py-16">
+        <div class="max-w-screen-xl mx-auto px-8">
+            <div class="max-w-3xl mx-auto text-center mb-10">
+                <span class="text-emerald-600 font-semibold tracking-[2px] text-sm">OUR FOUNDATION</span>
+                <h2 class="text-5xl font-bold tracking-tighter heading-serif text-emerald-900 mt-2">The Shepherd Ratings Code</h2>
+                <p class="mt-4 text-xl text-zinc-600">Motion Picture Guidance Inspired by Catholic Teaching.<br>Ten General Principles and ten Particular Applications for evaluating media with clarity, charity, and fidelity to the Gospel.</p>
+            </div>
+
+            <!-- Copy Button -->
+            <div class="flex justify-center mb-8">
+                <button onclick="copyFullCode()" 
+                        class="inline-flex items-center gap-x-3 px-8 py-4 bg-emerald-800 hover:bg-emerald-900 active:bg-emerald-950 text-white font-semibold rounded-3xl text-lg transition-all shadow-sm">
+                    <i class="fa-solid fa-copy"></i>
+                    <span>Copy Full Code to Clipboard</span>
+                </button>
+            </div>
+
+            <!-- Full Formatted Code Document -->
+            <div id="code-document" class="max-w-4xl mx-auto bg-white border border-zinc-200 rounded-3xl p-10 md:p-12 shadow-sm">
+                
+                <!-- Title Block -->
+                <div class="text-center mb-10 pb-8 border-b border-zinc-100">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-emerald-100 text-emerald-700 rounded-2xl mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 01-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-4xl font-bold tracking-tighter heading-serif text-emerald-900">Shepherd Ratings Code</h3>
+                    <p class="text-xl text-emerald-700 font-medium mt-1">Motion Picture Guidance Inspired by Catholic Teaching</p>
+                </div>
+
+                <!-- Preamble -->
+                <div class="mb-10">
+                    <h4 class="font-semibold text-2xl tracking-tight text-emerald-900 mb-4 flex items-center gap-x-3">
+                        <span class="text-emerald-600">✦</span> Preamble
+                    </h4>
+                    <div class="space-y-4 text-[15px] leading-relaxed text-zinc-700">
+                        <p>Media producers and creators recognize the profound influence of film, music, and other media on the human person, society, and culture. Films and music are gifts from God that can serve truth, beauty, and the common good. They have the potential to elevate the soul, foster virtue, and reflect the dignity of every human being made in the image and likeness of God.</p>
+                        <p>While films and music are primarily works of art and entertainment, creators bear a moral responsibility to respect the dignity of the person, uphold the natural law, promote justice and charity, and avoid leading audiences into moral confusion or sin.</p>
+                        <p>In the spirit of the Gospel, films and music should strive to illuminate the struggle between good and evil, offer paths to redemption, and celebrate the true, the good, and the beautiful.</p>
+                    </div>
+                    
+                    <div class="mt-6 space-y-4">
+                        <blockquote class="border-l-4 border-emerald-600 pl-6 italic text-zinc-700 text-[15px]">
+                            “The eye is the lamp of the body. So, if your eye is healthy, your whole body will be full of light; but if your eye is unhealthy, your whole body will be full of darkness. If then the light in you is darkness, how great is the darkness!” 
+                            <cite class="not-italic text-sm text-emerald-700 block mt-1">(Matthew 6:22-23)</cite>
+                        </blockquote>
+                        <blockquote class="border-l-4 border-emerald-600 pl-6 italic text-zinc-700 text-[15px]">
+                            “Bad company ruins good morals.”
+                            <cite class="not-italic text-sm text-emerald-700 block mt-1">(1 Corinthians 15:33)</cite>
+                        </blockquote>
+                    </div>
+                </div>
+
+                <!-- General Principles -->
+                <div class="mb-10">
+                    <h4 class="font-semibold text-2xl tracking-tight text-emerald-900 mb-5 flex items-center gap-x-3">
+                        <span class="text-emerald-600">✦</span> General Principles
+                    </h4>
+                    <ol class="space-y-5 text-[15px] leading-relaxed text-zinc-700 list-decimal pl-6">
+                        <li>No film should degrade the dignity of the human person or lower the moral standards of those who view it. Sympathy should never rest with evil, injustice, or sin in a way that glorifies wrongdoing without showing its consequences or the possibility of conversion.</li>
+                        <li>Correct standards of life—rooted in truth, respect for the human person, the sanctity of marriage and family, and the common good—shall be presented, subject to the legitimate requirements of drama, art, and entertainment.</li>
+                        <li>Natural and human law shall not be ridiculed, nor shall sympathy be created for their violation. Films should illuminate the moral order and the dignity of every person, regardless of race, ethnicity, gender, or background.</li>
+                    </ol>
+                </div>
+
+                <!-- Particular Applications -->
+                <div>
+                    <h4 class="font-semibold text-2xl tracking-tight text-emerald-900 mb-6 flex items-center gap-x-3">
+                        <span class="text-emerald-600">✦</span> Particular Applications
+                    </h4>
+
+                    <!-- I -->
+                    <div class="mb-8">
+                        <h5 class="font-semibold text-xl text-emerald-900 mb-2">I—Crimes Against the Law and Human Dignity</h5>
+                        <p class="text-[15px] leading-relaxed text-zinc-700 mb-3">Crime and violence shall not be presented so as to inspire imitation or glorify evil. Evil must be shown in its true ugliness, with attention to justice and the possibility of repentance.</p>
+                        <ol class="list-decimal pl-6 space-y-2.5 text-[15px] text-zinc-700">
+                            <li>Murder, brutality, and revenge shall not be depicted in excessive or gratuitous detail, nor justified as morally acceptable ends.</li>
+                            <li>Methods of crime should not be instructional.</li>
+                            <li>Illegal drug use and trafficking shall not be glamorized.</li>
+                            <li>Portrayals of violence must serve the story’s moral arc and never desensitize viewers to the sacredness of human life.</li>
+                        </ol>
+                    </div>
+
+                    <!-- II -->
+                    <div class="mb-8">
+                        <h5 class="font-semibold text-xl text-emerald-900 mb-2">II—Sex, Chastity, and the Dignity of the Person</h5>
+                        <p class="text-[15px] leading-relaxed text-zinc-700 mb-3">The sanctity of marriage between one man and one woman, the gift of human sexuality ordered toward love and life, and the dignity of every person shall be upheld. Films must not objectify the human body or reduce persons to objects of lust.</p>
+                        <ol class="list-decimal pl-6 space-y-2.5 text-[15px] text-zinc-700">
+                            <li>Adultery, fornication, or other violations of chastity may appear as plot elements but must never be presented as morally acceptable or desirable.</li>
+                            <li>Scenes of passion must serve the story and avoid explicit or arousing depictions that could lead viewers into sin.</li>
+                            <li>Seduction, rape, or sexual exploitation shall be treated with gravity, never for comedy or titillation, and must clearly show their moral evil.</li>
+                            <li>Pornography, objectification, or any depiction intended to arouse disordered sexual desire is forbidden.</li>
+                            <li>Sex hygiene and related topics, if treated, must respect modesty and the sacredness of the body.</li>
+                            <li>Nudity or undressing scenes are permitted only when artistically essential, non-exploitative, and presented with restraint and respect for human dignity (not in a lecherous or gratuitous manner).</li>
+                        </ol>
+                    </div>
+
+                    <!-- III -->
+                    <div class="mb-8">
+                        <h5 class="font-semibold text-xl text-emerald-900 mb-2">III—Vulgarity and Profanity</h5>
+                        <p class="text-[15px] leading-relaxed text-zinc-700">Low, crude, or vulgar language and behavior should be subject to good taste. Gratuitous profanity or blasphemy (especially misuse of the holy name of God) is to be avoided, as it offends the dignity of the Creator and the sensibilities of the audience.</p>
+                    </div>
+
+                    <!-- IV -->
+                    <div class="mb-8">
+                        <h5 class="font-semibold text-xl text-emerald-900 mb-2">IV—Costume and Modesty</h5>
+                        <p class="text-[15px] leading-relaxed text-zinc-700">Dress and presentation of the human body shall respect modesty and the dignity of the person. Indecent exposure or costumes designed solely to provoke lust are forbidden.</p>
+                    </div>
+
+                    <!-- V -->
+                    <div class="mb-8">
+                        <h5 class="font-semibold text-xl text-emerald-900 mb-2">V—Dances and Movements</h5>
+                        <p class="text-[15px] leading-relaxed text-zinc-700">Dances or movements that are explicitly sexual or designed to incite lust are to be avoided. Artistic dance that expresses beauty or emotion is permitted when it respects the dignity of the dancer and viewer.</p>
+                    </div>
+
+                    <!-- VI -->
+                    <div class="mb-8">
+                        <h5 class="font-semibold text-xl text-emerald-900 mb-2">VI—Religion</h5>
+                        <p class="text-[15px] leading-relaxed text-zinc-700">Religious faith, beliefs, and persons shall be treated with respect and never denigrated as foolish or unimportant. Ridicule of any religion is forbidden. Clergy and sacred rites may be portrayed realistically but never in a way that mocks the sacred.</p>
+                    </div>
+
+                    <!-- VII -->
+                    <div class="mb-8">
+                        <h5 class="font-semibold text-xl text-emerald-900 mb-2">VII—Dignity and Representation of Women</h5>
+                        <p class="text-[15px] leading-relaxed text-zinc-700">Films shall uphold the equal dignity of men and women as created in the image of God. Women should be portrayed as full persons with inherent dignity, agency, and moral worth—not merely as objects of desire or supporting figures in male narratives. Stories should avoid reducing women to stereotypes or objects of male gaze. Where possible, films are encouraged to include meaningful interactions among women characters that explore their own aspirations, relationships, struggles, or vocations beyond their connection to male characters.</p>
+                    </div>
+
+                    <!-- VIII -->
+                    <div class="mb-8">
+                        <h5 class="font-semibold text-xl text-emerald-900 mb-2">VIII—National and Racial Feelings</h5>
+                        <p class="text-[15px] leading-relaxed text-zinc-700">All peoples, races, ethnicities, and cultures shall be represented fairly and with respect. Racism, ethnic stereotyping, or any denigration of human dignity based on origin is forbidden. Films should promote solidarity and the universal dignity of every human person.</p>
+                    </div>
+
+                    <!-- IX -->
+                    <div class="mb-8">
+                        <h5 class="font-semibold text-xl text-emerald-900 mb-2">IX—Locations and Settings</h5>
+                        <p class="text-[15px] leading-relaxed text-zinc-700">Bedrooms and private settings must be treated with delicacy and respect for modesty and chastity.</p>
+                    </div>
+
+                    <!-- X -->
+                    <div class="mb-10">
+                        <h5 class="font-semibold text-xl text-emerald-900 mb-2">X—Repellent Subjects</h5>
+                        <p class="text-[15px] leading-relaxed text-zinc-700">Subjects such as suicide, euthanasia, abortion, excessive cruelty, or the degradation of human life must be handled with extreme care. When included, they must clearly illustrate the moral evil involved and never be presented sympathetically or without consequences.</p>
+                    </div>
+                </div>
+
+                <!-- Ratings -->
+                <div class="mb-10 pt-8 border-t border-zinc-100">
+                    <h4 class="font-semibold text-2xl tracking-tight text-emerald-900 mb-5 flex items-center gap-x-3">
+                        <span class="text-emerald-600">✦</span> Ratings
+                    </h4>
+                    <p class="text-[15px] text-zinc-600 mb-6">Ratings will be broken into 4 categories:</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="border border-emerald-200 bg-emerald-50/60 rounded-2xl p-5">
+                            <div class="flex items-center gap-x-3 mb-2">
+                                <span class="rating-badge rating-A1 text-sm px-3.5 py-0.5">A1</span>
+                                <span class="font-semibold text-emerald-900">Fully aligns with Christian principles</span>
+                            </div>
+                            <p class="text-sm text-zinc-700">No significant moral concerns. Good for the whole family. <span class="text-emerald-700">(Similar to G rated)</span></p>
+                        </div>
+                        <div class="border border-emerald-200 bg-emerald-50/60 rounded-2xl p-5">
+                            <div class="flex items-center gap-x-3 mb-2">
+                                <span class="rating-badge rating-A2 text-sm px-3.5 py-0.5">A2</span>
+                                <span class="font-semibold text-emerald-900">Fully aligns with Christian principles but best suited for adults</span>
+                            </div>
+                            <p class="text-sm text-zinc-700">Similar to PG/PG-13 rated</p>
+                        </div>
+                        <div class="border border-amber-200 bg-amber-50/60 rounded-2xl p-5">
+                            <div class="flex items-center gap-x-3 mb-2">
+                                <span class="rating-badge rating-B text-sm px-3.5 py-0.5">B</span>
+                                <span class="font-semibold text-amber-900">Beware. Contains morally objectionable elements that require discernment</span>
+                            </div>
+                            <p class="text-sm text-zinc-700">Similar to R Rated</p>
+                        </div>
+                        <div class="border border-red-200 bg-red-50/60 rounded-2xl p-5">
+                            <div class="flex items-center gap-x-3 mb-2">
+                                <span class="rating-badge rating-C text-sm px-3.5 py-0.5">C</span>
+                                <span class="font-semibold text-red-900">Condemned</span>
+                            </div>
+                            <p class="text-sm text-zinc-700">Likely to cause moral confusion, sinful thoughts, and lower the soul. Best avoided</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rating Product -->
+                <div class="mb-10 pt-6 border-t border-zinc-100">
+                    <h4 class="font-semibold text-2xl tracking-tight text-emerald-900 mb-4 flex items-center gap-x-3">
+                        <span class="text-emerald-600">✦</span> Rating Product
+                    </h4>
+                    <div class="bg-zinc-50 border border-zinc-200 rounded-2xl p-6 text-[15px] text-zinc-700 leading-relaxed">
+                        Output the Title with its associated rating, then a "Quick Summary" section of the morality of the media in a 280 character or less synopsis — no need to post the number of characters. Follow this up with a longer more in depth breakdown of each section.
+                    </div>
+                </div>
+
+                <!-- Conclusion -->
+                <div class="pt-8 border-t border-zinc-100">
+                    <h4 class="font-semibold text-2xl tracking-tight text-emerald-900 mb-4 flex items-center gap-x-3">
+                        <span class="text-emerald-600">✦</span> Conclusion
+                    </h4>
+                    <div class="space-y-4 text-[15px] leading-relaxed text-zinc-700">
+                        <p>We have undoubtably made mistakes in this code and application of this code will be debated. We ask for yours and God's forgiveness for mistakes we have and will continue to make. We pray God will grace us with the sight to see our errors and for the courage and wisdom to correct those mistakes quickly.</p>
+                        <p>We pray this code will help everyone fill their eyes and ears with media and stories that bring them into closer union with God and build up the Kingdom of Heaven in every family, community, and country around the world.</p>
+                        <blockquote class="border-l-4 border-emerald-600 pl-6 italic text-zinc-700 mt-4">
+                            “Let your light shine before others, so that they may see your good works and give glory to your Father in heaven.” 
+                            <cite class="not-italic text-sm text-emerald-700 block mt-1">(Matthew 5:16)</cite>
+                        </blockquote>
+                        <p class="pt-3 text-center font-medium text-emerald-800">God's is the kingdom, the power, and the glory, now and forever. Amen.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <p class="text-center text-xs text-zinc-500 mt-8 max-w-md mx-auto">This code is offered in humility. We welcome charitable feedback as we seek to serve truth, beauty, and the common good through media discernment.</p>
+        </div>
+    </section>
+
+    <!-- Browse / Featured Ratings -->
+    <section id="browse" class="max-w-screen-xl mx-auto px-8 py-16">
+        <div class="flex items-end justify-between mb-8">
+            <div>
+                <h2 class="text-4xl font-bold tracking-tight heading-serif">Recently Rated</h2>
+                <p class="text-zinc-600">A few examples from our growing collection</p>
+            </div>
+            <a href="#" class="hidden md:flex items-center text-emerald-700 font-semibold hover:text-emerald-800">
+                Browse all ratings <i class="fa-solid fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Movie Cards (posters can be added similarly if desired) -->
+            <div class="movie-card bg-white border border-zinc-200 rounded-3xl overflow-hidden">
+                <div class="h-2 bg-gradient-to-r from-emerald-700 to-emerald-500"></div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <div class="font-semibold text-xl">It's a Wonderful Life</div>
+                            <div class="text-sm text-zinc-500">1946 • Frank Capra</div>
+                        </div>
+                        <div class="rating-badge rating-A1 text-sm px-3 py-1">A1</div>
+                    </div>
+                    <div class="mt-4 text-sm text-zinc-600 line-clamp-3">
+                        A timeless story of faith, family, and redemption. One of the most beautiful depictions of Christian hope in cinema.
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card bg-white border border-zinc-200 rounded-3xl overflow-hidden">
+                <div class="h-2 bg-gradient-to-r from-emerald-700 to-emerald-500"></div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <div class="font-semibold text-xl">Quo Vadis</div>
+                            <div class="text-sm text-zinc-500">1951 • Mervyn LeRoy</div>
+                        </div>
+                        <div class="rating-badge rating-A2 text-sm px-3 py-1">A2</div>
+                    </div>
+                    <div class="mt-4 text-sm text-zinc-600 line-clamp-3">
+                        Epic story of early Christians in Nero's Rome. Strong faith themes with some dramatic intensity.
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card bg-white border border-zinc-200 rounded-3xl overflow-hidden">
+                <div class="h-2 bg-gradient-to-r from-emerald-700 to-emerald-500"></div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <div class="font-semibold text-xl">The Polar Express</div>
+                            <div class="text-sm text-zinc-500">2004 • Robert Zemeckis</div>
+                        </div>
+                        <div class="rating-badge rating-A1 text-sm px-3 py-1">A1</div>
+                    </div>
+                    <div class="mt-4 text-sm text-zinc-600 line-clamp-3">
+                        A beautiful Christmas story about faith, wonder, and believing in what cannot be seen.
+                    </div>
+                </div>
+            </div>
+
+            <div class="movie-card bg-white border border-zinc-200 rounded-3xl overflow-hidden">
+                <div class="h-2 bg-gradient-to-r from-emerald-700 to-emerald-500"></div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <div class="font-semibold text-xl">O Brother, Where Art Thou?</div>
+                            <div class="text-sm text-zinc-500">2000 • Coen Brothers</div>
+                        </div>
+                        <div class="rating-badge rating-B text-sm px-3 py-1">B</div>
+                    </div>
+                    <div class="mt-4 text-sm text-zinc-600 line-clamp-3">
+                        Charming and clever, with strong themes of redemption and brotherhood. Some language and mild violence.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <div class="bg-emerald-900 text-white py-16">
+        <div class="max-w-screen-xl mx-auto px-8 text-center">
+            <h2 class="text-4xl font-bold tracking-tight">Ready to help shepherd culture?</h2>
+            <p class="mt-3 max-w-md mx-auto text-emerald-200">Join thousands of Catholics rating media with clarity and charity.</p>
+            
+            <!-- Create Free Account button removed -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-900 text-zinc-400 py-12 text-sm">
+        <div class="max-w-screen-xl mx-auto px-8 grid md:grid-cols-3 gap-y-10">
+            <div>
+                <div class="flex items-center gap-x-3 mb-4">
+                    <div class="w-8 h-8 bg-emerald-700 rounded-2xl flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 01-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                    </div>
+                    <span class="font-bold text-white text-xl tracking-tighter">Shepherd Ratings</span>
+                </div>
+                <p class="text-xs leading-relaxed">A project to restore beauty and moral clarity to media through the lens of Catholic teaching.</p>
+            </div>
+            
+            <div class="md:col-span-2 grid grid-cols-2 md:grid-cols-3 gap-y-8 text-xs">
+                <div>
+                    <div class="font-semibold text-white mb-3 tracking-wider">EXPLORE</div>
+                    <div class="space-y-1.5">
+                        <div>Browse All Ratings</div>
+                        <div>Top Rated Films</div>
+                        <div>Recently Added</div>
+                        <div>The Code</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="font-semibold text-white mb-3 tracking-wider">COMMUNITY</div>
+                    <div class="space-y-1.5">
+                        <div>Submit a Film</div>
+                        <div>Discussion Forums</div>
+                        <div>Rating Guidelines</div>
+                        <div>Our Story</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="font-semibold text-white mb-3 tracking-wider">LEGAL</div>
+                    <div class="space-y-1.5">
+                        <div>Privacy</div>
+                        <div>Terms of Service</div>
+                        <div>Contact</div>
+                        <div class="pt-2 text-emerald-400">shepherdratings.org</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="login-modal" onclick="if (event.target.id === 'login-modal') hideLoginModal()" class="hidden fixed inset-0 bg-black/60 flex items-center justify-center z-[100]">
+        <div onclick="event.stopImmediatePropagation()" class="bg-white w-full max-w-md mx-4 rounded-3xl p-8">
+            <h3 class="text-2xl font-semibold mb-6">Welcome back</h3>
+            
+            <div class="space-y-4">
+                <div>
+                    <label class="text-sm font-medium text-zinc-600">Email</label>
+                    <input type="email" value="user@example.com" class="mt-1 w-full border border-zinc-300 rounded-2xl px-4 py-3 focus:outline-none focus:border-emerald-600">
+                </div>
+                <div>
+                    <label class="text-sm font-medium text-zinc-600">Password</label>
+                    <input type="password" value="demo123" class="mt-1 w-full border border-zinc-300 rounded-2xl px-4 py-3 focus:outline-none focus:border-emerald-600">
+                </div>
+            </div>
+            
+            <button onclick="loginUser()" class="mt-6 w-full py-4 bg-emerald-800 text-white font-semibold rounded-3xl">Log In</button>
+            
+            <div class="text-center text-xs mt-6 text-zinc-500">
+                Don't have an account? 
+                <span onclick="hideLoginModal(); showSignupModal()" class="text-emerald-700 font-medium cursor-pointer">Join the Flock</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signup-modal" onclick="if (event.target.id === 'signup-modal') hideSignupModal()" class="hidden fixed inset-0 bg-black/60 flex items-center justify-center z-[100]">
+        <div onclick="event.stopImmediatePropagation()" class="bg-white w-full max-w-md mx-4 rounded-3xl p-8">
+            <h3 class="text-2xl font-semibold mb-2">Join Shepherd Ratings</h3>
+            <p class="text-sm text-zinc-500 mb-6">Help restore beauty and moral clarity to media.</p>
+            
+            <div class="space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="text-sm font-medium text-zinc-600">First Name</label>
+                        <input type="text" value="John" class="mt-1 w-full border border-zinc-300 rounded-2xl px-4 py-3 focus:outline-none focus:border-emerald-600">
+                    </div>
+                    <div>
+                        <label class="text-sm font-medium text-zinc-600">Last Name</label>
+                        <input type="text" value="Shepherd" class="mt-1 w-full border border-zinc-300 rounded-2xl px-4 py-3 focus:outline-none focus:border-emerald-600">
+                    </div>
+                </div>
+                <div>
+                    <label class="text-sm font-medium text-zinc-600">Email</label>
+                    <input type="email" value="you@faithful.com" class="mt-1 w-full border border-zinc-300 rounded-2xl px-4 py-3 focus:outline-none focus:border-emerald-600">
+                </div>
+                <div>
+                    <label class="text-sm font-medium text-zinc-600">Create Password</label>
+                    <input type="password" value="demo123" class="mt-1 w-full border border-zinc-300 rounded-2xl px-4 py-3 focus:outline-none focus:border-emerald-600">
+                </div>
+            </div>
+            
+            <button onclick="signupUser()" class="mt-6 w-full py-4 bg-emerald-800 text-white font-semibold rounded-3xl">Create Account</button>
+            
+            <div class="text-xs text-center mt-5 text-zinc-400">By joining, you agree to our Terms &amp; the Shepherd Code of Conduct.</div>
+        </div>
+    </div>
+
+    <script>
+        // Tailwind script
+        function initializeTailwind() {
+            document.documentElement.style.setProperty('--accent', '#166534');
+        }
+        
+        // Expanded to IMDb Top ~20 for full database testing (stricter Shepherd Ratings with detailed Code-specific reasoning)
+        // The random selection in nextFilm() and startNewQuiz() uses the FULL films.length — it now cycles through all entries.
+        const films = [
+            {
+                id: 1,
+                title: "The Shawshank Redemption",
+                year: 1994,
+                director: "Frank Darabont",
+                poster: "https://image.tmdb.org/t/p/w500/lyQBXzOQSuE59IsHyhrp0qIiPAz.jpg",
+                correctRating: "B",
+                why: "Depicts prison violence, beatings, implied rape, and strong profanity in detail (clear violations of I—Crimes Against the Law by excessive brutality and graphic suffering, III—Vulgarity). The redemptive arc and themes of hope/friendship align with Preamble and General Principle 1 on human dignity, but the film fails to fully condemn the systemic evil and risks desensitizing viewers to violence and prison brutality; sympathy lingers on flawed characters without consistent moral condemnation of all sin. Requires very careful adult discernment and is not suitable for repeated viewing or younger audiences.",
+                summary: "Wrongfully imprisoned banker Andy Dufresne forms a deep friendship with fellow inmate Red while finding ways to maintain his hope and dignity over decades in Shawshank prison."
+            },
+            {
+                id: 2,
+                title: "The Godfather",
+                year: 1972,
+                director: "Francis Ford Coppola",
+                poster: "https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg",
+                correctRating: "B",
+                why: "Significant violence, brutality, adultery, and moral ambiguity where sympathy frequently rests with criminals in organized crime (violates General Principle 1 by allowing sympathy with evil without consistent condemnation or conversion, I—Crimes by depicting murder and brutality without sufficient moral framing, and II—Sex/Chastity). The film risks glamorizing the 'family' lifestyle and power of sin (Preamble), despite showing some costs; fails to clearly reject the underlying moral disorder. Requires strong adult discernment and is not recommended for impressionable viewers.",
+                summary: "The aging patriarch of a powerful crime family transfers control to his reluctant son, exploring the dark side of power and family loyalty."
+            },
+            {
+                id: 3,
+                title: "The Dark Knight",
+                year: 2008,
+                director: "Christopher Nolan",
+                poster: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg",
+                correctRating: "B",
+                why: "Intense and graphic violence (including torture, explosions, and psychological terror), chaos, and moral dilemmas (clear violations of I—Crimes Against the Law by excessive brutality and detailed suffering; some sympathy with anti-hero/vigilante methods and the Joker's seductive philosophy). While themes of sacrifice and justice align with General Principles, the film fails to fully condemn the darkness and risks moral confusion or desensitization; the intensity and ambiguity make it unsuitable without strong adult discernment and clear moral framework.",
+                summary: "Batman, James Gordon, and Harvey Dent must confront the Joker, who wreaks havoc on Gotham, testing the limits of morality and sacrifice."
+            },
+            {
+                id: 4,
+                title: "The Godfather Part II",
+                year: 1974,
+                director: "Francis Ford Coppola",
+                poster: "https://image.tmdb.org/t/p/w500/hek3koDUyRQk7FIhPXsa6mT2Zc3.jpg",
+                correctRating: "B",
+                why: "Expands on corruption, power, and personal moral decline with significant violence and scenes where evil acts are portrayed with complexity that can blur lines (violates General Principle 1 by allowing sympathy with characters making sinful choices without sufficient immediate condemnation in all arcs). Explores the corrupting influence of crime, requiring adult caution.",
+                summary: "Parallel stories of young Vito Corleone building his empire and Michael Corleone consolidating power, showing the corrupting influence of crime across generations."
+            },
+            {
+                id: 5,
+                title: "12 Angry Men",
+                year: 1957,
+                director: "Sidney Lumet",
+                poster: "https://image.tmdb.org/t/p/w500/ow3wq89wM8qd5X7hWKxiRfsFf9C.jpg",
+                correctRating: "A1",
+                why: "Excellent alignment with Christian principles of justice, truth, human dignity, and overcoming prejudice (General Principles 1-3 and Particular Applications on dignity). Almost no violence, profanity, or objectionable content; focuses on reason, empathy, and moral courage in a confined, thoughtful setting. Suitable for the whole family.",
+                summary: "A jury deliberates the fate of a young man accused of murder, with one juror forcing the others to confront their prejudices and examine the evidence."
+            },
+            {
+                id: 6,
+                title: "The Lord of the Rings: The Return of the King",
+                year: 2003,
+                director: "Peter Jackson",
+                poster: "https://image.tmdb.org/t/p/w500/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg",
+                correctRating: "B",
+                why: "Epic portrayal of good vs evil, friendship, sacrifice, and hope with strong Christian allegory (aligns with Preamble and General Principles on the struggle between good and evil, redemption). However, contains extensive, detailed battle violence, brutality, and dark moments (I—Crimes Against the Law by depicting warfare, death, and suffering in graphic detail without sufficient restraint), which risks desensitization; the film fails to fully address the moral cost of violence in some arcs. Requires adult discernment despite the uplifting moral core.",
+                summary: "As the final battle for Middle-earth approaches, Frodo and Sam continue their quest to destroy the One Ring while Aragorn leads the forces of good."
+            },
+            {
+                id: 7,
+                title: "Schindler's List",
+                year: 1993,
+                director: "Steven Spielberg",
+                poster: "https://image.tmdb.org/t/p/w500/sF1U4EUQS8YHUYjNl3pMGNIQyr0.jpg",
+                correctRating: "B",
+                why: "Powerful condemnation of evil, celebration of human dignity, compassion, and one man's redemption (strongly aligns with Preamble, General Principle 1, and Particular Applications on dignity and repellent subjects). Graphic violence and Holocaust depictions (I—Crimes by showing excessive brutality and cruelty) make it intensely mature and best for adults with guidance, despite its moral strength.",
+                summary: "German businessman Oskar Schindler saves the lives of more than a thousand Polish-Jewish refugees during the Holocaust by employing them in his factories."
+            },
+            {
+                id: 8,
+                title: "The Lord of the Rings: The Fellowship of the Ring",
+                year: 2001,
+                director: "Peter Jackson",
+                poster: "https://image.tmdb.org/t/p/w500/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg",
+                correctRating: "B",
+                why: "Beautiful epic of friendship, courage, sacrifice, and the battle between good and evil with deep Christian resonance (aligns with Preamble and General Principles). Contains intense violence, battles, and dark creatures (I—Crimes Against the Law), making it unsuitable for children and requiring adult discernment.",
+                summary: "A young hobbit, Frodo, inherits a powerful ring and must embark on a dangerous journey to destroy it before it falls into the hands of the Dark Lord Sauron."
+            },
+            {
+                id: 9,
+                title: "Pulp Fiction",
+                year: 1994,
+                director: "Quentin Tarantino",
+                poster: "https://image.tmdb.org/t/p/w500/d5iIlFn5s0ImszYzBPb8JPIfbXD.jpg",
+                correctRating: "C",
+                why: "Seriously violates core Christian principles through graphic violence, extreme profanity, drug use, sexual content, and criminal acts presented in a highly stylized, entertaining, and often non-judgmental way that glamorizes sin and risks moral confusion (violates Preamble, I—Crimes Against the Law by excessive brutality without consistent consequences or conversion, III—Vulgarity, and II—Sex/Chastity). Do not watch.",
+                summary: "The lives of two hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption."
+            },
+            {
+                id: 10,
+                title: "The Good, the Bad and the Ugly",
+                year: 1966,
+                director: "Sergio Leone",
+                poster: "https://image.tmdb.org/t/p/w500/bX2xnavhMYjWDoZp1VM6VnU1xwe.jpg",
+                correctRating: "B",
+                why: "Classic Western with memorable storytelling, but contains significant gun violence, brutality, moral gray areas, greed, and revenge-driven characters where sympathy can rest with anti-heroes (violates General Principle 1 and I—Crimes by depicting violence and lawlessness in detail without strong enough framing against sin in all cases). Requires adult caution.",
+                summary: "During the American Civil War, three men — a bounty hunter, a bandit, and a Mexican outlaw — search for a fortune in buried gold while navigating shifting alliances."
+            },
+            // Added Top 11-20 for full database testing (random now cycles through all 20)
+            {
+                id: 11,
+                title: "The Lord of the Rings: The Two Towers",
+                year: 2002,
+                director: "Peter Jackson",
+                poster: "https://image.tmdb.org/t/p/w500/5VTN0pR8gcqV3EPUHHfMGnJYN9L.jpg",
+                correctRating: "B",
+                why: "Continues the epic good vs evil struggle with strong themes of friendship, loyalty, and hope (aligns with Preamble and General Principles). Extensive battle violence and dark imagery (I—Crimes) require adult discernment, though the moral core uplifts the soul.",
+                summary: "Frodo and Sam continue their journey to Mordor while Aragorn, Legolas, and Gimli aid Rohan against Saruman's forces."
+            },
+            {
+                id: 12,
+                title: "Forrest Gump",
+                year: 1994,
+                director: "Robert Zemeckis",
+                poster: "https://image.tmdb.org/t/p/w500/arw2vcBveWOVZr6pxd9XTd1TdQa.jpg",
+                correctRating: "A2",
+                why: "Heartwarming story of perseverance, kindness, and American life with strong positive messages on human dignity and providence (aligns with Preamble and General Principles). Some mature themes and mild violence/language, but overall uplifting and suitable for most audiences with guidance.",
+                summary: "A man with a low IQ recounts his extraordinary life journey through decades of American history, touching many lives with his simple kindness."
+            },
+            {
+                id: 13,
+                title: "Fight Club",
+                year: 1999,
+                director: "David Fincher",
+                poster: "https://image.tmdb.org/t/p/w500/2lECpi35Hnbpa4y46JX0aY3AWTy.jpg",
+                correctRating: "B",
+                why: "Intense exploration of identity, consumerism, and masculinity with graphic violence and strong language (I—Crimes and III—Vulgarity). Themes of rebellion can border on glorifying destruction; requires strong adult discernment and clear moral framework.",
+                summary: "An insomniac office worker and a soap maker form an underground fight club that evolves into something much more dangerous."
+            },
+            {
+                id: 14,
+                title: "Inception",
+                year: 2010,
+                director: "Christopher Nolan",
+                poster: "https://image.tmdb.org/t/p/w500/8IB2e4r4oVhHnANbnm7O3Tj6tF8.jpg",
+                correctRating: "A2",
+                why: "Clever exploration of dreams, reality, guilt, and redemption with strong themes of love and sacrifice (aligns with General Principles). Some intense action and psychological intensity, but overall positive moral undertones.",
+                summary: "A thief who steals corporate secrets through dream-sharing technology is given the inverse task of planting an idea into a target's subconscious."
+            },
+            {
+                id: 15,
+                title: "Star Wars: Episode V - The Empire Strikes Back",
+                year: 1980,
+                director: "Irvin Kershner",
+                poster: "https://m.media-amazon.com/images/M/MV5BYmU1NDRjYTUtYTlmNi00ZDJkLWE2YjUtZThkZjQ5ZTQ5YjE4XkEyXkFqcGdeQXVyNjc1NTYyMjg@._V1_.jpg",
+                correctRating: "A2",
+                why: "Classic tale of good vs evil, friendship, and self-discovery with strong moral lessons on hope and perseverance (aligns with Preamble). Some violence in battles, but serves the heroic arc.",
+                summary: "After the Rebel Alliance's defeat, Luke Skywalker trains with Yoda while his friends are pursued by Darth Vader and the Empire."
+            },
+            {
+                id: 16,
+                title: "The Matrix",
+                year: 1999,
+                director: "Lana Wachowski, Lilly Wachowski",
+                poster: "https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
+                correctRating: "B",
+                why: "Explores reality, free will, and resistance against control with some violence and philosophical depth (I—Crimes for action scenes). Themes of awakening can be positive, but intense content requires discernment.",
+                summary: "A computer hacker learns about the true nature of his reality and his role in the war against its controllers."
+            },
+            {
+                id: 17,
+                title: "Goodfellas",
+                year: 1990,
+                director: "Martin Scorsese",
+                poster: "https://m.media-amazon.com/images/M/MV5BY2NkZjEzMDgtN2RjYy00YzM1LWI4NGItYjA0Y2I4ZjY4NjI2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
+                correctRating: "B",
+                why: "Gripping portrayal of organized crime with significant violence, profanity, and moral decline (I—Crimes and III—Vulgarity). Shows the consequences of a life of sin but can glamorize the lifestyle; requires strong adult guidance.",
+                summary: "The story of Henry Hill and his life in the mob, from his days as a teenager to his time as a full-fledged gangster."
+            },
+            {
+                id: 18,
+                title: "Interstellar",
+                year: 2014,
+                director: "Christopher Nolan",
+                poster: "https://m.media-amazon.com/images/M/MV5BZjdkOTU3MDktN2IxOS00OGEyLWFmMjktY2FiMmZkNWIyODZiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+                correctRating: "A2",
+                why: "Epic story of love, sacrifice, and human survival with profound themes of family and hope (aligns with Preamble and General Principles). Some intense scenes and mature concepts, but uplifting and thought-provoking.",
+                summary: "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival."
+            },
+            {
+                id: 19,
+                title: "One Flew Over the Cuckoo's Nest",
+                year: 1975,
+                director: "Miloš Forman",
+                poster: "https://m.media-amazon.com/images/M/MV5BZjA0OWVhOTAtYWQxNi00YzNhLWI4ZjYtNjFjZTEyYjJlNDVlL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzE3NA@@._V1_.jpg",
+                correctRating: "B",
+                why: "Powerful exploration of individuality, freedom, and institutional oppression with some violence and mature themes (I—Crimes). Strong message on human dignity and resistance to unjust authority.",
+                summary: "A criminal pleads insanity and is admitted to a mental institution, where he challenges the oppressive Nurse Ratched."
+            },
+            {
+                id: 20,
+                title: "Se7en",
+                year: 1995,
+                director: "David Fincher",
+                poster: "https://m.media-amazon.com/images/M/MV5BOTUwODM5MTQtZjgzYi00ZTg5LWE2YzYtYzY0YjY1YjA5ZGFjXkEyXkFqcGdeQXVyMTQxNzE3NA@@._V1_.jpg",
+                correctRating: "B",
+                why: "Dark thriller about sin and justice with graphic violence and disturbing content (I—Crimes and X—Repellent Subjects). Strong moral themes on good vs evil but extremely intense and not for the faint-hearted.",
+                summary: "Two detectives hunt a serial killer who uses the seven deadly sins as his modus operandi."
+            },
+            {
+                id: 21,
+                title: "It's a Wonderful Life",
+                year: 1946,
+                director: "Frank Capra",
+                poster: "https://m.media-amazon.com/images/M/MV5BZjc4NDZhZWMtNGEzYS00ZWU2LThlM2ItNTA0YzQ0OTExMTE2XkEyXkFqcGdeQXVyNjUwMzI2NzU@._V1_.jpg",
+                correctRating: "A1",
+                why: "Timeless and profound celebration of human dignity, community, hope, redemption, and the impact every life has (strongly aligns with Preamble and General Principle 1). Almost no objectionable content; one of the purest examples of uplifting, faith-affirming storytelling suitable for the whole family.",
+                summary: "An angel is sent from Heaven to help a desperately frustrated businessman by showing him what life would have been like if he had never existed."
+            },
+            {
+                id: 22,
+                title: "The Silence of the Lambs",
+                year: 1991,
+                director: "Jonathan Demme",
+                poster: "https://m.media-amazon.com/images/M/MV5BNjNhZTk0ZmEtNjJhMi00YzFlLWE1MmUtYzM1M2I2ZjA1Y2IxXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_.jpg",
+                correctRating: "B",
+                why: "Intense psychological thriller exploring the nature of evil and justice, with strong themes of courage and moral clarity (aligns with General Principles). However, contains graphic violence, disturbing content, and strong language (I—Crimes and X—Repellent Subjects), requiring strong adult discernment.",
+                summary: "A young F.B.I. cadet must receive the help of an incarcerated and manipulative cannibal killer to help catch another serial killer."
+            },
+            {
+                id: 23,
+                title: "Saving Private Ryan",
+                year: 1998,
+                director: "Steven Spielberg",
+                poster: "https://m.media-amazon.com/images/M/MV5BZjhkMDM4MWItZTVjOC00ZDRhLThmYTAtM2I5NzBmNmNlMzI1XkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_.jpg",
+                correctRating: "B",
+                why: "Powerful and realistic depiction of the horrors of war and the profound value of sacrifice, brotherhood, and doing what is right (aligns with General Principles and themes of laying down one's life). Extremely graphic and intense battle violence (I—Crimes) makes it strictly for mature adults.",
+                summary: "Following the Normandy Landings, a group of U.S. soldiers go behind enemy lines to retrieve a paratrooper whose brothers have been killed in action."
+            },
+            {
+                id: 24,
+                title: "City of God",
+                year: 2002,
+                director: "Fernando Meirelles",
+                poster: "https://m.media-amazon.com/images/M/MV5BMGU5OWEwZDItY2JlNC00OWZiLWI4NGUtMjIwNWMwZWJkMzEzXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_.jpg",
+                correctRating: "B",
+                why: "Raw and unflinching look at cycles of poverty, violence, and the loss of innocence, highlighting the consequences of sin and the need for moral choices (aligns with General Principle 1). Extremely graphic violence and mature content (I—Crimes), strictly for adults.",
+                summary: "In the slums of Rio, two kids' paths diverge as one struggles to become a photographer and the other a kingpin."
+            },
+            {
+                id: 25,
+                title: "Life Is Beautiful",
+                year: 1997,
+                director: "Roberto Benigni",
+                poster: "https://image.tmdb.org/t/p/w500/mfnkSeeVOBVheuyn2lo4tfmOPQb.jpg",
+                correctRating: "A2",
+                why: "Heartbreaking and inspiring story of a father's love, sacrifice, and protecting his child's innocence amid the Holocaust (strongly aligns with Preamble, General Principle 1, and themes of redemption and human dignity). Some dark and intense themes, best for adults.",
+                summary: "When an open-minded Jewish librarian and his son become victims of the Holocaust, he uses a perfect mixture of will, humor, and imagination to protect his son from the dangers around their camp."
+            },
+            {
+                id: 26,
+                title: "The Green Mile",
+                year: 1999,
+                director: "Frank Darabont",
+                poster: "https://image.tmdb.org/t/p/w500/8VG8fDNiy50H4FedGwdSVUPoaJe.jpg",
+                correctRating: "B",
+                why: "Powerful story of miracles, injustice, compassion, and redemption with strong moral and spiritual themes (aligns with Preamble and General Principles). Contains some violence and intense emotional content, best for adults.",
+                summary: "The lives of guards on Death Row are affected by one of their charges: a black man accused of child murder and rape, yet who has a mysterious gift."
+            },
+            {
+                id: 27,
+                title: "Star Wars",
+                year: 1977,
+                director: "George Lucas",
+                poster: "https://image.tmdb.org/t/p/w500/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg",
+                correctRating: "A2",
+                why: "Classic hero's journey with clear themes of good vs evil, hope, friendship, and the power of choice (aligns well with General Principles). Some sci-fi action and intense moments, suitable with guidance for older children and families.",
+                summary: "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a Wookiee and two droids to save the galaxy from the Empire's world-destroying battle station."
+            },
+            {
+                id: 28,
+                title: "Terminator 2: Judgment Day",
+                year: 1991,
+                director: "James Cameron",
+                poster: "https://image.tmdb.org/t/p/w500/5M0j0B18abtBI5gi2RhfjjurTqb.jpg",
+                correctRating: "B",
+                why: "Exciting action with themes of protection, sacrifice, and choosing one's destiny over fate (aligns with General Principles). Contains significant violence and intense action sequences, best for adults.",
+                summary: "A cyborg, identical to the one who failed to kill Sarah Connor, must now protect her teenage son John Connor from a more advanced and powerful cyborg."
+            },
+            {
+                id: 29,
+                title: "Back to the Future",
+                year: 1985,
+                director: "Robert Zemeckis",
+                poster: "https://m.media-amazon.com/images/M/MV5BZmU0M2Y1OGUtZjIxNi00ZjBkLTg1MjgtOWIyNThiZWIwYjRiXkEyXkFqcGdeQXVyMTQxNzE3NA@@._V1_.jpg",
+                correctRating: "A2",
+                why: "Fun, clever story about family, consequences of actions, and making the right choices (aligns with General Principles). Some mild language and intense moments, suitable for most audiences with guidance.",
+                summary: "Marty McFly, a 17-year-old high school student, is accidentally sent thirty years into the past in a time-traveling DeLorean invented by his close friend, the eccentric scientist Doc Brown."
+            },
+            {
+                id: 30,
+                title: "Spirited Away",
+                year: 2001,
+                director: "Hayao Miyazaki",
+                poster: "https://m.media-amazon.com/images/M/MV5BMjlmZmI5MDctNDE2YS00YWE0LWE5ZWItZDBhYWQ0NTcxNWRhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+                correctRating: "A2",
+                why: "Beautiful story of courage, growth, kindness, and finding one's identity with strong themes of overcoming fear and doing what is right (aligns with General Principles). Some scary imagery and mature emotional themes, best with guidance for younger viewers.",
+                summary: "During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts."
+            },
+            {
+                id: 31,
+                title: "The Lion King",
+                year: 1994,
+                director: "Roger Allers, Rob Minkoff",
+                poster: "https://upload.wikimedia.org/wikipedia/en/3/3d/The_Lion_King_poster.jpg",
+                correctRating: "A2",
+                why: "Classic story of responsibility, redemption, and the circle of life with strong moral lessons (aligns with General Principles). Contains some intense scenes of violence (animal fights, death of parent) and themes of loss (I—Crimes by depicting death and revenge). While uplifting and family-friendly overall, the emotional intensity and violence require parental guidance; fails to fully explore the moral cost of revenge in some arcs.",
+                summary: "Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself."
+            },
+            {
+                id: 32,
+                title: "Psycho",
+                year: 1960,
+                director: "Alfred Hitchcock",
+                poster: "https://m.media-amazon.com/images/M/MV5BNTQwNDM1YzItNDAxZC00NWY2LTk0M2UtNDIwNWI5OGUyNWUxXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
+                correctRating: "B",
+                why: "Masterful thriller exploring the nature of evil and the human psyche, with strong themes of guilt and consequence (aligns with General Principles). Contains horror elements, violence, and psychological intensity, requiring adult viewing.",
+                summary: "A Phoenix secretary embezzles $40,000 from her employer's client, goes on the run, and checks into a remote motel run by a young man under the domination of his mother."
+            },
+            {
+                id: 33,
+                title: "The Usual Suspects",
+                year: 1995,
+                director: "Bryan Singer",
+                poster: "https://upload.wikimedia.org/wikipedia/en/9/9c/The_Usual_Suspects_poster.jpg",
+                correctRating: "B",
+                why: "Clever crime thriller with themes of deception, justice, and the nature of evil (aligns with General Principles). Contains violence, strong language, and moral ambiguity, requiring adult discernment.",
+                summary: "A sole survivor tells of the twisty events leading up to a horrific gun battle on a boat, which began when five criminals met at a seemingly random police lineup."
+            },
+            {
+                id: 34,
+                title: "The Pianist",
+                year: 2002,
+                director: "Roman Polanski",
+                poster: "https://m.media-amazon.com/images/M/MV5BOWRiZDIxZjktMTA1NC00MDQ2LWEzMjUtMTliZmY3NjQ3ODJiXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
+                correctRating: "A2",
+                why: "Powerful and moving depiction of survival, human dignity, and the horrors of the Holocaust (strongly aligns with General Principle 1 and Particular Applications on dignity and repellent subjects). Graphic violence and intense themes, best for adults.",
+                summary: "A Polish Jewish musician struggles to survive the destruction of the Warsaw ghetto of World War II."
+            },
+            {
+                id: 35,
+                title: "Gladiator",
+                year: 2000,
+                director: "Ridley Scott",
+                poster: "https://m.media-amazon.com/images/M/MV5BMDliMmNhNDEtODUyOS00MjNlLTgxODEtN2U3NzIxMGVkZTA1L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
+                correctRating: "B",
+                why: "Epic story of revenge, honor, and the corrupting nature of power, with significant graphic violence, brutality, and moral ambiguity in the arena and political intrigue (violates I—Crimes Against the Law by depicting excessive violence and revenge without sufficient restraint or consistent moral framing; some sympathy with the anti-hero's violent path). While themes of justice and sacrifice align with General Principles, the film fails to fully condemn the cycle of violence and risks glamorizing revenge and spectacle; requires strong adult discernment.",
+                summary: "A former Roman General sets out to exact vengeance against the corrupt emperor who murdered his family and sent him into slavery."
+            },
+            {
+                id: 36,
+                title: "American History X",
+                year: 1998,
+                director: "Tony Kaye",
+                poster: "https://image.tmdb.org/t/p/w500/c2gsmSQ2Cqv8zosqKOCwRS0GFBS.jpg",
+                correctRating: "B",
+                why: "Powerful exploration of racism, redemption, and the consequences of hate, but contains graphic violence, brutality, strong language, and depictions of hate crimes (violates I—Crimes Against the Law by excessive brutality and III—Vulgarity; risks desensitization to racial violence). While it strongly aligns with General Principles on human dignity and rejecting prejudice, the intense graphic content and some lingering sympathy with the protagonist's violent past require strong adult discernment and clear moral framework.",
+                summary: "A former neo-nazi skinhead tries to prevent his younger brother from going down the same wrong path that he did."
+            },
+            {
+                id: 37,
+                title: "The Departed",
+                year: 2006,
+                director: "Martin Scorsese",
+                poster: "https://m.media-amazon.com/images/M/MV5BMTI1MTY2OTIxNV5BMl5BanBnXkFtZTYwNjQ4NjY3._V1_.jpg",
+                correctRating: "B",
+                why: "Intense crime thriller exploring loyalty, betrayal, and the cost of living a double life, with significant graphic violence, strong profanity, and moral ambiguity where sympathy can rest with flawed/criminal characters (violates I—Crimes Against the Law by excessive brutality and III—Vulgarity; risks glamorizing the criminal underworld in parts). While it has strong themes of justice and consequences (aligns with General Principles), it fails to fully condemn the cycle of violence and deceit without strong adult discernment.",
+                summary: "An undercover cop and a mole in the police attempt to identify each other while infiltrating an Irish gang in South Boston."
+            },
+            {
+                id: 38,
+                title: "The Prestige",
+                year: 2006,
+                director: "Christopher Nolan",
+                poster: "https://m.media-amazon.com/images/M/MV5BMjA4NDI0MTIxNF5BMl5BanBnXkFtZTYwNTM0MzY2._V1_.jpg",
+                correctRating: "A2",
+                why: "Clever exploration of obsession, sacrifice, and the nature of illusion with strong themes of consequences and identity (aligns with General Principles). Contains some violence, deception, and moral ambiguity in the pursuit of revenge (I—Crimes); the film risks glamorizing obsession and trickery without full condemnation of the personal cost to others. Requires adult discernment despite the intellectual depth.",
+                summary: "Two stage magicians engage in a bitter rivalry, leading to dangerous and deadly consequences."
+            },
+            {
+                id: 39,
+                title: "Whiplash",
+                year: 2014,
+                director: "Damien Chazelle",
+                poster: "https://m.media-amazon.com/images/M/MV5BOTA5NDZlZGUtMzU1OS00MDI5LTgwMzUtYWUyZjA4ZDAxZjQxXkEyXkFqcGdeQXVyMTA4NjE0NjQy._V1_.jpg",
+                correctRating: "A2",
+                why: "Intense story of ambition, mentorship, and the pursuit of excellence with strong themes of perseverance and self-discovery (aligns with General Principles). Contains strong language, psychological intensity, and depictions of abusive mentorship that border on emotional violence (III—Vulgarity and potential I—Crimes in the intensity of conflict). The film can glorify toxic drive without sufficient critique of the human cost; requires adult discernment.",
+                summary: "A young drummer enrolls at a cut-throat music conservatory where his dreams of greatness are mentored by an instructor who will stop at nothing to realize a student's potential."
+            },
+            {
+                id: 40,
+                title: "Casablanca",
+                year: 1942,
+                director: "Michael Curtiz",
+                poster: "https://m.media-amazon.com/images/M/MV5BY2IzZGY2YmEtYzljNS00NTM5LTgwMzUtZWEyN2E5Y2E4ZjU4XkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_.jpg",
+                correctRating: "A1",
+                why: "Timeless story of love, sacrifice, duty, and doing what is right in the face of evil (strongly aligns with Preamble and General Principles on human dignity, moral order, and redemption). Minimal objectionable content; a classic example of moral courage and redemption with almost no violations of the Code. Suitable for the whole family.",
+                summary: "A cynical American expatriate struggles to decide whether or not he should help his former lover and her new fiancé escape from the Nazis in Casablanca."
+            },
+            {
+                id: 41,
+                title: "Modern Times",
+                year: 1936,
+                director: "Charlie Chaplin",
+                poster: "https://m.media-amazon.com/images/M/MV5BYjJiZjMzYzktNjU0NS00OTkxLWEwYzItYzdhYWJjN2QzMTRlL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
+                correctRating: "A1",
+                why: "Brilliant satire on industrialization, poverty, and the human spirit with strong themes of dignity and resilience (aligns with General Principles). Minimal objectionable content; a classic of uplifting comedy with social commentary.",
+                summary: "The Tramp struggles to live in modern industrial society with the help of a young homeless woman."
+            },
+            {
+                id: 42,
+                title: "City Lights",
+                year: 1931,
+                director: "Charlie Chaplin",
+                poster: "https://m.media-amazon.com/images/M/MV5BY2I4MmM1N2EtM2Y1Mi00OWYyLWI4NTgtZDFjOGQ3N2Y2Y2M1XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
+                correctRating: "A1",
+                why: "Beautiful story of love, kindness, and human connection with strong themes of dignity and compassion (strongly aligns with Preamble and General Principle 1). Minimal objectionable content; a pure example of heartwarming storytelling.",
+                summary: "The Tramp falls in love with a blind flower girl and tries to raise money so she can have an operation to restore her sight."
+            },
+            {
+                id: 43,
+                title: "Once Upon a Time in the West",
+                year: 1968,
+                director: "Sergio Leone",
+                poster: "https://upload.wikimedia.org/wikipedia/en/8/8e/Once_Upon_a_Time_in_the_West.jpg",
+                correctRating: "B",
+                why: "Epic Western with themes of justice, revenge, and the cost of violence (aligns with General Principles). Contains significant violence and moral complexity, requiring adult discernment.",
+                summary: "A mysterious stranger with a harmonica joins forces with a notorious desperado to protect a beautiful widow from a ruthless assassin working for the railroad."
+            },
+            {
+                id: 44,
+                title: "Rear Window",
+                year: 1954,
+                director: "Alfred Hitchcock",
+                poster: "https://upload.wikimedia.org/wikipedia/en/5/5e/Rear_Window.jpg",
+                correctRating: "A2",
+                why: "Masterful thriller exploring voyeurism, justice, and human nature with strong moral undertones (aligns with General Principles). Some suspense and mature themes, best with guidance.",
+                summary: "A wheelchair-bound photographer spies on his neighbors from his apartment window and becomes convinced one of them has committed murder."
+            },
+            {
+                id: 45,
+                title: "Alien",
+                year: 1979,
+                director: "Ridley Scott",
+                poster: "https://upload.wikimedia.org/wikipedia/en/7/7a/Alien_movie_poster.jpg",
+                correctRating: "B",
+                why: "Classic sci-fi horror exploring survival, fear, and the unknown with strong themes of human resilience (aligns with General Principles). Contains graphic violence and intense horror elements, strictly for adults.",
+                summary: "The crew of a commercial spaceship encounters a deadly alien life form after investigating an unknown transmission."
+            },
+            {
+                id: 46,
+                title: "Apocalypse Now",
+                year: 1979,
+                director: "Francis Ford Coppola",
+                poster: "https://m.media-amazon.com/images/M/MV5BMDdhODg0MjYtYzBiOS00ZmI5LWEwZGYtZDEyNDU4MmQyNzFkXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
+                correctRating: "B",
+                why: "Powerful and disturbing exploration of war, morality, and the darkness of the human soul (aligns with General Principles on the consequences of evil). Extremely graphic violence and intense content, strictly for adults.",
+                summary: "A U.S. Army officer is sent on a dangerous mission into Cambodia to assassinate a renegade Special Forces colonel who has gone insane."
+            },
+            {
+                id: 47,
+                title: "Django Unchained",
+                year: 2012,
+                director: "Quentin Tarantino",
+                poster: "https://m.media-amazon.com/images/M/MV5BMjIyNTQ5NjQ1OV5BMl5BanBnXkFtZTcwODg1MDU4OA@@._V1_.jpg",
+                correctRating: "B",
+                why: "Stylized revenge story with themes of justice and freedom, but contains significant graphic violence and strong language (I—Crimes). Strong message against slavery but requires adult discernment.",
+                summary: "With the help of a German bounty-hunter, a freed slave sets out to rescue his wife from a brutal Mississippi plantation owner."
+            },
+            {
+                id: 48,
+                title: "The Lives of Others",
+                year: 2006,
+                director: "Florian Henckel von Donnersmarck",
+                poster: "https://upload.wikimedia.org/wikipedia/en/5/5d/The_Lives_of_Others.jpg",
+                correctRating: "A2",
+                why: "Powerful story of surveillance, redemption, and the human spirit under oppression (aligns with General Principles on dignity and truth). Some intense themes, best for adults.",
+                summary: "In 1984 East Berlin, an agent of the secret police, conducting surveillance on a writer and his lover, finds himself becoming increasingly absorbed by their lives."
+            },
+            {
+                id: 49,
+                title: "Memento",
+                year: 2000,
+                director: "Christopher Nolan",
+                poster: "https://m.media-amazon.com/images/M/MV5BZTcyNjk1MjgtOWI3Mi00YzQwLWI5MTktMzY4ZmI2NDAyNzYzXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
+                correctRating: "A2",
+                why: "Clever exploration of memory, identity, revenge, and the search for truth (aligns with General Principles). Some violence and mature themes, best for adults.",
+                summary: "A man with short-term memory loss attempts to track down his wife's murderer."
+            },
+            {
+                id: 50,
+                title: "The Intouchables",
+                year: 2011,
+                director: "Olivier Nakache, Éric Toledano",
+                poster: "https://m.media-amazon.com/images/M/MV5BMTYxNDA3MDQwNl5BMl5BanBnXkFtZTcwNTU4Mzc1Nw@@._V1_.jpg",
+                correctRating: "A2",
+                why: "Heartwarming story of friendship, dignity, and overcoming differences with strong themes of compassion and human connection (aligns with General Principles). Some language and mature themes, best for adults.",
+                summary: "After he becomes a quadriplegic from a paragliding accident, an aristocrat hires a young man from the projects to be his caregiver."
+            }
+        ]
+
+        // === TMDB API Integration (Secure - Tokens Hidden) ===
+        // IMPORTANT SECURITY NOTE:
+        // - Never commit your actual API Key or Read Access Token to any public repository or share it.
+        // - Replace the placeholder below ONLY for local development/testing.
+        // - For production or sharing this file, remove or comment out the token and use pre-fetched poster URLs.
+        const TMDB_READ_ACCESS_TOKEN = 'YOUR_TMDB_READ_ACCESS_TOKEN_HERE'; // <-- REPLACE WITH YOUR TOKEN (local only)
+        const TMDB_IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
+
+        /**
+         * Fetches the official poster URL from TMDB for a given movie.
+         * Uses the provided Read Access Token (Bearer auth).
+         * Returns null if not found or on error.
+         */
+        async function fetchTMDBPoster(title, year) {
+            if (!TMDB_READ_ACCESS_TOKEN || TMDB_READ_ACCESS_TOKEN === 'YOUR_TMDB_READ_ACCESS_TOKEN_HERE') {
+                console.warn('TMDB Read Access Token not configured. Using existing poster URL.');
+                return null;
+            }
+
+            try {
+                const query = encodeURIComponent(title);
+                const url = `https://api.themoviedb.org/3/search/movie?query=${query}&year=${year}&language=en-US&page=1`;
+
+                const response = await fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${TMDB_READ_ACCESS_TOKEN}`,
+                        'accept': 'application/json'
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error(`TMDB API error: ${response.status}`);
+                }
+
+                const data = await response.json();
+
+                if (data.results && data.results.length > 0) {
+                    const movie = data.results[0];
+                    if (movie.poster_path) {
+                        return `${TMDB_IMAGE_BASE_URL}${movie.poster_path}`;
+                    }
+                }
+                return null;
+            } catch (error) {
+                console.error('Error fetching poster from TMDB:', error);
+                return null;
+            }
+        }
+
+        // Optional: Button to refresh current film's poster from TMDB (for development)
+        // You can call this from console: refreshCurrentPosterFromTMDB()
+
+        async function refreshCurrentPosterFromTMDB() {
+            if (!currentFilm) {
+                alert('No film loaded yet.');
+                return;
+            }
+
+            const newPosterUrl = await fetchTMDBPoster(currentFilm.title, currentFilm.year);
+            if (newPosterUrl) {
+                currentFilm.poster = newPosterUrl; // Update in memory
+                
+                // Update the displayed image
+                const posterContainer = document.getElementById('movie-poster-placeholder');
+                posterContainer.innerHTML = `
+                    <img src="${newPosterUrl}" 
+                         alt="${currentFilm.title} poster" 
+                         class="w-full h-full object-cover">
+                `;
+                console.log(`Updated poster for ${currentFilm.title} from TMDB`);
+            } else {
+                alert('Could not find a poster on TMDB for this film.');
+            }
+        }
+        // === END TMDB API Integration ===
+
+        // Exact Shepherd Ratings Code text for one-click copy
+        const shepherdCodeText = `Shepherd Ratings Code
+
+Motion Picture Guidance Inspired by Catholic Teaching
 
 Preamble
-	Media producers and creators recognize the profound influence of film, music, and other media on the human person, society, and culture. Films and music are gifts from God that can serve truth, beauty, and the common good. They have the potential to elevate the soul, foster virtue, and reflect the dignity of every human being made in the image and likeness of God.
-	While films and music are primarily works of art and entertainment, creators bear a moral responsibility to respect the dignity of the person, uphold the natural law, promote justice and charity, and avoid leading audiences into moral confusion or sin. 
-	In the spirit of the Gospel, films and music should strive to illuminate the struggle between good and evil, offer paths to redemption, and celebrate the true, the good, and the beautiful.
+\tMedia producers and creators recognize the profound influence of film, music, and other media on the human person, society, and culture. Films and music are gifts from God that can serve truth, beauty, and the common good. They have the potential to elevate the soul, foster virtue, and reflect the dignity of every human being made in the image and likeness of God.
+\tWhile films and music are primarily works of art and entertainment, creators bear a moral responsibility to respect the dignity of the person, uphold the natural law, promote justice and charity, and avoid leading audiences into moral confusion or sin. 
+\tIn the spirit of the Gospel, films and music should strive to illuminate the struggle between good and evil, offer paths to redemption, and celebrate the true, the good, and the beautiful.
 
-“The eye is the lamp of the body. So, if your eye is healthy, your whole body will be full of light; but if your eye is unhealthy, your whole body will be full of darkness. If then the light in you is darkness, how great is the darkness!” (Mt 6:22-23) "Bad company ruins good morals."(1 Cor 15:33).
+“The eye is the lamp of the body. So, if your eye is healthy, your whole body will be full of light; but if your eye is unhealthy, your whole body will be full of darkness. If then the light in you is darkness, how great is the darkness!” (Mt‬ ‭6‬:‭22‬-‭23‬) "Bad company ruins good morals."(1 Cor 15:33).
 
 General Principles
 1. No film should degrade the dignity of the human person or lower the moral standards of those who view it. Sympathy should never rest with evil, injustice, or sin in a way that glorifies wrongdoing without showing its consequences or the possibility of conversion.
 2. Correct standards of life—rooted in truth, respect for the human person, the sanctity of marriage and family, and the common good—shall be presented, subject to the legitimate requirements of drama, art, and entertainment.
 3. Natural and human law shall not be ridiculed, nor shall sympathy be created for their violation. Films should illuminate the moral order and the dignity of every person, regardless of race, ethnicity, gender, or background.
-
 Particular Applications
 I—Crimes Against the Law and Human Dignity
 Crime and violence shall not be presented so as to inspire imitation or glorify evil. Evil must be shown in its true ugliness, with attention to justice and the possibility of repentance.
@@ -181,7 +1330,6 @@ Crime and violence shall not be presented so as to inspire imitation or glorify 
 2. Methods of crime should not be instructional.
 3. Illegal drug use and trafficking shall not be glamorized.
 4. Portrayals of violence must serve the story’s moral arc and never desensitize viewers to the sacredness of human life.
-
 II—Sex, Chastity, and the Dignity of the Person
 The sanctity of marriage between one man and one woman, the gift of human sexuality ordered toward love and life, and the dignity of every person shall be upheld. Films must not objectify the human body or reduce persons to objects of lust.
 1. Adultery, fornication, or other violations of chastity may appear as plot elements but must never be presented as morally acceptable or desirable.
@@ -190,28 +1338,20 @@ The sanctity of marriage between one man and one woman, the gift of human sexual
 4. Pornography, objectification, or any depiction intended to arouse disordered sexual desire is forbidden.
 5. Sex hygiene and related topics, if treated, must respect modesty and the sacredness of the body.
 6. Nudity or undressing scenes are permitted only when artistically essential, non-exploitative, and presented with restraint and respect for human dignity (not in a lecherous or gratuitous manner).
-
 III—Vulgarity and Profanity
 Low, crude, or vulgar language and behavior should be subject to good taste. Gratuitous profanity or blasphemy (especially misuse of the holy name of God) is to be avoided, as it offends the dignity of the Creator and the sensibilities of the audience.
-
 IV—Costume and Modesty
 Dress and presentation of the human body shall respect modesty and the dignity of the person. Indecent exposure or costumes designed solely to provoke lust are forbidden.
-
 V—Dances and Movements
 Dances or movements that are explicitly sexual or designed to incite lust are to be avoided. Artistic dance that expresses beauty or emotion is permitted when it respects the dignity of the dancer and viewer.
-
 VI—Religion
 Religious faith, beliefs, and persons shall be treated with respect and never denigrated as foolish or unimportant. Ridicule of any religion is forbidden. Clergy and sacred rites may be portrayed realistically but never in a way that mocks the sacred. 
-
 VII—Dignity and Representation of Women
 Films shall uphold the equal dignity of men and women as created in the image of God. Women should be portrayed as full persons with inherent dignity, agency, and moral worth—not merely as objects of desire or supporting figures in male narratives. Stories should avoid reducing women to stereotypes or objects of male gaze. Where possible, films are encouraged to include meaningful interactions among women characters that explore their own aspirations, relationships, struggles, or vocations beyond their connection to male characters.
-
 VIII—National and Racial Feelings
 All peoples, races, ethnicities, and cultures shall be represented fairly and with respect. Racism, ethnic stereotyping, or any denigration of human dignity based on origin is forbidden. Films should promote solidarity and the universal dignity of every human person.
-
 IX—Locations and Settings
 Bedrooms and private settings must be treated with delicacy and respect for modesty and chastity.
-
 X—Repellent Subjects
 Subjects such as suicide, euthanasia, abortion, excessive cruelty, or the degradation of human life must be handled with extreme care. When included, they must clearly illustrate the moral evil involved and never be presented sympathetically or without consequences.
 
@@ -219,42 +1359,355 @@ Ratings
 Ratings will be broken into 4 categories:
 
 A1: Fully aligns with Christian principles - no significant moral concerns. Good for the whole family. (Similar to G rated)
-A2: Fully aligns with Christian principles but contains mature themes best suited for adults (parental guidance advised for children). (Similar to PG/PG-13 rated)
-B: Beware. Contains morally objectionable elements that require caution and discernment for all adults. Not recommended for any children or repeated viewing. (Similar to R Rated)
-C: Condemned. Seriously violates core Christian principles and will lead viewers into sin and moral confusion. Do not watch.
+A2: Fully aligns with Christian principles but best suited for adults. (Similar to PG/PG-13 rated)
+B: Beware. Contains morally objectionable elements that require discernment. (Similar to R Rated)
+C: Condemned. Likely to cause moral confusion, sinful thoughts, and lower the soul. Best avoided
 
 Rating Product:
-Output the Title with it's associated rating, then a "Quick Summary" section 280 character or less synopsis - no need to post the number of characters. Follow this up with a longer more in depth breakdown of each section.
+Output the Title with it's associated rating, then a "Quick Summary" section of the morality of the media in a 280 character or less synopsis - no need to post the number of characters. Follow this up with a longer more in depth breakdown of each section.
 
 Conclusion
-	We have undoubtably made mistakes in this code and application of this code will be debated. We ask for yours and God's forgiveness for mistakes we have and will continue to make. We pray God will grace us with the sight to see our errors and for the courage and wisdom to correct those mistakes quickly. 
-	We pray this code will help everyone fill their eyes and ears with media and stories that bring them into closer union with God and build up the Kingdom of Heaven in every family, community, and country around the world.
-	"Let your light shine before others, so that they may see your good works and give glory to your Father in heaven." (Mt 5:16)
+\tWe have undoubtably made mistakes in this code and application of this code will be debated. We ask for yours and God's forgiveness for mistakes we have and will continue to make. We pray God will grace us with the sight to see our errors and for the courage and wisdom to correct those mistakes quickly. 
+\tWe pray this code will help everyone fill their eyes and ears with media and stories that bring them into closer union with God and build up the Kingdom of Heaven in every family, community, and country around the world.
+\t"Let your light shine before others, so that they may see your good works and give glory to your Father in heaven." (Mt 5:16)
 
-God's is the kingdom, the power, and the glory, now and forever. Amen.</pre>
-        </div>
+God's is the kingdom, the power, and the glory, now and forever. Amen.`;
 
-    </div>
-
-    <footer>
-        <p>Shepherd Rating Code • Inspired by Catholic Teaching</p>
-        <p style="margin-top: 1rem; opacity: 0.8;">“Let your light shine before others, so that they may see your good works and give glory to your Father in heaven.” (Mt 5:16)</p>
-    </footer>
-
-    <script>
-        function copyCode() {
-            const codeText = document.getElementById('shepherdCode').innerText;
-            navigator.clipboard.writeText(codeText).then(() => {
-                const btn = document.getElementById('copyButton');
-                const originalText = btn.innerHTML;
-                btn.innerHTML = '✅ Copied!';
-                btn.classList.add('success');
-                setTimeout(() => {
-                    btn.innerHTML = originalText;
-                    btn.classList.remove('success');
-                }, 2000);
-            });
+        let currentFilm = null
+        let hasGuessed = false
+        
+        function loadQuizFilm(film) {
+            currentFilm = film
+            hasGuessed = false
+            
+            // Reset UI
+            document.getElementById('feedback-area').classList.add('hidden')
+            document.getElementById('submit-btn').classList.remove('hidden')
+            document.getElementById('submit-btn').disabled = false
+            document.getElementById('next-btn').classList.add('hidden')
+            document.getElementById('feedback-text').style.display = 'block'
+            
+            // Populate film info
+            document.getElementById('movie-title').innerHTML = film.title
+            document.getElementById('movie-year').innerHTML = `${film.year} • ${film.director}`
+            
+            // === ROBUST POSTER HANDLING WITH SMART FALLBACKS (Fix 2) ===
+            const posterContainer = document.getElementById('movie-poster-placeholder')
+            
+            function createRobustPoster(film) {
+                const img = document.createElement('img');
+                img.className = 'w-full h-full object-cover';
+                img.alt = `${film.title} poster`;
+                
+                // List of sources to try in order (primary first, then fallbacks)
+                const sources = [
+                    film.poster,  // Primary (TMDB, Wikipedia, or Amazon)
+                    // Add more per-film fallbacks here later if needed
+                ].filter(Boolean);
+                
+                let attempt = 0;
+                
+                function tryLoad() {
+                    if (attempt < sources.length) {
+                        img.src = sources[attempt];
+                        attempt++;
+                    } else {
+                        // Final reliable fallback: Seeded Picsum (consistent per film ID)
+                        // Reliable, always works, good quality placeholder when all else fails.
+                        // Uses film.id for consistent image per movie.
+                        const seed = (film.id % 200) + 10; // Consistent seed
+                        img.src = `https://picsum.photos/id/${seed}/400/600`;
+                        img.onerror = null; // Prevent infinite loop
+                    }
+                }
+                
+                img.onerror = tryLoad;
+                
+                // Start loading the first source
+                tryLoad();
+                
+                return img;
+            }
+            
+            if (film.poster || true) {  // Always try robust loader
+                const posterImg = createRobustPoster(film);
+                posterContainer.innerHTML = '';
+                posterContainer.appendChild(posterImg);
+                posterContainer.className = "w-40 h-56 sm:w-48 sm:h-72 flex-shrink-0 rounded-3xl overflow-hidden border border-zinc-200 shadow-lg bg-zinc-100";
+            } else {
+                posterContainer.innerHTML = `<i class="fa-solid fa-film text-5xl text-zinc-400"></i>`;
+                posterContainer.className = "w-40 h-56 sm:w-48 sm:h-72 bg-zinc-200 rounded-3xl flex-shrink-0 flex items-center justify-center text-5xl text-zinc-400";
+            }
+            // === END ROBUST POSTER HANDLING ===
+            
+            // Clear previous options
+            const optionsContainer = document.getElementById('rating-options')
+            optionsContainer.innerHTML = ''
+            
+            // Create rating buttons with VERTICAL layout (badge on top, text below)
+            const ratings = ['A1', 'A2', 'B', 'C']
+            ratings.forEach(rating => {
+                const btn = document.createElement('button')
+                btn.className = `quiz-option border-2 border-zinc-200 hover:border-emerald-400 rounded-2xl transition-all`
+                btn.innerHTML = `
+                    <div class="rating-badge rating-${rating}">${rating}</div>
+                    <div class="text-sm text-zinc-700 leading-snug px-1" style="font-size: 0.82rem; line-height: 1.35;">
+                        ${getRatingLabel(rating)}
+                    </div>
+                `
+                btn.onclick = () => selectRating(btn, rating)
+                optionsContainer.appendChild(btn)
+            })
+            
+            // Clear any previous selection
+            window.selectedRating = null
         }
+        
+        function getRatingLabel(rating) {
+            switch(rating) {
+                case 'A1': 
+                    return 'Fully aligns with Christian principles (Similar to G rated)';
+                case 'A2': 
+                    return 'Fully aligns with Christian principles but best suited for adults. (Similar to PG/PG-13 rated)';
+                case 'B': 
+                    return 'Beware. Contains morally objectionable elements that require discernment. (Similar to R Rated)';
+                case 'C': 
+                    return 'Condemned. Likely to cause moral confusion, sinful thoughts, and lower the soul. Best avoided';
+                default: return '';
+            }
+        }
+        
+        function selectRating(element, rating) {
+            // Deselect all
+            document.querySelectorAll('#rating-options button').forEach(el => {
+                el.classList.remove('selected', 'border-emerald-500')
+                el.classList.add('border-zinc-200')
+            })
+            
+            // Select this one
+            element.classList.add('selected', 'border-emerald-500')
+            element.classList.remove('border-zinc-200')
+            
+            window.selectedRating = rating
+        }
+        
+        function submitGuess() {
+            if (!window.selectedRating) {
+                alert("Please select a rating first!")
+                return
+            }
+            
+            hasGuessed = true
+            const isCorrect = window.selectedRating === currentFilm.correctRating
+            
+            // Show feedback
+            showFeedback(isCorrect)
+            
+            // Hide submit, show next
+            document.getElementById('submit-btn').classList.add('hidden')
+            document.getElementById('next-btn').classList.remove('hidden')
+        }
+        
+        function showFeedback(isCorrect) {
+            const feedbackArea = document.getElementById('feedback-area')
+            const resultStatus = document.getElementById('result-status')
+            const correctBadge = document.getElementById('correct-badge')
+            const feedbackText = document.getElementById('feedback-text')
+            const whyText = document.getElementById('why-text')
+            
+            feedbackArea.classList.remove('hidden')
+            
+            if (isCorrect) {
+                resultStatus.innerHTML = `<span class="inline-flex items-center gap-x-2 px-6 py-2 bg-emerald-100 text-emerald-800 rounded-3xl text-lg"><i class="fa-solid fa-check-circle"></i> CORRECT</span>`
+                correctBadge.className = `rating-badge rating-${currentFilm.correctRating} text-base px-4 py-1`
+                correctBadge.innerHTML = `${currentFilm.correctRating}`
+                feedbackText.style.display = 'block'
+                feedbackText.innerHTML = `Excellent! You matched the official Shepherd Rating.`
+            } else {
+                resultStatus.innerHTML = `<span class="inline-flex items-center gap-x-2 px-6 py-2 bg-red-100 text-red-800 rounded-3xl text-lg"><i class="fa-solid fa-times-circle"></i> INCORRECT</span>`
+                correctBadge.className = `rating-badge rating-${currentFilm.correctRating} text-base px-4 py-1`
+                correctBadge.innerHTML = `Correct: ${currentFilm.correctRating}`
+                feedbackText.style.display = 'none'
+                feedbackText.innerHTML = ``
+            }
+            
+            whyText.innerHTML = currentFilm.why
+        }
+        
+        function nextFilm() {
+            // Pick a random different film
+            let newFilm
+            do {
+                newFilm = films[Math.floor(Math.random() * films.length)]
+            } while (newFilm.id === currentFilm.id)
+            
+            loadQuizFilm(newFilm)
+        }
+        
+        function startNewQuiz() {
+            const randomFilm = films[Math.floor(Math.random() * films.length)]
+            loadQuizFilm(randomFilm)
+        }
+        
+        // Initialize first film on load
+        function initializeQuiz() {
+            const firstFilm = films[0] // Start with It's a Wonderful Life
+            loadQuizFilm(firstFilm)
+        }
+        
+        // Modal functions
+        function showLoginModal() {
+            document.getElementById('login-modal').classList.remove('hidden')
+            document.getElementById('login-modal').classList.add('flex')
+        }
+        
+        function hideLoginModal() {
+            document.getElementById('login-modal').classList.remove('flex')
+            document.getElementById('login-modal').classList.add('hidden')
+        }
+        
+        function showSignupModal() {
+            document.getElementById('signup-modal').classList.remove('hidden')
+            document.getElementById('signup-modal').classList.add('flex')
+        }
+        
+        function hideSignupModal() {
+            document.getElementById('signup-modal').classList.remove('flex')
+            document.getElementById('signup-modal').classList.add('hidden')
+        }
+        
+        function loginUser() {
+            hideLoginModal()
+            // Simple success feedback
+            const toast = document.createElement('div')
+            toast.className = `fixed bottom-6 right-6 bg-emerald-800 text-white px-6 py-3 rounded-2xl shadow-lg flex items-center gap-x-3 z-[200]`
+            toast.innerHTML = `
+                <i class="fa-solid fa-check-circle"></i>
+                <span>Welcome back! You're now signed in.</span>
+            `
+            document.body.appendChild(toast)
+            setTimeout(() => {
+                toast.style.transition = 'all 0.3s ease'
+                toast.style.opacity = '0'
+                setTimeout(() => toast.remove(), 300)
+            }, 2200)
+        }
+        
+        function signupUser() {
+            hideSignupModal()
+            const toast = document.createElement('div')
+            toast.className = `fixed bottom-6 right-6 bg-emerald-800 text-white px-6 py-3 rounded-2xl shadow-lg flex items-center gap-x-3 z-[200]`
+            toast.innerHTML = `
+                <i class="fa-solid fa-check-circle"></i>
+                <span>Welcome to Shepherd Ratings! Your account has been created.</span>
+            `
+            document.body.appendChild(toast)
+            setTimeout(() => {
+                toast.style.transition = 'all 0.3s ease'
+                toast.style.opacity = '0'
+                setTimeout(() => toast.remove(), 300)
+            }, 2800)
+        }
+        
+        function copyFullCode() {
+            navigator.clipboard.writeText(shepherdCodeText).then(() => {
+                const toast = document.createElement('div')
+                toast.className = `fixed bottom-6 right-6 bg-emerald-800 text-white px-6 py-3 rounded-2xl shadow-lg flex items-center gap-x-3 z-[200]`
+                toast.innerHTML = `
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Full Shepherd Ratings Code copied to clipboard!</span>
+                `
+                document.body.appendChild(toast)
+                setTimeout(() => {
+                    toast.style.transition = 'all 0.3s ease'
+                    toast.style.opacity = '0'
+                    setTimeout(() => toast.remove(), 300)
+                }, 2400)
+            }).catch(() => {
+                // Fallback for older browsers or permission issues
+                const textarea = document.createElement('textarea')
+                textarea.value = shepherdCodeText
+                document.body.appendChild(textarea)
+                textarea.select()
+                document.execCommand('copy')
+                document.body.removeChild(textarea)
+                
+                const toast = document.createElement('div')
+                toast.className = `fixed bottom-6 right-6 bg-emerald-800 text-white px-6 py-3 rounded-2xl shadow-lg flex items-center gap-x-3 z-[200]`
+                toast.innerHTML = `
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Full Shepherd Ratings Code copied!</span>
+                `
+                document.body.appendChild(toast)
+                setTimeout(() => {
+                    toast.style.transition = 'all 0.3s ease'
+                    toast.style.opacity = '0'
+                    setTimeout(() => toast.remove(), 300)
+                }, 2400)
+            })
+        }
+        
+        // Keyboard support
+        function setupKeyboardSupport() {
+            document.addEventListener('keydown', function(e) {
+                if (e.key === '?' && document.activeElement.tagName === 'BODY') {
+                    e.preventDefault()
+                    const quizSection = document.getElementById('quiz')
+                    quizSection.scrollIntoView({ behavior: 'smooth' })
+                }
+            })
+            
+            // Allow number keys for quick rating selection (1=A1, 2=A2, 3=B, 4=C)
+            document.addEventListener('keypress', function(e) {
+                if (!currentFilm || hasGuessed) return
+                
+                const options = document.querySelectorAll('#rating-options button')
+                if (!options.length) return
+                
+                let index = -1
+                if (e.key === '1') index = 0
+                else if (e.key === '2') index = 1
+                else if (e.key === '3') index = 2
+                else if (e.key === '4') index = 3
+                
+                if (index >= 0 && index < options.length) {
+                    options[index].click()
+                }
+                
+                if (e.key === 'Enter' && window.selectedRating) {
+                    const submitBtn = document.getElementById('submit-btn')
+                    if (!submitBtn.classList.contains('hidden')) {
+                        submitBtn.click()
+                    }
+                }
+            })
+        }
+        
+        // Main initialization
+        function initializeSite() {
+            initializeTailwind()
+            initializeQuiz()
+            setupKeyboardSupport()
+            
+            // Easter egg: Press "S" to show a random film
+            document.addEventListener('keypress', function(e) {
+                if (e.key.toLowerCase() === 's' && document.activeElement.tagName === 'BODY') {
+                    startNewQuiz()
+                }
+            })
+            
+            // Make the logo clickable to go home
+            const logo = document.querySelector('nav .flex.items-center.gap-x-3')
+            if (logo) {
+                logo.style.cursor = 'pointer'
+                logo.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' })
+            }
+            
+            console.log('%c[Shepherd Ratings] Prototype with movie posters initialized successfully!', 'color:#166534')
+        }
+        
+        // Boot the application
+        window.onload = initializeSite
     </script>
 </body>
 </html>
