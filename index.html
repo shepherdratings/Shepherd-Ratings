@@ -148,23 +148,18 @@
 
     <!-- Hero Section -->
     <header class="shepherd-bg text-white">
-        <div class="max-w-screen-xl mx-auto px-8 pt-16 pb-20">
-            <div class="max-w-2xl">
-                <div class="inline-flex items-center gap-x-2 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-3xl text-sm font-medium mb-6">
-                    <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-                    <span>Now featuring Top 10 IMDb classics</span>
-                </div>
-                
+        <div class="max-w-screen-xl mx-auto px-8 py-24 flex items-center min-h-[520px]">
+            <div class="max-w-2xl mx-auto text-center">
                 <h1 class="text-6xl md:text-7xl font-bold tracking-tighter leading-none heading-serif mb-6">
-                    See media<br>through the<br>eyes of faith.
+                    Traditional Ratings<br>using<br>Modern Technology
                 </h1>
                 
-                <p class="max-w-md text-xl text-emerald-100 mb-10">
-                    A Catholic lens for movies, television, and music. 
-                    Clear guidance rooted in truth, beauty, and human dignity.
+                <p class="max-w-md mx-auto text-xl text-emerald-100 mb-10 text-center">
+                    Use AI combined with traditional Catholic teachings to make wise media selections for yourself and your family.
+                   
                 </p>
                 
-                <div class="flex flex-wrap gap-4">
+                <div class="flex flex-wrap gap-4 justify-center">
                     <a href="#quiz" 
                        class="inline-flex items-center justify-center gap-x-3 bg-white text-emerald-900 hover:bg-emerald-50 font-semibold px-8 py-4 rounded-3xl text-lg transition-all active:scale-[0.985]">
                         <span>Try the Rating Quiz</span>
@@ -177,14 +172,6 @@
                     </a>
                 </div>
                 
-                <div class="mt-8 flex items-center gap-x-4 text-sm text-emerald-200">
-                    <div class="flex -space-x-2">
-                        <div class="w-7 h-7 bg-white rounded-full border-2 border-emerald-800 overflow-hidden"><img src="https://i.pravatar.cc/28?img=32" class="w-full h-full object-cover"></div>
-                        <div class="w-7 h-7 bg-white rounded-full border-2 border-emerald-800 overflow-hidden"><img src="https://i.pravatar.cc/28?img=47" class="w-full h-full object-cover"></div>
-                        <div class="w-7 h-7 bg-white rounded-full border-2 border-emerald-800 overflow-hidden"><img src="https://i.pravatar.cc/28?img=28" class="w-full h-full object-cover"></div>
-                    </div>
-                    <span>Joined by 500+ faithful this month</span>
-                </div>
             </div>
         </div>
     </header>
@@ -212,22 +199,14 @@
         <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-10">
             <div>
                 <span class="px-4 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold tracking-[1.5px] rounded-3xl">INTERACTIVE</span>
-                <h2 class="text-5xl font-bold tracking-tighter heading-serif text-emerald-900 mt-3">What is the Rating?</h2>
-                <p class="mt-3 text-xl text-zinc-600 max-w-md">Test your discernment. Guess the Shepherd Rating for these films.</p>
+                <h2 class="text-5xl font-bold tracking-tighter heading-serif text-emerald-900 mt-3">What's the Rating?</h2>
+                <p class="mt-3 text-xl text-zinc-600 max-w-md">Test your discernment! Guess the Shepherd Rating for these IMDB Top 100 films:</p>
             </div>
             <div class="mt-6 md:mt-0 flex gap-2">
                 <button onclick="startNewQuiz()" 
                         class="flex items-center gap-x-2 px-5 py-3 bg-white border border-zinc-300 hover:bg-zinc-50 text-sm font-semibold rounded-3xl transition-colors">
                     <i class="fa-solid fa-sync-alt"></i>
                     <span>New Random Film</span>
-                </button>
-                
-                <!-- TMDB Poster Refresh Button (Development only - remove in production) -->
-                <button onclick="refreshCurrentPosterFromTMDB()" 
-                        class="flex items-center gap-x-2 px-4 py-3 bg-emerald-100 hover:bg-emerald-200 text-emerald-800 text-sm font-semibold rounded-3xl transition-colors border border-emerald-200"
-                        title="Fetch latest poster from TMDB (requires token in code)">
-                    <i class="fa-solid fa-image"></i>
-                    <span class="hidden md:inline">Refresh Poster (TMDB)</span>
                 </button>
             </div>
         </div>
@@ -256,7 +235,7 @@
                 <div class="p-8">
                     <!-- Question -->
                     <div class="mb-8">
-                        <p class="text-lg font-medium text-zinc-700">What Shepherd Rating would you give this film?</p>
+                        <p class="text-lg font-medium text-zinc-700">What Rating do you give this film?</p>
                         <p class="text-sm text-zinc-500 mt-1">Choose the rating that best reflects Catholic moral guidance.</p>
                     </div>
 
@@ -289,7 +268,7 @@
                     <div class="flex gap-3 mt-6">
                         <button onclick="submitGuess()" id="submit-btn"
                                 class="flex-1 py-4 bg-emerald-800 hover:bg-emerald-900 active:bg-emerald-950 text-white font-semibold rounded-3xl transition-all disabled:opacity-50">
-                            Submit My Guess
+                            Submit My Answer
                         </button>
                         
                         <button onclick="nextFilm()" id="next-btn"
@@ -308,9 +287,9 @@
     <section id="code" class="bg-white border-y border-zinc-100 py-16">
         <div class="max-w-screen-xl mx-auto px-8">
             <div class="max-w-3xl mx-auto text-center mb-10">
-                <span class="text-emerald-600 font-semibold tracking-[2px] text-sm">OUR FOUNDATION</span>
+                <span class="text-emerald-600 font-semibold tracking-[2px] text-sm">Use it Yourself</span>
                 <h2 class="text-5xl font-bold tracking-tighter heading-serif text-emerald-900 mt-2">The Shepherd Ratings Code</h2>
-                <p class="mt-4 text-xl text-zinc-600">Motion Picture Guidance Inspired by Catholic Teaching.<br>Ten General Principles and ten Particular Applications for evaluating media with clarity, charity, and fidelity to the Gospel.</p>
+                <p class="mt-4 text-xl text-zinc-600">This is the text of the Shepherd Rating Code used above. Just copy the text > paste it into your favorite AI > ask the AI to rate any movie/show/album. We've done our best to be faithful to Catholic teachings. </p>
             </div>
 
             <!-- Copy Button -->
@@ -486,7 +465,7 @@
                                 <span class="rating-badge rating-C text-sm px-3.5 py-0.5">C</span>
                                 <span class="font-semibold text-red-900">Condemned</span>
                             </div>
-                            <p class="text-sm text-zinc-700">Likely to cause moral confusion, sinful thoughts, and lower the soul. Best avoided</p>
+                            <p class="text-sm text-zinc-700">Likely to cause moral confusion, sinful thoughts, and pollute the soul. Best avoided</p>
                         </div>
                     </div>
                 </div>
@@ -854,8 +833,8 @@
                 year: 1999,
                 director: "David Fincher",
                 poster: "https://image.tmdb.org/t/p/w500/2lECpi35Hnbpa4y46JX0aY3AWTy.jpg",
-                correctRating: "B",
-                why: "Intense exploration of identity, consumerism, and masculinity with graphic violence and strong language (I—Crimes and III—Vulgarity). Themes of rebellion can border on glorifying destruction; requires strong adult discernment and clear moral framework.",
+                correctRating: "C",
+                why: "A dark satire on consumerism that glorifies underground fighting, graphic violence, anarchy, and rebellion through charismatic anti-heroes and stylish direction. It blurs moral lines, romanticizes destructive masculinity and chaos, and includes explicit content without sufficient condemnation, risking moral confusion and imitation. Best avoided.",
                 summary: "An insomniac office worker and a soap maker form an underground fight club that evolves into something much more dangerous."
             },
             {
@@ -894,8 +873,8 @@
                 year: 1990,
                 director: "Martin Scorsese",
                 poster: "https://m.media-amazon.com/images/M/MV5BY2NkZjEzMDgtN2RjYy00YzM1LWI4NGItYjA0Y2I4ZjY4NjI2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
-                correctRating: "B",
-                why: "Gripping portrayal of organized crime with significant violence, profanity, and moral decline (I—Crimes and III—Vulgarity). Shows the consequences of a life of sin but can glamorize the lifestyle; requires strong adult guidance.",
+                correctRating: "C",
+                why: "A stylish, semi-documentary chronicle of mafia life that glamorizes crime, extreme violence, drug use, adultery, and material excess through charismatic narration and dark humor. It humanizes gangsters without consistently showing the full moral ugliness or redemption, leading to moral confusion. Best avoided.",
                 summary: "The story of Henry Hill and his life in the mob, from his days as a teenager to his time as a full-fledged gangster."
             },
             {
@@ -924,8 +903,8 @@
                 year: 1995,
                 director: "David Fincher",
                 poster: "https://m.media-amazon.com/images/M/MV5BOTUwODM5MTQtZjgzYi00ZTg5LWE2YzYtYzY0YjY1YjA5ZGFjXkEyXkFqcGdeQXVyMTQxNzE3NA@@._V1_.jpg",
-                correctRating: "B",
-                why: "Dark thriller about sin and justice with graphic violence and disturbing content (I—Crimes and X—Repellent Subjects). Strong moral themes on good vs evil but extremely intense and not for the faint-hearted.",
+                correctRating: "C",
+                why: "A grim, stylish thriller that depicts a serial killer enacting the seven deadly sins through extremely graphic torture, murder, and psychological torment. While it explores themes of evil and justice, it glamorizes violence and desensitizes viewers with repellent imagery. Best avoided.",
                 summary: "Two detectives hunt a serial killer who uses the seven deadly sins as his modus operandi."
             },
             {
@@ -944,8 +923,8 @@
                 year: 1991,
                 director: "Jonathan Demme",
                 poster: "https://m.media-amazon.com/images/M/MV5BNjNhZTk0ZmEtNjJhMi00YzFlLWE1MmUtYzM1M2I2ZjA1Y2IxXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_.jpg",
-                correctRating: "B",
-                why: "Intense psychological thriller exploring the nature of evil and justice, with strong themes of courage and moral clarity (aligns with General Principles). However, contains graphic violence, disturbing content, and strong language (I—Crimes and X—Repellent Subjects), requiring strong adult discernment.",
+                correctRating: "C",
+                why: "A tense psychological thriller featuring a brilliant cannibalistic serial killer who assists in hunting another murderer. It glamorizes extreme evil intelligence, contains graphic violence, torture, cannibalism, psychological torment, nudity, and sexual deviance, creating fascination with monstrosity rather than clear moral condemnation or redemption. Best avoided.",
                 summary: "A young F.B.I. cadet must receive the help of an incarcerated and manipulative cannibal killer to help catch another serial killer."
             },
             {
@@ -964,8 +943,8 @@
                 year: 2002,
                 director: "Fernando Meirelles",
                 poster: "https://m.media-amazon.com/images/M/MV5BMGU5OWEwZDItY2JlNC00OWZiLWI4NGUtMjIwNWMwZWJkMzEzXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_.jpg",
-                correctRating: "B",
-                why: "Raw and unflinching look at cycles of poverty, violence, and the loss of innocence, highlighting the consequences of sin and the need for moral choices (aligns with General Principle 1). Extremely graphic violence and mature content (I—Crimes), strictly for adults.",
+                correctRating: "C",
+                why: "A raw, energetic portrayal of gang life, drug trafficking, and extreme violence in Rio’s favelas, featuring children as both victims and perpetrators. While realistic and showing some consequences of crime, it glamorizes the gangster lifestyle through stylish direction, contains graphic brutality, drug use, profanity, and sexual content without sufficient moral clarity or redemption. Best avoided.",
                 summary: "In the slums of Rio, two kids' paths diverge as one struggles to become a photographer and the other a kingpin."
             },
             {
@@ -1044,8 +1023,8 @@
                 year: 1960,
                 director: "Alfred Hitchcock",
                 poster: "https://m.media-amazon.com/images/M/MV5BNTQwNDM1YzItNDAxZC00NWY2LTk0M2UtNDIwNWI5OGUyNWUxXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
-                correctRating: "B",
-                why: "Masterful thriller exploring the nature of evil and the human psyche, with strong themes of guilt and consequence (aligns with General Principles). Contains horror elements, violence, and psychological intensity, requiring adult viewing.",
+                correctRating: "C",
+                why: "Alfred Hitchcock’s horror thriller centers on a secretary’s murder at a remote motel run by a deeply disturbed young man with a fractured psyche and deadly secret. The film builds suspense through voyeurism, deception, and shocking violence while exploring madness and matricide. It glamorizes evil through stylish direction and leaves viewers with moral ambiguity and disturbance rather than clarity or redemption. Best avoided.",
                 summary: "A Phoenix secretary embezzles $40,000 from her employer's client, goes on the run, and checks into a remote motel run by a young man under the domination of his mother."
             },
             {
@@ -1054,8 +1033,8 @@
                 year: 1995,
                 director: "Bryan Singer",
                 poster: "https://upload.wikimedia.org/wikipedia/en/9/9c/The_Usual_Suspects_poster.jpg",
-                correctRating: "B",
-                why: "Clever crime thriller with themes of deception, justice, and the nature of evil (aligns with General Principles). Contains violence, strong language, and moral ambiguity, requiring adult discernment.",
+                correctRating: "C",
+                why: "A stylish crime thriller following a group of criminals brought together for a mysterious job. It glamorizes clever con men, betrayal, and violence through sharp dialogue and non-linear storytelling, with heavy profanity and moral ambiguity. The finale romanticizes evil genius rather than condemning it. Best avoided.",
                 summary: "A sole survivor tells of the twisty events leading up to a horrific gun battle on a boat, which began when five criminals met at a seemingly random police lineup."
             },
             {
@@ -1094,8 +1073,8 @@
                 year: 2006,
                 director: "Martin Scorsese",
                 poster: "https://m.media-amazon.com/images/M/MV5BMTI1MTY2OTIxNV5BMl5BanBnXkFtZTYwNjQ4NjY3._V1_.jpg",
-                correctRating: "B",
-                why: "Intense crime thriller exploring loyalty, betrayal, and the cost of living a double life, with significant graphic violence, strong profanity, and moral ambiguity where sympathy can rest with flawed/criminal characters (violates I—Crimes Against the Law by excessive brutality and III—Vulgarity; risks glamorizing the criminal underworld in parts). While it has strong themes of justice and consequences (aligns with General Principles), it fails to fully condemn the cycle of violence and deceit without strong adult discernment.",
+                correctRating: "C",
+                why: "A tense, star-studded crime thriller about an undercover cop infiltrating the Irish mob and a mob informant rising in the police department. It glamorizes ruthless criminals, betrayal, graphic violence, and moral corruption through sharp dialogue and stylish direction, with extreme profanity and sexual content. Lacks clear redemption or moral clarity. Best avoided.",
                 summary: "An undercover cop and a mole in the police attempt to identify each other while infiltrating an Irish gang in South Boston."
             },
             {
@@ -1104,8 +1083,8 @@
                 year: 2006,
                 director: "Christopher Nolan",
                 poster: "https://m.media-amazon.com/images/M/MV5BMjA4NDI0MTIxNF5BMl5BanBnXkFtZTYwNTM0MzY2._V1_.jpg",
-                correctRating: "A2",
-                why: "Clever exploration of obsession, sacrifice, and the nature of illusion with strong themes of consequences and identity (aligns with General Principles). Contains some violence, deception, and moral ambiguity in the pursuit of revenge (I—Crimes); the film risks glamorizing obsession and trickery without full condemnation of the personal cost to others. Requires adult discernment despite the intellectual depth.",
+                correctRating: "B",
+                why: "A stylish, mind-bending thriller about two rival magicians whose obsessive rivalry leads to deception, sacrifice, and moral ruin. It explores themes of ambition, illusion vs. reality, and the cost of obsession, with some violence and ethical compromises, but lacks clear redemption or moral resolution. Requires adult discernment.",
                 summary: "Two stage magicians engage in a bitter rivalry, leading to dangerous and deadly consequences."
             },
             {
@@ -1361,7 +1340,7 @@ Ratings will be broken into 4 categories:
 A1: Fully aligns with Christian principles - no significant moral concerns. Good for the whole family. (Similar to G rated)
 A2: Fully aligns with Christian principles but best suited for adults. (Similar to PG/PG-13 rated)
 B: Beware. Contains morally objectionable elements that require discernment. (Similar to R Rated)
-C: Condemned. Likely to cause moral confusion, sinful thoughts, and lower the soul. Best avoided
+C: Condemned. Likely to cause moral confusion, sinful thoughts, and pollute the soul. Best avoided
 
 Rating Product:
 Output the Title with it's associated rating, then a "Quick Summary" section of the morality of the media in a 280 character or less synopsis - no need to post the number of characters. Follow this up with a longer more in depth breakdown of each section.
@@ -1468,11 +1447,11 @@ God's is the kingdom, the power, and the glory, now and forever. Amen.`;
                 case 'A1': 
                     return 'Fully aligns with Christian principles (Similar to G rated)';
                 case 'A2': 
-                    return 'Fully aligns with Christian principles but best suited for adults. (Similar to PG/PG-13 rated)';
+                    return 'Fully aligns with Christian principles but best suited for adults (Similar to PG/PG-13 rated)';
                 case 'B': 
-                    return 'Beware. Contains morally objectionable elements that require discernment. (Similar to R Rated)';
+                    return 'Beware. Contains morally objectionable elements that require discernment (Similar to R Rated)';
                 case 'C': 
-                    return 'Condemned. Likely to cause moral confusion, sinful thoughts, and lower the soul. Best avoided';
+                    return 'Condemned. Likely to cause moral confusion, sinful thoughts, and pollute the soul (Best avoided)';
                 default: return '';
             }
         }
