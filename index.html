@@ -10,7 +10,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Inter:wght@300;400;500;600&amp;display=swap');
         
         :root {
-            --primary: #1e3a5f;
+            --primary: #0B1424;
         }
         
         body {
@@ -22,7 +22,7 @@
         }
 
         .shepherd-bg {
-            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
+            background: linear-gradient(135deg, #0B1424 0%, #152238 100%);
         }
 
         .rating-badge {
@@ -37,31 +37,31 @@
         }
 
         .rating-A1 {
-            background-color: #166534;
-            color: white;
-        }
-        
-        .rating-A2 {
-            background-color: #4ade80;
-            color: #166534;
-        }
-        
-        .rating-B {
-            background-color: #eab308;
-            color: #713f12;
-        }
-        
-        .rating-C {
-            background-color: #ef4444;
-            color: white;
-        }
+    background-color: #86efac; /* light green */
+    color: #14532d;
+		}
+
+	.rating-A2 {
+    background-color: #93c5fd; /* light blue */
+    color: #1e3a8a;
+	}
+
+	.rating-B {
+    background-color: #ff6b00; /* traffic-cone orange */
+    color: #fff7ed;
+		}
+
+	.rating-C {
+    background-color: #c8102e; /* stop-sign red */
+    color: #fff;
+	}
 
         .nav-link {
             transition: color 0.2s ease;
         }
         
         .nav-link:hover {
-            color: #4ade80;
+            color: #D4B15A;
         }
 
         .movie-card {
@@ -90,7 +90,7 @@
         }
 
         .quiz-option.selected {
-            border-color: #4ade80;
+            border-color: #D4B15A;
             background-color: #f0fdf4;
         }
 
@@ -106,7 +106,7 @@
             left: 0;
             width: 60%;
             height: 3px;
-            background: linear-gradient(to right, #4ade80, transparent);
+            background: linear-gradient(to right, #D4B15A, transparent);
         }
 
         .shepherd-crook {
@@ -123,22 +123,23 @@
                 <div class="flex items-center gap-x-3">
                     <!-- Logo -->
                     <div class="flex items-center gap-x-3">
-                        <div class="w-11 h-11 bg-emerald-800 rounded-2xl flex items-center justify-center shadow-inner">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="shepherd-crook w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.25">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 01-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 01-2 2 2 2 0 01-2-2 2 2 0 012-2 2 2 0 012 2z" />
-                            </svg>
+                        <div class="w-11 h-11 rounded-2xl overflow-hidden shadow-inner ring-1 ring-[#D4B15A]/50 flex-shrink-0">
+                           <img src="IMG_0016.jpeg"
+     alt="Shepherd Ratings"
+     class="w-full h-full object-cover">
+                           
                         </div>
                         <div>
-                            <span class="font-bold text-3xl tracking-tighter heading-serif text-emerald-900">Shepherd</span>
-                            <span class="font-semibold text-3xl tracking-tighter text-emerald-700">Ratings</span>
+                            <span class="font-bold text-3xl tracking-tighter heading-serif text-[#0B1424]">Shepherd</span>
+                            <span class="font-semibold text-3xl tracking-tighter text-[#8A6A2A]">Ratings</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
-                    <a href="#quiz" class="nav-link text-zinc-600 hover:text-emerald-700">What is the Rating?</a>
-                    <a href="#code" class="nav-link text-zinc-600 hover:text-emerald-700">The Code</a>
-                    <a href="#browse" class="nav-link text-zinc-600 hover:text-emerald-700">Browse Ratings</a>
+                    <a href="#quiz" class="nav-link text-zinc-600 hover:text-[#8A6A2A]">What is the Rating?</a>
+                    <a href="#code" class="nav-link text-zinc-600 hover:text-[#8A6A2A]">The Code</a>
+                    <a href="#browse" class="nav-link text-zinc-600 hover:text-[#8A6A2A]">Browse Ratings</a>
                 </div>
 
                 <!-- Auth buttons removed for focused prototype -->
@@ -151,17 +152,17 @@
         <div class="max-w-screen-xl mx-auto px-8 py-24 flex items-center min-h-[520px]">
             <div class="max-w-2xl mx-auto text-center">
                 <h1 class="text-6xl md:text-7xl font-bold tracking-tighter leading-none heading-serif mb-6">
-                    Traditional Ratings<br>using<br>Modern Technology
+                    See the Morality <br>in all Art
                 </h1>
                 
-                <p class="max-w-md mx-auto text-xl text-emerald-100 mb-10 text-center">
-                    Use AI combined with traditional Catholic teachings to make wise media selections for yourself and your family.
+                <p class="max-w-xl mx-auto text-xl text-[#F3E2B0] mb-10 text-center">
+                    We apply traditional Catholic teachings on morality to rate everyday film and music to help you edify your household and uplift souls
                    
                 </p>
                 
                 <div class="flex flex-wrap gap-4 justify-center">
                     <a href="#quiz" 
-                       class="inline-flex items-center justify-center gap-x-3 bg-white text-emerald-900 hover:bg-emerald-50 font-semibold px-8 py-4 rounded-3xl text-lg transition-all active:scale-[0.985]">
+                       class="inline-flex items-center justify-center gap-x-3 bg-white text-[#0B1424] hover:bg-[#FBF6EA] font-semibold px-8 py-4 rounded-3xl text-lg transition-all active:scale-[0.985]">
                         <span>Try the Rating Quiz</span>
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
@@ -180,15 +181,15 @@
     <div class="border-b bg-white">
         <div class="max-w-screen-xl mx-auto px-8 py-5 grid grid-cols-2 md:grid-cols-3 gap-y-3 text-center">
             <div>
-                <div class="text-3xl font-semibold text-emerald-800">200+</div>
+                <div class="text-3xl font-semibold text-[#0B1424]">200+</div>
                 <div class="text-sm text-zinc-500">Films Rated</div>
             </div>
             <div>
-                <div class="text-3xl font-semibold text-emerald-800">50</div>
+                <div class="text-3xl font-semibold text-[#0B1424]">50</div>
                 <div class="text-sm text-zinc-500">TV Series</div>
             </div>
             <div>
-                <div class="text-3xl font-semibold text-emerald-800">100+</div>
+                <div class="text-3xl font-semibold text-[#0B1424]">100+</div>
                 <div class="text-sm text-zinc-500">Albums &amp; Artists</div>
             </div>
         </div>
@@ -198,8 +199,8 @@
     <section id="quiz" class="max-w-screen-xl mx-auto px-8 pt-16 pb-12">
         <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-10">
             <div>
-                <span class="px-4 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold tracking-[1.5px] rounded-3xl">INTERACTIVE</span>
-                <h2 class="text-5xl font-bold tracking-tighter heading-serif text-emerald-900 mt-3">What's the Rating?</h2>
+                <span class="px-4 py-1 bg-[#F5E6C4] text-[#8A6A2A] text-xs font-bold tracking-[1.5px] rounded-3xl">INTERACTIVE</span>
+                <h2 class="text-5xl font-bold tracking-tighter heading-serif text-[#0B1424] mt-3">What's the Rating?</h2>
                 <p class="mt-3 text-xl text-zinc-600 max-w-md">Test your discernment! Guess the Shepherd Rating for these IMDB Top 100 films:</p>
             </div>
             <div class="mt-6 md:mt-0 flex gap-2">
@@ -227,7 +228,7 @@
                         <!-- Title and year below poster -->
                         <div>
                             <div id="movie-title" class="text-3xl font-semibold tracking-tight"></div>
-                            <div id="movie-year" class="text-emerald-700 font-medium mt-1"></div>
+                            <div id="movie-year" class="text-[#8A6A2A] font-medium mt-1"></div>
                         </div>
                     </div>
                 </div>
@@ -257,7 +258,7 @@
                                     <div id="feedback-text" class="text-zinc-700 leading-relaxed"></div>
                                     
                                     <div class="mt-4 pt-4 border-t">
-                                        <div class="text-xs uppercase tracking-widest text-emerald-700 font-semibold mb-2">WHY THIS RATING</div>
+                                        <div class="text-xs uppercase tracking-widest text-[#8A6A2A] font-semibold mb-2">WHY THIS RATING</div>
                                         <div id="why-text" class="text-sm text-zinc-600"></div>
                                     </div>
                                 </div>
@@ -267,12 +268,12 @@
 
                     <div class="flex gap-3 mt-6">
                         <button onclick="submitGuess()" id="submit-btn"
-                                class="flex-1 py-4 bg-emerald-800 hover:bg-emerald-900 active:bg-emerald-950 text-white font-semibold rounded-3xl transition-all disabled:opacity-50">
+                                class="flex-1 py-4 bg-[#0B1424] hover:bg-[#0B1424] active:bg-black text-white font-semibold rounded-3xl transition-all disabled:opacity-50">
                             Submit My Answer
                         </button>
                         
                         <button onclick="nextFilm()" id="next-btn"
-                                class="px-8 py-4 bg-white border border-emerald-200 text-emerald-700 hover:bg-emerald-50 font-semibold rounded-3xl transition-colors hidden">
+                                class="px-8 py-4 bg-white border border-[#D4B15A]/40 text-[#8A6A2A] hover:bg-[#FBF6EA] font-semibold rounded-3xl transition-colors hidden">
                             Next Film <i class="fa-solid fa-arrow-right ml-2"></i>
                         </button>
                     </div>
@@ -287,38 +288,38 @@
     <section id="browse" class="max-w-screen-xl mx-auto px-8 py-16 bg-white">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-12">
-                <span class="px-4 py-1 bg-emerald-100 text-emerald-700 text-xs font-bold tracking-[1.5px] rounded-3xl">OUR HERITAGE</span>
-                <h2 class="text-5xl font-bold tracking-tighter heading-serif text-emerald-900 mt-3">A Short History of Religion’s Role in Shaping the Stories That Form Our Culture</h2>
+                <span class="px-4 py-1 bg-[#F5E6C4] text-[#8A6A2A] text-xs font-bold tracking-[1.5px] rounded-3xl">OUR HERITAGE</span>
+                <h2 class="text-5xl font-bold tracking-tighter heading-serif text-[#0B1424] mt-3">A Short History of Religion’s Role in Shaping the Stories That Form Our Culture</h2>
                 <p class="mt-4 text-xl text-zinc-600">From Roman times to Shepherd Ratings — the Church’s enduring mission of moral guidance in storytelling</p>
             </div>
 
             <div class="prose prose-zinc max-w-none text-[15.2px] leading-relaxed">
                 <p>From the earliest days, religion has understood that stories shape souls and societies. Narratives — whether told around fires, performed on stages, or projected on screens — form imaginations, teach virtues or vices, and orient people toward what is true, good, and beautiful… or toward what degrades. The Christian Church has long taken this responsibility seriously, discerning and guiding the stories that influence culture for the salvation of souls.</p>
 
-                <h3 class="text-2xl font-semibold text-emerald-900 mt-12 mb-4">The Early Church in Roman Times: From Opposition to Christian Storytelling</h3>
+                <h3 class="text-2xl font-semibold text-[#0B1424] mt-12 mb-4">The Early Church in Roman Times: From Opposition to Christian Storytelling</h3>
                 <p>In the Roman Empire, Christians encountered a culture saturated with pagan theater and spectacles. Church Fathers such as Tertullian (<em>De Spectaculis</em>), Clement of Alexandria, and St. Augustine warned against performances that glorified immorality, idolatry, adultery, and violence, viewing them as occasions of sin that corrupted minds and drew hearts from God. Augustine, in his <em>Confessions</em>, reflected on how theater inflamed passions and distracted from eternal truth.</p>
                 <p>Yet the Church did not merely reject; it transformed storytelling. Early Christians emphasized sacred narratives — the Gospels, lives of the saints (hagiography), and parables — as powerful tools for catechesis and evangelization. Over time, this led to the positive use of drama within a Christian framework.</p>
 
-                <h3 class="text-2xl font-semibold text-emerald-900 mt-12 mb-4">The Medieval Church: Mystery Plays and Morality Plays as Teaching Tools</h3>
+                <h3 class="text-2xl font-semibold text-[#0B1424] mt-12 mb-4">The Medieval Church: Mystery Plays and Morality Plays as Teaching Tools</h3>
                 <p>In the Middle Ages, the Church harnessed drama to teach the faith to largely illiterate populations. Liturgical drama grew out of the liturgy itself (e.g., the <em>Quem Quaeritis</em> trope for Easter). This evolved into <strong>mystery plays</strong> (dramatizations of biblical stories and salvation history) and <strong>morality plays</strong> (allegorical dramas like <em>Everyman</em>, personifying virtues and vices in the soul’s struggle toward God).</p>
                 <p>These were acts of the Church’s teaching office — vivid, communal ways to proclaim Scripture, illustrate moral truths, and foster conversion. The Church sponsored, regulated, or tolerated them as instruments of grace.</p>
 
-                <h3 class="text-2xl font-semibold text-emerald-900 mt-12 mb-4">Early Modern Period: Guiding Literature and Theater</h3>
+                <h3 class="text-2xl font-semibold text-[#0B1424] mt-12 mb-4">Early Modern Period: Guiding Literature and Theater</h3>
                 <p>As printing spread and secular literature grew, the Church exercised vigilance through the <em>Index Librorum Prohibitorum</em> (Index of Forbidden Books) to protect the faithful from works that undermined faith or morals. Theater faced similar scrutiny when it promoted vice or ridiculed the sacred. The principle remained consistent: stories that shape culture must be measured against divine truth and human dignity.</p>
 
-                <h3 class="text-2xl font-semibold text-emerald-900 mt-12 mb-4">The 20th Century: Cinema, the Hays Code, and the Legion of Decency</h3>
+                <h3 class="text-2xl font-semibold text-[#0B1424] mt-12 mb-4">The 20th Century: Cinema, the Hays Code, and the Legion of Decency</h3>
                 <p>The invention of motion pictures brought new urgency. In 1930, Hollywood adopted the <strong>Motion Picture Production Code (Hays Code)</strong>, heavily shaped by Catholic advisors including Jesuit Fr. Daniel A. Lord and publisher Martin Quigley. It required films to uphold moral standards and avoid glorifying evil.</p>
                 <p>In 1934, the U.S. bishops launched the <strong>National Legion of Decency</strong>, a Catholic-led movement that mobilized millions to pledge against immoral films. Pope Pius XI strongly endorsed it in his 1936 encyclical <em>Vigilanti Cura</em>. The Legion’s A/B/C ratings exerted enormous cultural influence during Hollywood’s Golden Age.</p>
 
-                <h3 class="text-2xl font-semibold text-emerald-900 mt-12 mb-4">The Shift to Modern Ratings (1968 Onward)</h3>
+                <h3 class="text-2xl font-semibold text-[#0B1424] mt-12 mb-4">The Shift to Modern Ratings (1968 Onward)</h3>
                 <p>By the 1960s, cultural shifts and legal rulings led to the decline of strict self-censorship. In 1968, the MPAA replaced the Hays Code with the voluntary age-based ratings system (G, PG, PG-13, R, NC-17) still in use today — a move from prescriptive moral guidance toward parental information.</p>
 
-                <h3 class="text-2xl font-semibold text-emerald-900 mt-12 mb-4">Shepherd Ratings: Renewing the Ancient Tradition Today</h3>
+                <h3 class="text-2xl font-semibold text-[#0B1424] mt-12 mb-4">Shepherd Ratings: Renewing the Ancient Tradition Today</h3>
                 <p>Shepherd Ratings continues this centuries-old Christian mission in the digital age. Rooted in Scripture (“The eye is the lamp of the body…” — Matthew 6:22), Catholic teaching on human dignity, and the Church’s long practice of discerning stories, we offer families clear, charitable guidance for film and media.</p>
                 <p>We build on the strengths of the Hays Code and Legion of Decency while learning from their limitations, adding explicit attention to equality, global cultures, and the full dignity of the person. Our goal remains the same as the early Church’s, the medieval dramatists’, and the Legion’s: to help stories elevate souls, foster virtue, and point toward the True, the Good, and the Beautiful — so that what we watch draws us closer to Christ and builds up the Kingdom.</p>
 
-                <div class="mt-12 p-8 bg-emerald-50 rounded-3xl border border-emerald-100">
-                    <p class="text-emerald-800 font-medium">“Let your light shine before others, so that they may see your good works and give glory to your Father in heaven.” (Matthew 5:16)</p>
+                <div class="mt-12 p-8 bg-[#FBF6EA] rounded-3xl border border-[#E8D5A3]">
+                    <p class="text-[#0B1424] font-medium">“Let your light shine before others, so that they may see your good works and give glory to your Father in heaven.” (Matthew 5:16)</p>
                 </div>
             </div>
         </div>
@@ -329,15 +330,15 @@
     <section id="code" class="bg-white border-y border-zinc-100 py-16">
         <div class="max-w-screen-xl mx-auto px-8">
             <div class="max-w-3xl mx-auto text-center mb-10">
-                <span class="text-emerald-600 font-semibold tracking-[2px] text-sm">Use it Yourself</span>
-                <h2 class="text-5xl font-bold tracking-tighter heading-serif text-emerald-900 mt-2">The Shepherd Ratings Code</h2>
+                <span class="text-[#D4B15A] font-semibold tracking-[2px] text-sm">Use it Yourself</span>
+                <h2 class="text-5xl font-bold tracking-tighter heading-serif text-[#0B1424] mt-2">The Shepherd Ratings Code</h2>
                 <p class="mt-4 text-xl text-zinc-600">This is the text of the Shepherd Rating Code used above. Just copy the text > paste it into your favorite AI > ask the AI to rate any movie/show/album. </p>
             </div>
 
             <!-- Copy Button -->
             <div class="flex justify-center mb-8">
                 <button onclick="copyFullCode()" 
-                        class="inline-flex items-center gap-x-3 px-8 py-4 bg-emerald-800 hover:bg-emerald-900 active:bg-emerald-950 text-white font-semibold rounded-3xl text-lg transition-all shadow-sm">
+                        class="inline-flex items-center gap-x-3 px-8 py-4 bg-[#0B1424] hover:bg-[#0B1424] active:bg-black text-white font-semibold rounded-3xl text-lg transition-all shadow-sm">
                     <i class="fa-solid fa-copy"></i>
                     <span>Copy Full Code to Clipboard</span>
                 </button>
@@ -350,19 +351,19 @@
                 
                 <!-- Title Block -->
                 <div class="text-center mb-10 pb-8 border-b border-zinc-100">
-                    <div class="inline-flex items-center justify-center w-16 h-16 bg-emerald-100 text-emerald-700 rounded-2xl mb-4">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-[#F5E6C4] text-[#8A6A2A] rounded-2xl mb-4">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 01-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
                     </div>
-                    <h3 class="text-4xl font-bold tracking-tighter heading-serif text-emerald-900">Shepherd Ratings Code</h3>
-                    <p class="text-xl text-emerald-700 font-medium mt-1">Motion Picture Guidance Inspired by Catholic Teaching</p>
+                    <h3 class="text-4xl font-bold tracking-tighter heading-serif text-[#0B1424]">Shepherd Ratings Code</h3>
+                    <p class="text-xl text-[#8A6A2A] font-medium mt-1">Motion Picture Guidance Inspired by Catholic Teaching</p>
                 </div>
 
                 <!-- Preamble -->
                 <div class="mb-10">
-                    <h4 class="font-semibold text-2xl tracking-tight text-emerald-900 mb-4 flex items-center gap-x-3">
-                        <span class="text-emerald-600">✦</span> Preamble
+                    <h4 class="font-semibold text-2xl tracking-tight text-[#0B1424] mb-4 flex items-center gap-x-3">
+                        <span class="text-[#D4B15A]">✦</span> Preamble
                     </h4>
                     <div class="space-y-4 text-[15px] leading-relaxed text-zinc-700">
                         <p>Media producers and creators recognize the profound influence of film, music, and other media on the human person, society, and culture. Films and music are gifts from God that can serve truth, beauty, and the common good. They have the potential to elevate the soul, foster virtue, and reflect the dignity of every human being made in the image and likeness of God.</p>
@@ -371,38 +372,42 @@
                     </div>
                     
                     <div class="mt-6 space-y-4">
-                        <blockquote class="border-l-4 border-emerald-600 pl-6 italic text-zinc-700 text-[15px]">
+                        <blockquote class="border-l-4 border-[#D4B15A] pl-6 italic text-zinc-700 text-[15px]">
                             “The eye is the lamp of the body. So, if your eye is healthy, your whole body will be full of light; but if your eye is unhealthy, your whole body will be full of darkness. If then the light in you is darkness, how great is the darkness!” 
-                            <cite class="not-italic text-sm text-emerald-700 block mt-1">(Matthew 6:22-23)</cite>
+                            <cite class="not-italic text-sm text-[#8A6A2A] block mt-1">(Matthew 6:22-23)</cite>
                         </blockquote>
-                        <blockquote class="border-l-4 border-emerald-600 pl-6 italic text-zinc-700 text-[15px]">
+                        <blockquote class="border-l-4 border-[#D4B15A] pl-6 italic text-zinc-700 text-[15px]">
                             “Bad company ruins good morals.”
-                            <cite class="not-italic text-sm text-emerald-700 block mt-1">(1 Corinthians 15:33)</cite>
+                            <cite class="not-italic text-sm text-[#8A6A2A] block mt-1">(1 Corinthians 15:33)</cite>
                         </blockquote>
                     </div>
                 </div>
 
                 <!-- General Principles -->
                 <div class="mb-10">
-                    <h4 class="font-semibold text-2xl tracking-tight text-emerald-900 mb-5 flex items-center gap-x-3">
-                        <span class="text-emerald-600">✦</span> General Principles
+                    <h4 class="font-semibold text-2xl tracking-tight text-[#0B1424] mb-5 flex items-center gap-x-3">
+                        <span class="text-[#D4B15A]">✦</span> General Principles
                     </h4>
                     <ol class="space-y-5 text-[15px] leading-relaxed text-zinc-700 list-decimal pl-6">
-                        <li>No film should degrade the dignity of the human person or lower the moral standards of those who view it. Sympathy should never rest with evil, injustice, or sin in a way that glorifies wrongdoing without showing its consequences or the possibility of conversion.</li>
+                        <li>No work should degrade the dignity of the human person or lower the moral standards of those who receive it. Sympathy should never rest with evil, injustice, or sin in a way that glorifies wrongdoing without showing its consequences or the possibility of conversion.</li>
                         <li>Correct standards of life—rooted in truth, respect for the human person, the sanctity of marriage and family, and the common good—shall be presented, subject to the legitimate requirements of drama, art, and entertainment.</li>
-                        <li>Natural and human law shall not be ridiculed, nor shall sympathy be created for their violation. Films should illuminate the moral order and the dignity of every person, regardless of race, ethnicity, gender, or background.</li>
+                        <li>Natural and human law shall not be ridiculed, nor shall sympathy be created for their violation. Works should illuminate the moral order and the dignity of every person, regardless of race, ethnicity, sex, or background.</li>
+                        <li>A work is judged by what it teaches, not only by what it depicts. A character may sin. The work may not treat a breach of the moral law as freedom, as love, as wisdom, or as a success the plot quietly pays.</li>
+                        <li>A redemptive last act does not excuse the work if its most repeatable element—song, slogan, image, or set piece—teaches the contrary.</li>
+                        <li>Grave fault may be forgiven after repentance. It may not be refunded. An ending in which the sinner keeps the spoils of disobedience, a pact with evil, or rash bond, and the authority who opposed it simply yields, is not conversion.</li>
+                        <li>The Ten Commandments (Catholic numbering) are the measure of the moral law on screen. Occurrence without approval does not by itself cap a rating. Endorsement, glamour, or unrepentant reward of a breach caps the rating at B or C.</li>
                     </ol>
                 </div>
 
                 <!-- Particular Applications -->
                 <div>
-                    <h4 class="font-semibold text-2xl tracking-tight text-emerald-900 mb-6 flex items-center gap-x-3">
-                        <span class="text-emerald-600">✦</span> Particular Applications
+                    <h4 class="font-semibold text-2xl tracking-tight text-[#0B1424] mb-6 flex items-center gap-x-3">
+                        <span class="text-[#D4B15A]">✦</span> Particular Applications
                     </h4>
 
                     <!-- I -->
                     <div class="mb-8">
-                        <h5 class="font-semibold text-xl text-emerald-900 mb-2">I—Crimes Against the Law and Human Dignity</h5>
+                        <h5 class="font-semibold text-xl text-[#0B1424] mb-2">I—Crimes Against the Law and Human Dignity</h5>
                         <p class="text-[15px] leading-relaxed text-zinc-700 mb-3">Crime and violence shall not be presented so as to inspire imitation or glorify evil. Evil must be shown in its true ugliness, with attention to justice and the possibility of repentance.</p>
                         <ol class="list-decimal pl-6 space-y-2.5 text-[15px] text-zinc-700">
                             <li>Murder, brutality, and revenge shall not be depicted in excessive or gratuitous detail, nor justified as morally acceptable ends.</li>
@@ -414,7 +419,7 @@
 
                     <!-- II -->
                     <div class="mb-8">
-                        <h5 class="font-semibold text-xl text-emerald-900 mb-2">II—Sex, Chastity, and the Dignity of the Person</h5>
+                        <h5 class="font-semibold text-xl text-[#0B1424] mb-2">II—Sex, Chastity, and the Dignity of the Person</h5>
                         <p class="text-[15px] leading-relaxed text-zinc-700 mb-3">The sanctity of marriage between one man and one woman, the gift of human sexuality ordered toward love and life, and the dignity of every person shall be upheld. Films must not objectify the human body or reduce persons to objects of lust.</p>
                         <ol class="list-decimal pl-6 space-y-2.5 text-[15px] text-zinc-700">
                             <li>Adultery, fornication, or other violations of chastity may appear as plot elements but must never be presented as morally acceptable or desirable.</li>
@@ -422,80 +427,119 @@
                             <li>Seduction, rape, or sexual exploitation shall be treated with gravity, never for comedy or titillation, and must clearly show their moral evil.</li>
                             <li>Pornography, objectification, or any depiction intended to arouse disordered sexual desire is forbidden.</li>
                             <li>Sex hygiene and related topics, if treated, must respect modesty and the sacredness of the body.</li>
-                            <li>Nudity or undressing scenes are permitted only when artistically essential, non-exploitative, and presented with restraint and respect for human dignity (not in a lecherous or gratuitous manner).</li>
+                            <li>Nudity or undressing scenes are permitted only when artistically essential, non-exploitative, and presented with restraint and respect for human dignity.</li>
+                            <li>Marriage at the end does not sanctify a courtship that began in haste, secrecy from the parents, or muteness before a stranger.</li>
                         </ol>
                     </div>
 
                     <!-- III -->
                     <div class="mb-8">
-                        <h5 class="font-semibold text-xl text-emerald-900 mb-2">III—Vulgarity and Profanity</h5>
+                        <h5 class="font-semibold text-xl text-[#0B1424] mb-2">III—Vulgarity and Profanity</h5>
                         <p class="text-[15px] leading-relaxed text-zinc-700">Low, crude, or vulgar language and behavior should be subject to good taste. Gratuitous profanity or blasphemy (especially misuse of the holy name of God) is to be avoided, as it offends the dignity of the Creator and the sensibilities of the audience.</p>
                     </div>
 
                     <!-- IV -->
                     <div class="mb-8">
-                        <h5 class="font-semibold text-xl text-emerald-900 mb-2">IV—Costume and Modesty</h5>
+                        <h5 class="font-semibold text-xl text-[#0B1424] mb-2">IV—Costume and Modesty</h5>
                         <p class="text-[15px] leading-relaxed text-zinc-700">Dress and presentation of the human body shall respect modesty and the dignity of the person. Indecent exposure or costumes designed solely to provoke lust are forbidden.</p>
                     </div>
 
                     <!-- V -->
                     <div class="mb-8">
-                        <h5 class="font-semibold text-xl text-emerald-900 mb-2">V—Dances and Movements</h5>
+                        <h5 class="font-semibold text-xl text-[#0B1424] mb-2">V—Dances and Movements</h5>
                         <p class="text-[15px] leading-relaxed text-zinc-700">Dances or movements that are explicitly sexual or designed to incite lust are to be avoided. Artistic dance that expresses beauty or emotion is permitted when it respects the dignity of the dancer and viewer.</p>
                     </div>
 
                     <!-- VI -->
                     <div class="mb-8">
-                        <h5 class="font-semibold text-xl text-emerald-900 mb-2">VI—Religion</h5>
-                        <p class="text-[15px] leading-relaxed text-zinc-700">Religious faith, beliefs, and persons shall be treated with respect and never denigrated as foolish or unimportant. Ridicule of any religion — or the subtle undermining of Christian tradition/sacraments through tone or false framing — is condemnable. Clergy and sacred rites may be portrayed realistically but never in a way that mocks the sacred.</p>
+                        <h5 class="font-semibold text-xl text-[#0B1424] mb-2">VI—Religion</h5>
+                        <p class="text-[15px] leading-relaxed text-zinc-700">Religious faith, beliefs, and persons shall be treated with respect and never denigrated as foolish or unimportant. Ridicule of any religion — or the subtle undermining of Christian tradition/sacraments through tone or false framing — is condemnable. Clergy and sacred rites may be portrayed realistically but never in a way that mocks the sacred. Pacts with witches, spirits, or rival gods are occult furniture: they may appear as danger; they may not appear as a path that prospers.</p>
                     </div>
 
                     <!-- VII -->
                     <div class="mb-8">
-                        <h5 class="font-semibold text-xl text-emerald-900 mb-2">VII—Dignity and Representation of Women</h5>
+                        <h5 class="font-semibold text-xl text-[#0B1424] mb-2">VII—Dignity of Women and Men</h5>
                         <p class="text-[15px] leading-relaxed text-zinc-700">Films shall uphold the equal dignity of men and women as created in the image of God. Women should be portrayed as full persons with inherent dignity, agency, and moral worth—not merely as objects of desire or supporting figures in male narratives. Stories should avoid reducing women to stereotypes or objects of male gaze. Where possible, films are encouraged to include meaningful interactions among women characters that explore their own aspirations, relationships, struggles, or vocations beyond their connection to male characters.</p>
                     </div>
 
                     <!-- VIII -->
                     <div class="mb-8">
-                        <h5 class="font-semibold text-xl text-emerald-900 mb-2">VIII—National and Racial Feelings</h5>
+                        <h5 class="font-semibold text-xl text-[#0B1424] mb-2">VIII—National and Racial Feelings</h5>
                         <p class="text-[15px] leading-relaxed text-zinc-700">All peoples, races, ethnicities, and cultures shall be represented fairly and with respect. Racism, ethnic stereotyping, or any denigration of human dignity based on origin is forbidden. Films should promote solidarity and the universal dignity of every human person.</p>
                     </div>
 
                     <!-- IX -->
                     <div class="mb-8">
-                        <h5 class="font-semibold text-xl text-emerald-900 mb-2">IX—Locations and Settings</h5>
+                        <h5 class="font-semibold text-xl text-[#0B1424] mb-2">IX—Locations and Settings</h5>
                         <p class="text-[15px] leading-relaxed text-zinc-700">Bedrooms and private settings must be treated with delicacy and respect for modesty and chastity.</p>
                     </div>
 
                     <!-- X -->
                     <div class="mb-10">
-                        <h5 class="font-semibold text-xl text-emerald-900 mb-2">X—Repellent Subjects</h5>
+                        <h5 class="font-semibold text-xl text-[#0B1424] mb-2">X—Repellent Subjects</h5>
                         <p class="text-[15px] leading-relaxed text-zinc-700">Subjects such as suicide, euthanasia, abortion, excessive cruelty, or the degradation of human life must be handled with extreme care. When included, they must clearly illustrate the moral evil involved and never be presented sympathetically or without consequences.</p>
+
+                    <!-- XI -->
+                    <div class="mb-8">
+                        <h5 class="font-semibold text-xl text-[#0B1424] mb-2">XI—Freedom, Vocation, and the Meaning of Love</h5>
+                        <ol class="list-decimal pl-6 space-y-2.5 text-[15px] text-zinc-700">
+                            <li>Freedom shall not be identified with the absence of moral law, duty, office, or communion with others. License presented as liberation is a moral error, even when the character later “comes home.”</li>
+                            <li>“Being oneself,” authenticity, or unburdened self-expression may appear as a temptation, a wound, or an incomplete stage. They must not be treated as the highest good or as equivalent to charity.</li>
+                            <li>Love is willing the true good of the other, including form (marriage, family, repentance, responsibility). Mere affirmation, permissiveness, or the refusal of judgment is not love.</li>
+                            <li>Isolation, exile, or the casting off of a crown or role may be depicted, but must not be glamorized as the soul’s proper end.</li>
+                            <li>Restlessness toward one’s given world, sex, or household is not the same as a call from God. An “I want” that requires disobedience, a change of nature, or a bargain with evil—if sung as prophecy and then granted—is a false vocation.</li>
+                        </ol>
+                    </div>
+                    <!-- XII -->
+                    <div class="mb-8">
+                        <h5 class="font-semibold text-xl text-[#0B1424] mb-2">XII—Songs and Takeaway Teaching</h5>
+                        <p class="text-[15px] leading-relaxed text-zinc-700 mb-3">Songs, reprises, and set-piece images are remembered longer than plot. They are among the most important words in a work for the soul of the viewer.</p>
+                        <ol class="list-decimal pl-6 space-y-2.5 text-[15px] text-zinc-700">
+                            <li>Lyrics of every prominent song shall be judged as teaching.</li>
+                            <li>A hymn that praises selfishness, license, or flight from duty is not cancelled by a later song or speech about self-gift.</li>
+                            <li>The rating follows the worst song (or slogan, or image) that the work offers as good—not a villain’s number that the story itself marks as evil.</li>
+                            <li>If Arc and Takeaway conflict, the published rating may not be higher than the Takeaway allows. A1 requires both to align.</li>
+                        </ol>
+                    </div>
+                    <!-- XIII -->
+                    <div class="mb-8">
+                        <h5 class="font-semibold text-xl text-[#0B1424] mb-2">XIII—Parents, Office, and Obedience</h5>
+                        <ol class="list-decimal pl-6 space-y-2.5 text-[15px] text-zinc-700">
+                            <li>Legitimate authority in the family—especially father and mother over a child not yet independent—shall not be treated as the enemy of love or of the self.</li>
+                            <li>Grave disobedience, flight from home, or a secret pact that rejects a parent’s lawful command may appear as plot, but must not be crowned. The child must meet repentance, restoration, or a loss proportionate to the act—not a refund of the wish.</li>
+                            <li>A parent who commands what is evil may be resisted. A parent who commands what is merely hard, cautious, or unfashionable is not thereby a tyrant.</li>
+                            <li>Binding oneself to a stranger—especially across household, people, or kind—without time, counsel, or parental blessing is rashness, not vocation.</li>
+                            <li>A father’s or mother’s later smile does not erase the lesson if they are simply overruled so the child may keep what disobedience won.</li>
+                        </ol>
+                    </div>
+                    <div class="mb-8">
+                        <h5 class="font-semibold text-xl text-[#0B1424] mb-2">The 10 Commandments / Natural Law as Ceiling</h5>
+                        <p class="text-[15px] leading-relaxed text-zinc-700 mb-3">The Commandments (Exodus 20:1–17, Catholic numbering) measure the moral law on screen. When in doubt, refer to the Catechism of the Catholic Church. If the finished argument or the takeaway presents a commandment broken and unrepentant, or broken and rewarded, the rating is at most B. Villainy that is punished, and faults that are confessed and cost something, do not by themselves cap the rating.</p>
                     </div>
                 </div>
 
+
                 <!-- Ratings -->
                 <div class="mb-10 pt-8 border-t border-zinc-100">
-                    <h4 class="font-semibold text-2xl tracking-tight text-emerald-900 mb-5 flex items-center gap-x-3">
-                        <span class="text-emerald-600">✦</span> Ratings
+                    <h4 class="font-semibold text-2xl tracking-tight text-[#0B1424] mb-5 flex items-center gap-x-3">
+                        <span class="text-[#D4B15A]">✦</span> Ratings
                     </h4>
                     <p class="text-[15px] text-zinc-600 mb-6">Ratings will be broken into 4 categories:</p>
                     
                     <div class="grid md:grid-cols-2 gap-4">
-                        <div class="border border-emerald-200 bg-emerald-50/60 rounded-2xl p-5">
+                        <div class="border border-[#D4B15A]/40 bg-[#FBF6EA]/60 rounded-2xl p-5">
                             <div class="flex items-center gap-x-3 mb-2">
                                 <span class="rating-badge rating-A1 text-sm px-3.5 py-0.5">A1</span>
-                                <span class="font-semibold text-emerald-900">Fully aligns with Christian principles</span>
+                                <span class="font-semibold text-[#0B1424]">Fully aligns with Christian principles</span>
                             </div>
-                            <p class="text-sm text-zinc-700">No significant moral concerns. Good for the whole family. <span class="text-emerald-700">(Similar to G rated)</span></p>
+                            <p class="text-sm text-zinc-700">Good for kids and adults. Fully aligns with Christian principles. <span class="text-[#8A6A2A]">(Similar to G)</span></p>
                         </div>
-                        <div class="border border-emerald-200 bg-emerald-50/60 rounded-2xl p-5">
+                        <div class="border border-[#D4B15A]/40 bg-[#FBF6EA]/60 rounded-2xl p-5">
                             <div class="flex items-center gap-x-3 mb-2">
                                 <span class="rating-badge rating-A2 text-sm px-3.5 py-0.5">A2</span>
-                                <span class="font-semibold text-emerald-900">Fully aligns with Christian principles but best suited for adults</span>
+                                <span class="font-semibold text-[#0B1424]">Fully aligns with Christian principles but best suited for adults</span>
                             </div>
-                            <p class="text-sm text-zinc-700">Similar to PG/PG-13 rated</p>
+                            <p class="text-sm text-zinc-700">Fully aligns, but themes best suited for adults or children with parental guidance. <span class="text-[#8A6A2A]">(Similar to PG/PG-13)</span></p>
                         </div>
                         <div class="border border-amber-200 bg-amber-50/60 rounded-2xl p-5">
                             <div class="flex items-center gap-x-3 mb-2">
@@ -516,27 +560,29 @@
 
                 <!-- Rating Product -->
                 <div class="mb-10 pt-6 border-t border-zinc-100">
-                    <h4 class="font-semibold text-2xl tracking-tight text-emerald-900 mb-4 flex items-center gap-x-3">
-                        <span class="text-emerald-600">✦</span> Rating Product
+                    <h4 class="font-semibold text-2xl tracking-tight text-[#0B1424] mb-4 flex items-center gap-x-3">
+                        <span class="text-[#D4B15A]">✦</span> Rating Product
                     </h4>
                     <div class="bg-zinc-50 border border-zinc-200 rounded-2xl p-6 text-[15px] text-zinc-700 leading-relaxed">
-                        Output the Title with its associated rating, then a "Quick Summary" section of the morality of the media in a 280 character or less synopsis — no need to post the number of characters. Follow this up with a longer more in depth breakdown of each section.
+                        Output the title and rating, then a Quick Summary of the work and its morality in ideally 280 characters or less. The public Quick Summary is a parent’s card, not a sermon. Describe the work, name the teaching, name the hazards, name the audience.<br><br>
+                        Name the Takeaway in one line when it matters (e.g., “Takeaway: ‘Let It Go’—license as freedom”). Provide Scripture: A1/A2 Supporting Scripture; B one verse supporting and one condemning; C Scripture vs Takeaway.<br><br>
+                        Follow with a breakdown of each Particular Application (I–XIII), plus Commandments/Takeaway if they decided the stamp.
                     </div>
                 </div>
 
                 <!-- Conclusion -->
                 <div class="pt-8 border-t border-zinc-100">
-                    <h4 class="font-semibold text-2xl tracking-tight text-emerald-900 mb-4 flex items-center gap-x-3">
-                        <span class="text-emerald-600">✦</span> Conclusion
+                    <h4 class="font-semibold text-2xl tracking-tight text-[#0B1424] mb-4 flex items-center gap-x-3">
+                        <span class="text-[#D4B15A]">✦</span> Conclusion
                     </h4>
                     <div class="space-y-4 text-[15px] leading-relaxed text-zinc-700">
                         <p>We have undoubtably made mistakes in this code and application of this code will be debated. We ask for yours and God's forgiveness for mistakes we have and will continue to make. We pray God will grace us with the sight to see our errors and for the courage and wisdom to correct those mistakes quickly.</p>
                         <p>We pray this code will help everyone fill their eyes and ears with media and stories that bring them into closer union with God and build up the Kingdom of Heaven in every family, community, and country around the world.</p>
-                        <blockquote class="border-l-4 border-emerald-600 pl-6 italic text-zinc-700 mt-4">
+                        <blockquote class="border-l-4 border-[#D4B15A] pl-6 italic text-zinc-700 mt-4">
                             “Let your light shine before others, so that they may see your good works and give glory to your Father in heaven.” 
-                            <cite class="not-italic text-sm text-emerald-700 block mt-1">(Matthew 5:16)</cite>
+                            <cite class="not-italic text-sm text-[#8A6A2A] block mt-1">(Matthew 5:16)</cite>
                         </blockquote>
-                        <p class="pt-3 text-center font-medium text-emerald-800">God's is the kingdom, the power, and the glory, now and forever. Amen.</p>
+                        <p class="pt-3 text-center font-medium text-[#0B1424]">God's is the kingdom, the power, and the glory, now and forever. Amen.</p>
                     </div>
                 </div>
 
@@ -553,7 +599,7 @@
                 <h2 class="text-4xl font-bold tracking-tight heading-serif">Recently Rated</h2>
                 <p class="text-zinc-600">A few examples from our growing collection</p>
             </div>
-            <a href="#" class="hidden md:flex items-center text-emerald-700 font-semibold hover:text-emerald-800">
+            <a href="#" class="hidden md:flex items-center text-[#8A6A2A] font-semibold hover:text-[#0B1424]">
                 Browse all ratings <i class="fa-solid fa-arrow-right ml-2"></i>
             </a>
         </div>
@@ -561,7 +607,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             <!-- Movie Cards (posters can be added similarly if desired) -->
             <div class="movie-card bg-white border border-zinc-200 rounded-3xl overflow-hidden">
-                <div class="h-2 bg-gradient-to-r from-emerald-700 to-emerald-500"></div>
+                <div class="h-2 bg-gradient-to-r from-[#0B1424] to-[#D4B15A]"></div>
                 <div class="p-6">
                     <div class="flex justify-between items-start">
                         <div>
@@ -577,7 +623,7 @@
             </div>
 
             <div class="movie-card bg-white border border-zinc-200 rounded-3xl overflow-hidden">
-                <div class="h-2 bg-gradient-to-r from-emerald-700 to-emerald-500"></div>
+                <div class="h-2 bg-gradient-to-r from-[#0B1424] to-[#D4B15A]"></div>
                 <div class="p-6">
                     <div class="flex justify-between items-start">
                         <div>
@@ -593,7 +639,7 @@
             </div>
 
             <div class="movie-card bg-white border border-zinc-200 rounded-3xl overflow-hidden">
-                <div class="h-2 bg-gradient-to-r from-emerald-700 to-emerald-500"></div>
+                <div class="h-2 bg-gradient-to-r from-[#0B1424] to-[#D4B15A]"></div>
                 <div class="p-6">
                     <div class="flex justify-between items-start">
                         <div>
@@ -609,7 +655,7 @@
             </div>
 
             <div class="movie-card bg-white border border-zinc-200 rounded-3xl overflow-hidden">
-                <div class="h-2 bg-gradient-to-r from-emerald-700 to-emerald-500"></div>
+                <div class="h-2 bg-gradient-to-r from-[#0B1424] to-[#D4B15A]"></div>
                 <div class="p-6">
                     <div class="flex justify-between items-start">
                         <div>
@@ -627,10 +673,10 @@
     </section>
 
     <!-- Call to Action -->
-    <div class="bg-emerald-900 text-white py-16">
+    <div class="bg-[#0B1424] text-white py-16">
         <div class="max-w-screen-xl mx-auto px-8 text-center">
             <h2 class="text-4xl font-bold tracking-tight">“Go therefore and make disciples of all nations, baptizing them in the name of the Father and of the Son and of the Holy Spirit, and teaching them to observe everything that I have commanded you.</h2>
-            <p class="mt-3 max-w-md mx-auto text-emerald-200">‭‭Matthew 28:19-20</p>
+            <p class="mt-3 max-w-md mx-auto text-[#F3E2B0]">Matthew 28:19-20</p>
             
             <!-- Create Free Account button removed -->
         </div>
@@ -641,10 +687,10 @@
         <div class="max-w-screen-xl mx-auto px-8 grid md:grid-cols-3 gap-y-10">
             <div>
                 <div class="flex items-center gap-x-3 mb-4">
-                    <div class="w-8 h-8 bg-emerald-700 rounded-2xl flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 01-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
+                    <div class="w-8 h-8 rounded-lg overflow-hidden ring-1 ring-[#D4B15A]/40">
+                        <img src="IMG_0016.jpeg"
+     alt="Shepherd Ratings"
+     class="w-8 h-8 object-cover rounded-lg">
                     </div>
                     <span class="font-bold text-white text-xl tracking-tighter">Shepherd Ratings</span>
                 </div>
@@ -666,6 +712,7 @@
                     <div class="space-y-1.5">
                         <div>Submit a Film</div>
                         <div>Discussion Forums</div>
+                        <div><a href="https://www.instagram.com/shepherdratings/" class="hover:text-[#D4B15A]">Instagram @shepherdratings</a></div>
                         <div>Rating Guidelines</div>
                         <div>Our Story</div>
                     </div>
@@ -676,7 +723,7 @@
                         <div>Privacy</div>
                         <div>Terms of Service</div>
                         <div>Contact</div>
-                        <div class="pt-2 text-emerald-400">shepherdratings.org</div>
+                        <div class="pt-2 text-[#D4B15A]">shepherdratings.org</div>
                     </div>
                 </div>
             </div>
@@ -691,19 +738,19 @@
             <div class="space-y-4">
                 <div>
                     <label class="text-sm font-medium text-zinc-600">Email</label>
-                    <input type="email" value="user@example.com" class="mt-1 w-full border border-zinc-300 rounded-2xl px-4 py-3 focus:outline-none focus:border-emerald-600">
+                    <input type="email" value="user@example.com" class="mt-1 w-full border border-zinc-300 rounded-2xl px-4 py-3 focus:outline-none focus:border-[#D4B15A]">
                 </div>
                 <div>
                     <label class="text-sm font-medium text-zinc-600">Password</label>
-                    <input type="password" value="demo123" class="mt-1 w-full border border-zinc-300 rounded-2xl px-4 py-3 focus:outline-none focus:border-emerald-600">
+                    <input type="password" value="demo123" class="mt-1 w-full border border-zinc-300 rounded-2xl px-4 py-3 focus:outline-none focus:border-[#D4B15A]">
                 </div>
             </div>
             
-            <button onclick="loginUser()" class="mt-6 w-full py-4 bg-emerald-800 text-white font-semibold rounded-3xl">Log In</button>
+            <button onclick="loginUser()" class="mt-6 w-full py-4 bg-[#0B1424] text-white font-semibold rounded-3xl">Log In</button>
             
             <div class="text-center text-xs mt-6 text-zinc-500">
                 Don't have an account? 
-                <span onclick="hideLoginModal(); showSignupModal()" class="text-emerald-700 font-medium cursor-pointer">Join the Flock</span>
+                <span onclick="hideLoginModal(); showSignupModal()" class="text-[#8A6A2A] font-medium cursor-pointer">Join the Flock</span>
             </div>
         </div>
     </div>
@@ -718,24 +765,24 @@
                 <div class="grid grid-cols-2 gap-4">
                     <div>
                         <label class="text-sm font-medium text-zinc-600">First Name</label>
-                        <input type="text" value="John" class="mt-1 w-full border border-zinc-300 rounded-2xl px-4 py-3 focus:outline-none focus:border-emerald-600">
+                        <input type="text" value="John" class="mt-1 w-full border border-zinc-300 rounded-2xl px-4 py-3 focus:outline-none focus:border-[#D4B15A]">
                     </div>
                     <div>
                         <label class="text-sm font-medium text-zinc-600">Last Name</label>
-                        <input type="text" value="Shepherd" class="mt-1 w-full border border-zinc-300 rounded-2xl px-4 py-3 focus:outline-none focus:border-emerald-600">
+                        <input type="text" value="Shepherd" class="mt-1 w-full border border-zinc-300 rounded-2xl px-4 py-3 focus:outline-none focus:border-[#D4B15A]">
                     </div>
                 </div>
                 <div>
                     <label class="text-sm font-medium text-zinc-600">Email</label>
-                    <input type="email" value="you@faithful.com" class="mt-1 w-full border border-zinc-300 rounded-2xl px-4 py-3 focus:outline-none focus:border-emerald-600">
+                    <input type="email" value="you@faithful.com" class="mt-1 w-full border border-zinc-300 rounded-2xl px-4 py-3 focus:outline-none focus:border-[#D4B15A]">
                 </div>
                 <div>
                     <label class="text-sm font-medium text-zinc-600">Create Password</label>
-                    <input type="password" value="demo123" class="mt-1 w-full border border-zinc-300 rounded-2xl px-4 py-3 focus:outline-none focus:border-emerald-600">
+                    <input type="password" value="demo123" class="mt-1 w-full border border-zinc-300 rounded-2xl px-4 py-3 focus:outline-none focus:border-[#D4B15A]">
                 </div>
             </div>
             
-            <button onclick="signupUser()" class="mt-6 w-full py-4 bg-emerald-800 text-white font-semibold rounded-3xl">Create Account</button>
+            <button onclick="signupUser()" class="mt-6 w-full py-4 bg-[#0B1424] text-white font-semibold rounded-3xl">Create Account</button>
             
             <div class="text-xs text-center mt-5 text-zinc-400">By joining, you agree to our Terms &amp; the Shepherd Code of Conduct.</div>
         </div>
@@ -744,7 +791,7 @@
     <script>
         // Tailwind script
         function initializeTailwind() {
-            document.documentElement.style.setProperty('--accent', '#166534');
+            document.documentElement.style.setProperty('--accent', '#0B1424');
         }
         
         // Expanded to IMDb Top ~20 for full database testing (stricter Shepherd Ratings with detailed Code-specific reasoning)
@@ -1331,70 +1378,106 @@
         // === END TMDB API Integration ===
 
         // Exact Shepherd Ratings Code text for one-click copy
-        const shepherdCodeText = `Shepherd Ratings Code
-
+        const shepherdCodeText = `Shepherd Ratings Code v3
 Motion Picture Guidance Inspired by Catholic Teaching
 
 Preamble
-\tMedia producers and creators recognize the profound influence of film, music, and other media on the human person, society, and culture. Films and music are gifts from God that can serve truth, beauty, and the common good. They have the potential to elevate the soul, foster virtue, and reflect the dignity of every human being made in the image and likeness of God.
-\tWhile films and music are primarily works of art and entertainment, creators bear a moral responsibility to respect the dignity of the person, uphold the natural law, promote justice and charity, and avoid leading audiences into moral confusion or sin. 
-\tIn the spirit of the Gospel, films and music should strive to illuminate the struggle between good and evil, offer paths to redemption, and celebrate the true, the good, and the beautiful.
-
-“The eye is the lamp of the body. So, if your eye is healthy, your whole body will be full of light; but if your eye is unhealthy, your whole body will be full of darkness. If then the light in you is darkness, how great is the darkness!” (Mt‬ ‭6‬:‭22‬-‭23‬) "Bad company ruins good morals."(1 Cor 15:33).
+Media producers and creators recognize the profound influence of film, music, and other media on the human person, society, and culture. Films and music are gifts from God that can serve truth, beauty, and the common good. They have the potential to elevate the soul, foster virtue, and reflect the dignity of every human being made in the image and likeness of God.
+While films and music are primarily works of art and entertainment, creators bear a moral responsibility to respect the dignity of the person, uphold the natural law, promote justice and charity, and avoid leading audiences into moral confusion or sin.
+In the spirit of the Gospel, films and music should strive to illuminate the struggle between good and evil, offer paths to redemption, and celebrate the true, the good, and the beautiful.
+“The eye is the lamp of the body. So, if your eye is healthy, your whole body will be full of light; but if your eye is unhealthy, your whole body will be full of darkness. If then the light in you is darkness, how great is the darkness!” (Mt 6:22–23). “Bad company ruins good morals.” (1 Cor 15:33).
 
 General Principles
-1. No film should degrade the dignity of the human person or lower the moral standards of those who view it. Sympathy should never rest with evil, injustice, or sin in a way that glorifies wrongdoing without showing its consequences or the possibility of conversion.
+1. No work should degrade the dignity of the human person or lower the moral standards of those who receive it. Sympathy should never rest with evil, injustice, or sin in a way that glorifies wrongdoing without showing its consequences or the possibility of conversion.
 2. Correct standards of life—rooted in truth, respect for the human person, the sanctity of marriage and family, and the common good—shall be presented, subject to the legitimate requirements of drama, art, and entertainment.
-3. Natural and human law shall not be ridiculed, nor shall sympathy be created for their violation. Films should illuminate the moral order and the dignity of every person, regardless of race, ethnicity, gender, or background.
+3. Natural and human law shall not be ridiculed, nor shall sympathy be created for their violation. Works should illuminate the moral order and the dignity of every person, regardless of race, ethnicity, sex, or background.
+4. A work is judged by what it teaches, not only by what it depicts. A character may sin. The work may not treat a breach of the moral law as freedom, as love, as wisdom, or as a success the plot quietly pays.
+5. A redemptive last act does not excuse the work if its most repeatable element—song, slogan, image, or set piece—teaches the contrary.
+6. Grave fault may be forgiven after repentance. It may not be refunded. An ending in which the sinner keeps the spoils of disobedience, a pact with evil, or rash bond, and the authority who opposed it simply yields, is not conversion.
+7. The Ten Commandments (Catholic numbering) are the measure of the moral law on screen. Occurrence without approval does not by itself cap a rating. Endorsement, glamour, or unrepentant reward of a breach caps the rating at B or C.
+
 Particular Applications
-I—Crimes Against the Law and Human Dignity
+I — Crimes Against the Law and Human Dignity
 Crime and violence shall not be presented so as to inspire imitation or glorify evil. Evil must be shown in its true ugliness, with attention to justice and the possibility of repentance.
 1. Murder, brutality, and revenge shall not be depicted in excessive or gratuitous detail, nor justified as morally acceptable ends.
 2. Methods of crime should not be instructional.
 3. Illegal drug use and trafficking shall not be glamorized.
 4. Portrayals of violence must serve the story’s moral arc and never desensitize viewers to the sacredness of human life.
-II—Sex, Chastity, and the Dignity of the Person
-The sanctity of marriage between one man and one woman, the gift of human sexuality ordered toward love and life, and the dignity of every person shall be upheld. Films must not objectify the human body or reduce persons to objects of lust.
+
+II — Sex, Chastity, and the Dignity of the Person
+The sanctity of marriage between one man and one woman, the gift of human sexuality ordered toward love and life, and the dignity of every person shall be upheld. Works must not objectify the human body or reduce persons to objects of lust.
 1. Adultery, fornication, or other violations of chastity may appear as plot elements but must never be presented as morally acceptable or desirable.
 2. Scenes of passion must serve the story and avoid explicit or arousing depictions that could lead viewers into sin.
 3. Seduction, rape, or sexual exploitation shall be treated with gravity, never for comedy or titillation, and must clearly show their moral evil.
 4. Pornography, objectification, or any depiction intended to arouse disordered sexual desire is forbidden.
 5. Sex hygiene and related topics, if treated, must respect modesty and the sacredness of the body.
-6. Nudity or undressing scenes are permitted only when artistically essential, non-exploitative, and presented with restraint and respect for human dignity (not in a lecherous or gratuitous manner).
-III—Vulgarity and Profanity
-Low, crude, or vulgar language and behavior should be subject to good taste. Gratuitous profanity or blasphemy (especially misuse of the holy name of God) is to be avoided, as it offends the dignity of the Creator and the sensibilities of the audience.
-IV—Costume and Modesty
+6. Nudity or undressing scenes are permitted only when artistically essential, non-exploitative, and presented with restraint and respect for human dignity.
+7. Marriage at the end does not sanctify a courtship that began in haste, secrecy from the parents, or muteness before a stranger.
+
+III — Vulgarity and Profanity
+Low, crude, or vulgar language and behavior should be subject to good taste. Gratuitous profanity or blasphemy (especially misuse of the holy name of God) is to be avoided.
+
+IV — Costume and Modesty
 Dress and presentation of the human body shall respect modesty and the dignity of the person. Indecent exposure or costumes designed solely to provoke lust are forbidden.
-V—Dances and Movements
+
+V — Dances and Movements
 Dances or movements that are explicitly sexual or designed to incite lust are to be avoided. Artistic dance that expresses beauty or emotion is permitted when it respects the dignity of the dancer and viewer.
-VI—Religion
-Religious faith, beliefs, and persons shall be treated with respect and never denigrated as foolish or unimportant. Ridicule of any religion — or the subtle undermining of Christian tradition/sacraments through tone or false framing — is condemnable. Clergy and sacred rites may be portrayed realistically but never in a way that mocks the sacred. 
-VII—Dignity and Representation of Women
-Films shall uphold the equal dignity of men and women as created in the image of God. Women should be portrayed as full persons with inherent dignity, agency, and moral worth—not merely as objects of desire or supporting figures in male narratives. Stories should avoid reducing women to stereotypes or objects of male gaze. Where possible, films are encouraged to include meaningful interactions among women characters that explore their own aspirations, relationships, struggles, or vocations beyond their connection to male characters.
-VIII—National and Racial Feelings
-All peoples, races, ethnicities, and cultures shall be represented fairly and with respect. Racism, ethnic stereotyping, or any denigration of human dignity based on origin is forbidden. Films should promote solidarity and the universal dignity of every human person.
-IX—Locations and Settings
+
+VI — Religion
+Religious faith, beliefs, and persons shall be treated with respect and never denigrated as foolish or unimportant. Ridicule of any religion—or the subtle undermining of Christian tradition and sacraments through tone or false framing—is condemnable. Clergy and sacred rites may be portrayed realistically but never in a way that mocks the sacred. Pacts with witches, spirits, or rival gods are occult furniture: they may appear as danger; they may not appear as a path that prospers.
+
+VII — Dignity of Women and Men
+Works shall uphold the equal dignity of men and women as created in the image of God. Women should be portrayed as full persons with inherent dignity, agency, and moral worth—not merely as objects of desire or supporting figures in male narratives. Stories should avoid reducing women to stereotypes or to the male gaze. Where possible, works are encouraged to include meaningful bonds among women that explore aspirations, struggles, or vocations beyond their relation to men.
+
+VIII — National and Racial Feelings
+All peoples, races, ethnicities, and cultures shall be represented fairly and with respect. Racism, ethnic stereotyping, or any denigration of human dignity based on origin is forbidden.
+
+IX — Locations and Settings
 Bedrooms and private settings must be treated with delicacy and respect for modesty and chastity.
-X—Repellent Subjects
+
+X — Repellent Subjects
 Subjects such as suicide, euthanasia, abortion, excessive cruelty, or the degradation of human life must be handled with extreme care. When included, they must clearly illustrate the moral evil involved and never be presented sympathetically or without consequences.
 
+XI — Freedom, Vocation, and the Meaning of Love
+1. Freedom shall not be identified with the absence of moral law, duty, office, or communion with others. License presented as liberation is a moral error, even when the character later “comes home.”
+2. “Being oneself,” authenticity, or unburdened self-expression may appear as a temptation, a wound, or an incomplete stage. They must not be treated as the highest good or as equivalent to charity.
+3. Love is willing the true good of the other, including form (marriage, family, repentance, responsibility). Mere affirmation, permissiveness, or the refusal of judgment is not love.
+4. Isolation, exile, or the casting off of a crown or role may be depicted, but must not be glamorized as the soul’s proper end.
+5. Restlessness toward one’s given world, sex, or household is not the same as a call from God. An “I want” that requires disobedience, a change of nature, or a bargain with evil—if sung as prophecy and then granted—is a false vocation.
+
+XII — Songs and Takeaway Teaching
+Songs, reprises, and set-piece images are remembered longer than plot. They are among the most important words in a work for the soul of the viewer.
+1. Lyrics of every prominent song shall be judged as teaching.
+2. A hymn that praises selfishness, license, or flight from duty is not cancelled by a later song or speech about self-gift.
+3. The rating follows the worst song (or slogan, or image) that the work offers as good—not a villain’s number that the story itself marks as evil.
+4. If Arc and Takeaway conflict, the published rating may not be higher than the Takeaway allows. A1 requires both to align.
+
+XIII — Parents, Office, and Obedience
+1. Legitimate authority in the family—especially father and mother over a child not yet independent—shall not be treated as the enemy of love or of the self.
+2. Grave disobedience, flight from home, or a secret pact that rejects a parent’s lawful command may appear as plot, but must not be crowned. The child must meet repentance, restoration, or a loss proportionate to the act—not a refund of the wish.
+3. A parent who commands what is evil may be resisted. A parent who commands what is merely hard, cautious, or unfashionable is not thereby a tyrant.
+4. Binding oneself to a stranger—especially across household, people, or kind—without time, counsel, or parental blessing is rashness, not vocation.
+5. A father’s or mother’s later smile does not erase the lesson if they are simply overruled so the child may keep what disobedience won.
+
+The 10 Commandments / Natural Law as Ceiling
+The Ten Commandments are listed in Exodus 20:1-17. When in doubt, refer to the Catechism of the Catholic Church. If the finished argument or the takeaway presents a commandment broken and unrepentant, or broken and rewarded, the rating is at most B. Villainy that is punished, and faults that are confessed and cost something, do not by themselves cap the rating.
+
 Ratings
-Ratings will be broken into 4 categories:
+A1: Good for kids & adults. Fully aligns with Christian principles (Similar to G)
+A2: Good for adults. Fully aligns with Christian principles but contains themes best suited for adults or children with parental guidance (Similar to PG/PG-13)
+B: Beware. Contains morally objectionable elements that require caution and discernment for anyone. Not for children (Similar to R)
+C: Condemned. Seriously violates core Christian principles and will lead viewers into sin and moral confusion.
 
-A1: Fully aligns with Christian principles - no significant moral concerns. Good for the whole family. (Similar to G rated)
-A2: Fully aligns with Christian principles but best suited for adults. (Similar to PG/PG-13 rated)
-B: Beware. Contains morally objectionable elements that require discernment. (Similar to R Rated)
-C: Condemned. Likely to cause moral confusion, sinful thoughts, and pollute the soul. Best avoided
-
-Rating Product:
-Output the Title with it's associated rating, then a "Quick Summary" section of the morality of the media in a 280 character or less synopsis - no need to post the number of characters. Follow this up with a longer more in depth breakdown of each section.
+Rating Product
+Output the title and rating, then a Quick Summary of the work and its morality in ideally 280 characters or less. The public Quick Summary is a parent’s card, not a sermon. Describe the work, name the teaching, name the hazards, name the audience.
+Name the Takeaway in one line when it matters (e.g., “Takeaway: ‘Let It Go’—license as freedom”). A1/A2: Supporting Scripture. B: one verse supporting and one condemning. C: Scripture vs Takeaway.
+Follow with a breakdown of each Particular Application (I–XIII), plus Commandments/Takeaway if they decided the stamp.
 
 Conclusion
-\tWe have undoubtably made mistakes in this code and application of this code will be debated. We ask for yours and God's forgiveness for mistakes we have and will continue to make. We pray God will grace us with the sight to see our errors and for the courage and wisdom to correct those mistakes quickly. 
-\tWe pray this code will help everyone fill their eyes and ears with media and stories that bring them into closer union with God and build up the Kingdom of Heaven in every family, community, and country around the world.
-\t"Let your light shine before others, so that they may see your good works and give glory to your Father in heaven." (Mt 5:16)
-
-God's is the kingdom, the power, and the glory, now and forever. Amen.`;
+We have undoubtedly made mistakes in this code and application of this code will be debated. We ask for yours and God’s forgiveness for mistakes we have and will continue to make. We pray God will grace us with the sight to see our errors and for the courage and wisdom to correct those mistakes quickly.
+We pray this code will help everyone fill their eyes and ears with media and stories that bring them into closer union with God and build up the Kingdom of Heaven in every family, community, and country around the world.
+“Let your light shine before others, so that they may see your good works and give glory to your Father in heaven.” (Mt 5:16)
+God’s is the kingdom, the power, and the glory, now and forever. Amen.`;
 
         let currentFilm = null
         let hasGuessed = false
@@ -1471,7 +1554,7 @@ God's is the kingdom, the power, and the glory, now and forever. Amen.`;
             const ratings = ['A1', 'A2', 'B', 'C']
             ratings.forEach(rating => {
                 const btn = document.createElement('button')
-                btn.className = `quiz-option border-2 border-zinc-200 hover:border-emerald-400 rounded-2xl transition-all`
+                btn.className = `quiz-option border-2 border-zinc-200 hover:border-[#D4B15A] rounded-2xl transition-all`
                 btn.innerHTML = `
                     <div class="rating-badge rating-${rating}">${rating}</div>
                     <div class="text-sm text-zinc-700 leading-snug px-1" style="font-size: 0.82rem; line-height: 1.35;">
@@ -1489,13 +1572,13 @@ God's is the kingdom, the power, and the glory, now and forever. Amen.`;
         function getRatingLabel(rating) {
             switch(rating) {
                 case 'A1': 
-                    return 'Fully aligns with Christian principles (Similar to G rated)';
+                    return 'Good for kids & adults. Fully aligns (similar to G)';
                 case 'A2': 
-                    return 'Fully aligns with Christian principles but best suited for adults (Similar to PG/PG-13 rated)';
+                    return 'Aligns, with guidance — similar to PG/PG-13';
                 case 'B': 
-                    return 'Beware. Contains morally objectionable elements that require discernment (Similar to R Rated)';
+                    return 'Beware. Discernment required. Not for children';
                 case 'C': 
-                    return 'Condemned. Likely to cause moral confusion, sinful thoughts, and pollute the soul (Best avoided)';
+                    return 'Condemned. Avoid — moral confusion or sin';
                 default: return '';
             }
         }
@@ -1503,12 +1586,12 @@ God's is the kingdom, the power, and the glory, now and forever. Amen.`;
         function selectRating(element, rating) {
             // Deselect all
             document.querySelectorAll('#rating-options button').forEach(el => {
-                el.classList.remove('selected', 'border-emerald-500')
+                el.classList.remove('selected', 'border-[#D4B15A]')
                 el.classList.add('border-zinc-200')
             })
             
             // Select this one
-            element.classList.add('selected', 'border-emerald-500')
+            element.classList.add('selected', 'border-[#D4B15A]')
             element.classList.remove('border-zinc-200')
             
             window.selectedRating = rating
@@ -1541,7 +1624,7 @@ God's is the kingdom, the power, and the glory, now and forever. Amen.`;
             feedbackArea.classList.remove('hidden')
             
             if (isCorrect) {
-                resultStatus.innerHTML = `<span class="inline-flex items-center gap-x-2 px-6 py-2 bg-emerald-100 text-emerald-800 rounded-3xl text-lg"><i class="fa-solid fa-check-circle"></i> CORRECT</span>`
+                resultStatus.innerHTML = `<span class="inline-flex items-center gap-x-2 px-6 py-2 bg-[#F5E6C4] text-[#0B1424] rounded-3xl text-lg"><i class="fa-solid fa-check-circle"></i> CORRECT</span>`
                 correctBadge.className = `rating-badge rating-${currentFilm.correctRating} text-base px-4 py-1`
                 correctBadge.innerHTML = `${currentFilm.correctRating}`
                 feedbackText.style.display = 'block'
@@ -1603,7 +1686,7 @@ God's is the kingdom, the power, and the glory, now and forever. Amen.`;
             hideLoginModal()
             // Simple success feedback
             const toast = document.createElement('div')
-            toast.className = `fixed bottom-6 right-6 bg-emerald-800 text-white px-6 py-3 rounded-2xl shadow-lg flex items-center gap-x-3 z-[200]`
+            toast.className = `fixed bottom-6 right-6 bg-[#0B1424] text-white px-6 py-3 rounded-2xl shadow-lg flex items-center gap-x-3 z-[200]`
             toast.innerHTML = `
                 <i class="fa-solid fa-check-circle"></i>
                 <span>Welcome back! You're now signed in.</span>
@@ -1619,7 +1702,7 @@ God's is the kingdom, the power, and the glory, now and forever. Amen.`;
         function signupUser() {
             hideSignupModal()
             const toast = document.createElement('div')
-            toast.className = `fixed bottom-6 right-6 bg-emerald-800 text-white px-6 py-3 rounded-2xl shadow-lg flex items-center gap-x-3 z-[200]`
+            toast.className = `fixed bottom-6 right-6 bg-[#0B1424] text-white px-6 py-3 rounded-2xl shadow-lg flex items-center gap-x-3 z-[200]`
             toast.innerHTML = `
                 <i class="fa-solid fa-check-circle"></i>
                 <span>Welcome to Shepherd Ratings! Your account has been created.</span>
@@ -1635,7 +1718,7 @@ God's is the kingdom, the power, and the glory, now and forever. Amen.`;
         function copyFullCode() {
             navigator.clipboard.writeText(shepherdCodeText).then(() => {
                 const toast = document.createElement('div')
-                toast.className = `fixed bottom-6 right-6 bg-emerald-800 text-white px-6 py-3 rounded-2xl shadow-lg flex items-center gap-x-3 z-[200]`
+                toast.className = `fixed bottom-6 right-6 bg-[#0B1424] text-white px-6 py-3 rounded-2xl shadow-lg flex items-center gap-x-3 z-[200]`
                 toast.innerHTML = `
                     <i class="fa-solid fa-check-circle"></i>
                     <span>Full Shepherd Ratings Code copied to clipboard!</span>
@@ -1656,7 +1739,7 @@ God's is the kingdom, the power, and the glory, now and forever. Amen.`;
                 document.body.removeChild(textarea)
                 
                 const toast = document.createElement('div')
-                toast.className = `fixed bottom-6 right-6 bg-emerald-800 text-white px-6 py-3 rounded-2xl shadow-lg flex items-center gap-x-3 z-[200]`
+                toast.className = `fixed bottom-6 right-6 bg-[#0B1424] text-white px-6 py-3 rounded-2xl shadow-lg flex items-center gap-x-3 z-[200]`
                 toast.innerHTML = `
                     <i class="fa-solid fa-check-circle"></i>
                     <span>Full Shepherd Ratings Code copied!</span>
@@ -1726,7 +1809,7 @@ God's is the kingdom, the power, and the glory, now and forever. Amen.`;
                 logo.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' })
             }
             
-            console.log('%c[Shepherd Ratings] Prototype with movie posters initialized successfully!', 'color:#166534')
+            console.log('%c[Shepherd Ratings] Prototype with movie posters initialized successfully!', 'color:#0B1424')
         }
         
         // Boot the application
