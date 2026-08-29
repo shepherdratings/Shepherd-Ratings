@@ -137,8 +137,9 @@
                 </div>
 
                 <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
-                    <a href="#quiz" class="nav-link text-zinc-600 hover:text-[#8A6A2A]">What is the Rating?</a>
+                    <a href="#history" class="nav-link text-zinc-600 hover:text-[#8A6A2A]">History</a>
                     <a href="#code" class="nav-link text-zinc-600 hover:text-[#8A6A2A]">The Code</a>
+                    <a href="#quiz" class="nav-link text-zinc-600 hover:text-[#8A6A2A]">What is the Rating?</a>
                     <a href="#browse" class="nav-link text-zinc-600 hover:text-[#8A6A2A]">Browse Ratings</a>
                 </div>
 
@@ -195,97 +196,9 @@
         </div>
     </div>
 
-    <!-- What is the Rating? Quiz Section -->
-    <section id="quiz" class="max-w-screen-xl mx-auto px-8 pt-16 pb-12">
-        <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-10">
-            <div>
-                <span class="px-4 py-1 bg-[#F5E6C4] text-[#8A6A2A] text-xs font-bold tracking-[1.5px] rounded-3xl">INTERACTIVE</span>
-                <h2 class="text-5xl font-bold tracking-tighter heading-serif text-[#0B1424] mt-3">What's the Rating?</h2>
-                <p class="mt-3 text-xl text-zinc-600 max-w-md">Test your discernment! Guess the Shepherd Rating for these IMDB Top 100 films:</p>
-            </div>
-            <div class="mt-6 md:mt-0 flex gap-2">
-                <button onclick="startNewQuiz()" 
-                        class="flex items-center gap-x-2 px-5 py-3 bg-white border border-zinc-300 hover:bg-zinc-50 text-sm font-semibold rounded-3xl transition-colors">
-                    <i class="fa-solid fa-sync-alt"></i>
-                    <span>New Random Film</span>
-                </button>
-            </div>
-        </div>
-
-        <!-- Quiz Container -->
-        <div class="max-w-3xl mx-auto">
-            <div id="quiz-container" class="bg-white rounded-3xl border border-zinc-200 shadow-sm overflow-hidden">
-                
-                <!-- Quiz Header - Stacked layout: Large poster on top, title/year below -->
-                <div class="px-8 pt-8 pb-6 bg-zinc-50 border-b">
-                    <div class="flex flex-col items-center text-center gap-y-4">
-                        <!-- Larger centered poster -->
-                        <div id="movie-poster-placeholder" 
-                             class="w-40 h-56 sm:w-48 sm:h-72 flex-shrink-0 rounded-3xl overflow-hidden border border-zinc-200 shadow-lg bg-zinc-100 flex items-center justify-center">
-                            <!-- Poster image inserted by JavaScript -->
-                        </div>
-                        
-                        <!-- Title and year below poster -->
-                        <div>
-                            <div id="movie-title" class="text-3xl font-semibold tracking-tight"></div>
-                            <div id="movie-year" class="text-[#8A6A2A] font-medium mt-1"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="p-8">
-                    <!-- Question -->
-                    <div class="mb-8">
-                        <p class="text-lg font-medium text-zinc-700">What Rating do you give this film?</p>
-                        <p class="text-sm text-zinc-500 mt-1">Choose the rating that best reflects Catholic moral guidance.</p>
-                    </div>
-
-                    <!-- Rating Options -->
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8" id="rating-options">
-                        <!-- Populated by JS -->
-                    </div>
-
-                    <!-- Feedback Area -->
-                    <div id="feedback-area" class="hidden">
-                        <div class="rounded-2xl border p-6 bg-zinc-50">
-                            <!-- New prominent row at the top: Correct or Incorrect -->
-                            <div id="result-status" class="mb-4 text-center text-xl font-bold"></div>
-                            
-                            <div class="flex items-start gap-4">
-                                <div id="correct-badge" class="rating-badge flex-shrink-0 text-base px-4 py-1"></div>
-                                
-                                <div class="flex-1">
-                                    <div id="feedback-text" class="text-zinc-700 leading-relaxed"></div>
-                                    
-                                    <div class="mt-4 pt-4 border-t">
-                                        <div class="text-xs uppercase tracking-widest text-[#8A6A2A] font-semibold mb-2">WHY THIS RATING</div>
-                                        <div id="why-text" class="text-sm text-zinc-600"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="flex gap-3 mt-6">
-                        <button onclick="submitGuess()" id="submit-btn"
-                                class="flex-1 py-4 bg-[#0B1424] hover:bg-[#0B1424] active:bg-black text-white font-semibold rounded-3xl transition-all disabled:opacity-50">
-                            Submit My Answer
-                        </button>
-                        
-                        <button onclick="nextFilm()" id="next-btn"
-                                class="px-8 py-4 bg-white border border-[#D4B15A]/40 text-[#8A6A2A] hover:bg-[#FBF6EA] font-semibold rounded-3xl transition-colors hidden">
-                            Next Film <i class="fa-solid fa-arrow-right ml-2"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-        
-        </div>
-    </section>
-
     <!-- History of Catholic Movie Ratings -->
-    <section id="browse" class="max-w-screen-xl mx-auto px-8 py-16 bg-white">
+    <section id="history" class="bg-white">
+        <div class="max-w-screen-xl mx-auto px-8 py-16">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-12">
                 <span class="px-4 py-1 bg-[#F5E6C4] text-[#8A6A2A] text-xs font-bold tracking-[1.5px] rounded-3xl">OUR HERITAGE</span>
@@ -297,31 +210,29 @@
                 <p>From the earliest days, religion has understood that stories shape souls and societies. Narratives — whether told around fires, performed on stages, or projected on screens — form imaginations, teach virtues or vices, and orient people toward what is true, good, and beautiful… or toward what degrades. The Christian Church has long taken this responsibility seriously, discerning and guiding the stories that influence culture for the salvation of souls.</p>
 
                 <h3 class="text-2xl font-semibold text-[#0B1424] mt-12 mb-4">The Early Church in Roman Times: From Opposition to Christian Storytelling</h3>
-                <p>In the Roman Empire, Christians encountered a culture saturated with pagan theater and spectacles. Church Fathers such as Tertullian (<em>De Spectaculis</em>), Clement of Alexandria, and St. Augustine warned against performances that glorified immorality, idolatry, adultery, and violence, viewing them as occasions of sin that corrupted minds and drew hearts from God. Augustine, in his <em>Confessions</em>, reflected on how theater inflamed passions and distracted from eternal truth.</p>
-                <p>Yet the Church did not merely reject; it transformed storytelling. Early Christians emphasized sacred narratives — the Gospels, lives of the saints (hagiography), and parables — as powerful tools for catechesis and evangelization. Over time, this led to the positive use of drama within a Christian framework.</p>
+                <p>In the Roman Empire, Christians encountered a culture saturated with pagan theater and spectacles. Church Fathers such as Tertullian (<em>De Spectaculis</em>), Clement of Alexandria, and St. Augustine warned against performances that glorified immorality, idolatry, adultery, and violence, viewing them as occasions of sin that corrupted minds and drew hearts from God. Augustine, in his <em>Confessions</em>, reflected on how theater inflamed passions and distracted from eternal truth. Yet the Church did not merely reject; it transformed storytelling. Early Christians emphasized sacred narratives — the Gospels, lives of the saints (hagiography), and parables — as powerful tools for catechesis and evangelization. Over time, this led to the positive use of drama within a Christian framework.</p>
 
                 <h3 class="text-2xl font-semibold text-[#0B1424] mt-12 mb-4">The Medieval Church: Mystery Plays and Morality Plays as Teaching Tools</h3>
-                <p>In the Middle Ages, the Church harnessed drama to teach the faith to largely illiterate populations. Liturgical drama grew out of the liturgy itself (e.g., the <em>Quem Quaeritis</em> trope for Easter). This evolved into <strong>mystery plays</strong> (dramatizations of biblical stories and salvation history) and <strong>morality plays</strong> (allegorical dramas like <em>Everyman</em>, personifying virtues and vices in the soul’s struggle toward God).</p>
-                <p>These were acts of the Church’s teaching office — vivid, communal ways to proclaim Scripture, illustrate moral truths, and foster conversion. The Church sponsored, regulated, or tolerated them as instruments of grace.</p>
+                <p>In the Middle Ages, the Church harnessed drama to teach the faith to largely illiterate populations. Liturgical drama grew out of the liturgy itself (e.g., the <em>Quem Quaeritis</em> trope for Easter). This evolved into <strong>mystery plays</strong> (dramatizations of biblical stories and salvation history) and <strong>morality plays</strong> (allegorical dramas like <em>Everyman</em>, personifying virtues and vices in the soul’s struggle toward God). These were acts of the Church’s teaching office — vivid, communal ways to proclaim Scripture, illustrate moral truths, and foster conversion. The Church sponsored, regulated, or tolerated them as instruments of grace.</p>
 
                 <h3 class="text-2xl font-semibold text-[#0B1424] mt-12 mb-4">Early Modern Period: Guiding Literature and Theater</h3>
                 <p>As printing spread and secular literature grew, the Church exercised vigilance through the <em>Index Librorum Prohibitorum</em> (Index of Forbidden Books) to protect the faithful from works that undermined faith or morals. Theater faced similar scrutiny when it promoted vice or ridiculed the sacred. The principle remained consistent: stories that shape culture must be measured against divine truth and human dignity.</p>
 
                 <h3 class="text-2xl font-semibold text-[#0B1424] mt-12 mb-4">The 20th Century: Cinema, the Hays Code, and the Legion of Decency</h3>
-                <p>The invention of motion pictures brought new urgency. In 1930, Hollywood adopted the <strong>Motion Picture Production Code (Hays Code)</strong>, heavily shaped by Catholic advisors including Jesuit Fr. Daniel A. Lord and publisher Martin Quigley. It required films to uphold moral standards and avoid glorifying evil.</p>
-                <p>In 1934, the U.S. bishops launched the <strong>National Legion of Decency</strong>, a Catholic-led movement that mobilized millions to pledge against immoral films. Pope Pius XI strongly endorsed it in his 1936 encyclical <em>Vigilanti Cura</em>. The Legion’s A/B/C ratings exerted enormous cultural influence during Hollywood’s Golden Age.</p>
+                <p>The invention of motion pictures brought new urgency. In 1930, Hollywood adopted the <strong>Motion Picture Production Code (Hays Code)</strong>, heavily shaped by Catholic advisors including Jesuit Fr. Daniel A. Lord and publisher Martin Quigley. It required films to uphold moral standards and avoid glorifying evil. In 1934, the U.S. bishops launched the <strong>National Legion of Decency</strong>, a Catholic-led movement that mobilized millions to pledge against immoral films. Pope Pius XI strongly endorsed it in his 1936 encyclical <em>Vigilanti Cura</em>. The Legion’s A/B/C ratings exerted enormous cultural influence during Hollywood’s Golden Age.</p>
 
                 <h3 class="text-2xl font-semibold text-[#0B1424] mt-12 mb-4">The Shift to Modern Ratings (1968 Onward)</h3>
                 <p>By the 1960s, cultural shifts and legal rulings led to the decline of strict self-censorship. In 1968, the MPAA replaced the Hays Code with the voluntary age-based ratings system (G, PG, PG-13, R, NC-17) still in use today — a move from prescriptive moral guidance toward parental information.</p>
 
                 <h3 class="text-2xl font-semibold text-[#0B1424] mt-12 mb-4">Shepherd Ratings: Renewing the Ancient Tradition Today</h3>
-                <p>Shepherd Ratings continues this centuries-old Christian mission in the digital age. Rooted in Scripture (“The eye is the lamp of the body…” — Matthew 6:22), Catholic teaching on human dignity, and the Church’s long practice of discerning stories, we offer families clear, charitable guidance for film and media.</p>
-                <p>We build on the strengths of the Hays Code and Legion of Decency while learning from their limitations, adding explicit attention to equality, global cultures, and the full dignity of the person. Our goal remains the same as the early Church’s, the medieval dramatists’, and the Legion’s: to help stories elevate souls, foster virtue, and point toward the True, the Good, and the Beautiful — so that what we watch draws us closer to Christ and builds up the Kingdom.</p>
+                <p>Shepherd Ratings continues this centuries-old Christian mission in the digital age. Rooted in Scripture (“The eye is the lamp of the body…” — Matthew 6:22), Catholic teaching on human dignity, and the Church’s long practice of discerning stories, we offer families clear, charitable guidance for film and media. We build on the strengths of the Hays Code and Legion of Decency while learning from their limitations, adding explicit attention to equality, global cultures, and the full dignity of the person. Our goal remains the same as the early Church’s, the medieval dramatists’, and the Legion’s: to help stories elevate souls, foster virtue, and point toward the True, the Good, and the Beautiful — so that what we watch draws us closer to Christ and builds up the Kingdom.</p>
 
                 <div class="mt-12 p-8 bg-[#FBF6EA] rounded-3xl border border-[#E8D5A3]">
                     <p class="text-[#0B1424] font-medium">“Let your light shine before others, so that they may see your good works and give glory to your Father in heaven.” (Matthew 5:16)</p>
                 </div>
             </div>
+        </div>
+    </section>
         </div>
     </section>
 
@@ -530,23 +441,23 @@
                         <div class="border border-[#D4B15A]/40 bg-[#FBF6EA]/60 rounded-2xl p-5">
                             <div class="flex items-center gap-x-3 mb-2">
                                 <span class="rating-badge rating-A1 text-sm px-3.5 py-0.5">A1</span>
-                                <span class="font-semibold text-[#0B1424]">Fully aligns with Christian principles</span>
+                                <span class="font-semibold text-[#0B1424]">Good for All</span>
                             </div>
-                            <p class="text-sm text-zinc-700">Good for kids and adults. Fully aligns with Christian principles. <span class="text-[#8A6A2A]">(Similar to G)</span></p>
+                            <p class="text-sm text-zinc-700">Fully aligns with Christian principles. Good for kids and adults. <span class="text-[#8A6A2A]">(Similar to G)</span></p>
                         </div>
                         <div class="border border-[#D4B15A]/40 bg-[#FBF6EA]/60 rounded-2xl p-5">
                             <div class="flex items-center gap-x-3 mb-2">
                                 <span class="rating-badge rating-A2 text-sm px-3.5 py-0.5">A2</span>
-                                <span class="font-semibold text-[#0B1424]">Fully aligns with Christian principles but best suited for adults</span>
+                                <span class="font-semibold text-[#0B1424]">Good for adults</span>
                             </div>
-                            <p class="text-sm text-zinc-700">Fully aligns, but themes best suited for adults or children with parental guidance. <span class="text-[#8A6A2A]">(Similar to PG/PG-13)</span></p>
+                            <p class="text-sm text-zinc-700">Fully aligns with Christian principles, but themes best suited for adults or children with parental guidance. <span class="text-[#8A6A2A]">(Similar to PG/PG-13)</span></p>
                         </div>
                         <div class="border border-amber-200 bg-amber-50/60 rounded-2xl p-5">
                             <div class="flex items-center gap-x-3 mb-2">
                                 <span class="rating-badge rating-B text-sm px-3.5 py-0.5">B</span>
-                                <span class="font-semibold text-amber-900">Beware. Contains morally objectionable elements that require discernment</span>
+                                <span class="font-semibold text-amber-900">Beware</span>
                             </div>
-                            <p class="text-sm text-zinc-700">Similar to R Rated</p>
+                            <p class="text-sm text-zinc-700">Contains morally objectionable elements that require discernment for all (Similar to R)</p>
                         </div>
                         <div class="border border-red-200 bg-red-50/60 rounded-2xl p-5">
                             <div class="flex items-center gap-x-3 mb-2">
@@ -589,6 +500,98 @@
             </div>
 
             <p class="text-center text-xs text-zinc-500 mt-8 max-w-md mx-auto">This code is offered in humility. We welcome charitable feedback as we seek to serve truth, beauty, and the common good through media discernment.</p>
+        </div>
+    </section>
+
+    <!-- What is the Rating? Quiz Section -->
+    <section id="quiz" class="bg-zinc-50 border-t border-zinc-200">
+        <div class="max-w-screen-xl mx-auto px-8 pt-16 pb-12">
+        <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-10">
+            <div>
+                <span class="px-4 py-1 bg-[#F5E6C4] text-[#8A6A2A] text-xs font-bold tracking-[1.5px] rounded-3xl">INTERACTIVE</span>
+                <h2 class="text-5xl font-bold tracking-tighter heading-serif text-[#0B1424] mt-3">What's the Rating?</h2>
+                <p class="mt-3 text-xl text-zinc-600 max-w-md">Test your discernment! Guess the Shepherd Rating for these IMDB Top 100 films:</p>
+            </div>
+            <div class="mt-6 md:mt-0 flex gap-2">
+                <button onclick="startNewQuiz()" 
+                        class="flex items-center gap-x-2 px-5 py-3 bg-white border border-zinc-300 hover:bg-zinc-50 text-sm font-semibold rounded-3xl transition-colors">
+                    <i class="fa-solid fa-sync-alt"></i>
+                    <span>New Random Film</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Quiz Container -->
+        <div class="max-w-3xl mx-auto">
+            <div id="quiz-container" class="bg-white rounded-3xl border border-zinc-200 shadow-sm overflow-hidden">
+                
+                <!-- Quiz Header - Stacked layout: Large poster on top, title/year below -->
+                <div class="px-8 pt-8 pb-6 bg-zinc-50 border-b">
+                    <div class="flex flex-col items-center text-center gap-y-4">
+                        <!-- Larger centered poster -->
+                        <div id="movie-poster-placeholder" 
+                             class="w-40 h-56 sm:w-48 sm:h-72 flex-shrink-0 rounded-3xl overflow-hidden border border-zinc-200 shadow-lg bg-zinc-100 flex items-center justify-center">
+                            <!-- Poster image inserted by JavaScript -->
+                        </div>
+                        
+                        <!-- Title and year below poster -->
+                        <div>
+                            <div id="movie-title" class="text-3xl font-semibold tracking-tight"></div>
+                            <div id="movie-year" class="text-[#8A6A2A] font-medium mt-1"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-8">
+                    <!-- Question -->
+                    <div class="mb-8">
+                        <p class="text-lg font-medium text-zinc-700">What Rating do you give this film?</p>
+                        <p class="text-sm text-zinc-500 mt-1">Choose the rating that best reflects Catholic moral guidance.</p>
+                    </div>
+
+                    <!-- Rating Options -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-8" id="rating-options">
+                        <!-- Populated by JS -->
+                    </div>
+
+                    <!-- Feedback Area -->
+                    <div id="feedback-area" class="hidden">
+                        <div class="rounded-2xl border p-6 bg-zinc-50">
+                            <!-- New prominent row at the top: Correct or Incorrect -->
+                            <div id="result-status" class="mb-4 text-center text-xl font-bold"></div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div id="correct-badge" class="rating-badge flex-shrink-0 text-base px-4 py-1"></div>
+                                
+                                <div class="flex-1">
+                                    <div id="feedback-text" class="text-zinc-700 leading-relaxed"></div>
+                                    
+                                    <div class="mt-4 pt-4 border-t">
+                                        <div class="text-xs uppercase tracking-widest text-[#8A6A2A] font-semibold mb-2">WHY THIS RATING</div>
+                                        <div id="why-text" class="text-sm text-zinc-600"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-3 mt-6">
+                        <button onclick="submitGuess()" id="submit-btn"
+                                class="flex-1 py-4 bg-[#0B1424] hover:bg-[#0B1424] active:bg-black text-white font-semibold rounded-3xl transition-all disabled:opacity-50">
+                            Submit My Answer
+                        </button>
+                        
+                        <button onclick="nextFilm()" id="next-btn"
+                                class="px-8 py-4 bg-white border border-[#D4B15A]/40 text-[#8A6A2A] hover:bg-[#FBF6EA] font-semibold rounded-3xl transition-colors hidden">
+                            Next Film <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+        
+        </div>
+    </section>
         </div>
     </section>
 
@@ -1465,7 +1468,7 @@ The Ten Commandments are listed in Exodus 20:1-17. When in doubt, refer to the C
 Ratings
 A1: Good for kids & adults. Fully aligns with Christian principles (Similar to G)
 A2: Good for adults. Fully aligns with Christian principles but contains themes best suited for adults or children with parental guidance (Similar to PG/PG-13)
-B: Beware. Contains morally objectionable elements that require caution and discernment for anyone. Not for children (Similar to R)
+B: Beware. Contains morally objectionable elements that require caution and discernment for anyone. (Similar to R)
 C: Condemned. Seriously violates core Christian principles and will lead viewers into sin and moral confusion.
 
 Rating Product
@@ -1572,13 +1575,13 @@ God’s is the kingdom, the power, and the glory, now and forever. Amen.`;
         function getRatingLabel(rating) {
             switch(rating) {
                 case 'A1': 
-                    return 'Good for kids & adults. Fully aligns (similar to G)';
+                    return 'Good for the whole family (similar to G)';
                 case 'A2': 
-                    return 'Aligns, with guidance — similar to PG/PG-13';
+                    return 'Good for adults (similar to PG/PG-13)';
                 case 'B': 
-                    return 'Beware. Discernment required. Not for children';
+                    return 'Beware. Discernment required for all (similar to R)';
                 case 'C': 
-                    return 'Condemned. Avoid — moral confusion or sin';
+                    return 'Condemned. Pollutes the soul';
                 default: return '';
             }
         }
