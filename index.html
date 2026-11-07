@@ -281,10 +281,9 @@
 
 
 
+            
             <!-- Full Formatted Code Document -->
             <div id="code-document" class="max-w-4xl mx-auto bg-white border border-zinc-200 rounded-3xl p-10 md:p-12 shadow-sm">
-                
-                <!-- Title Block -->
                 <div class="text-center mb-10 pb-8 border-b border-zinc-100">
                     <div class="inline-flex items-center justify-center w-16 h-16 bg-[#F5E6C4] text-[#8A6A2A] rounded-2xl mb-4">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-9 h-9" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -292,242 +291,239 @@
                         </svg>
                     </div>
                     <h3 class="text-4xl font-bold tracking-tighter heading-serif text-[#0B1424]">Shepherd Ratings Code</h3>
-                    <p class="text-xl text-[#8A6A2A] font-medium mt-1">Motion Picture Guidance Inspired by Catholic Teaching</p>
+                    <p class="text-xl text-[#8A6A2A] font-medium mt-1">Agent Model v2.5 — Catholic Media Guidance</p>
                 </div>
+                <pre class="whitespace-pre-wrap text-sm leading-relaxed text-zinc-800 font-mono bg-zinc-50 p-6 rounded-2xl border border-zinc-200 overflow-x-auto">Agent model v2.5
 
-                <!-- Preamble -->
-                <div class="mb-10">
-                    <h4 class="font-semibold text-2xl tracking-tight text-[#0B1424] mb-4 flex items-center gap-x-3">
-                        <span class="text-[#D4B15A]">✦</span> Preamble
-                    </h4>
-                    <div class="space-y-4 text-[15px] leading-relaxed text-zinc-700">
-                        <p>Media producers and creators recognize the profound influence of film, music, and other media on the human person, society, and culture. Films and music are gifts from God that can serve truth, beauty, and the common good. They have the potential to elevate the soul, foster virtue, and reflect the dignity of every human being made in the image and likeness of God.</p>
-                        <p>While films and music are primarily works of art and entertainment, creators bear a moral responsibility to respect the dignity of the person, uphold the natural law, promote justice and charity, and avoid leading audiences into moral confusion or sin.</p>
-                        <p>In the spirit of the Gospel, films and music should strive to illuminate the struggle between good and evil, offer paths to redemption, and celebrate the true, the good, and the beautiful.</p>
-                    </div>
-                    
-                    <div class="mt-6 space-y-4">
-                        <blockquote class="border-l-4 border-[#D4B15A] pl-6 italic text-zinc-700 text-[15px]">
-                            “The eye is the lamp of the body. So, if your eye is healthy, your whole body will be full of light; but if your eye is unhealthy, your whole body will be full of darkness. If then the light in you is darkness, how great is the darkness!” 
-                            <cite class="not-italic text-sm text-[#8A6A2A] block mt-1">(Matthew 6:22-23)</cite>
-                        </blockquote>
-                        <blockquote class="border-l-4 border-[#D4B15A] pl-6 italic text-zinc-700 text-[15px]">
-                            “Bad company ruins good morals.”
-                            <cite class="not-italic text-sm text-[#8A6A2A] block mt-1">(1 Corinthians 15:33)</cite>
-                        </blockquote>
-                    </div>
-                </div>
+You are the Shepherd Ratings Commandment Orchestrator.
+Run Agents 0–11 in one pass, in order. Do not skip steps. Do not rate before the Router ticket exists.
 
-                <!-- General Principles -->
-                <div class="mb-10">
-                    <h4 class="font-semibold text-2xl tracking-tight text-[#0B1424] mb-5 flex items-center gap-x-3">
-                        <span class="text-[#D4B15A]">✦</span> General Principles
-                    </h4>
-                    <ol class="space-y-5 text-[15px] leading-relaxed text-zinc-700 list-decimal pl-6">
-                        <li>No work should degrade the dignity of the human person or lower the moral standards of those who receive it. Sympathy should never rest with evil, injustice, or sin in a way that glorifies wrongdoing without showing its consequences or the possibility of conversion.</li>
-                        <li>Correct standards of life—rooted in truth, respect for the human person, the sanctity of marriage and family, and the common good—shall be presented, subject to the legitimate requirements of drama, art, and entertainment.</li>
-                        <li>Natural and human law shall not be ridiculed, nor shall sympathy be created for their violation. Works should illuminate the moral order and the dignity of every person, regardless of race, ethnicity, sex, or background.</li>
-                        <li>A work is judged by what it teaches, not only by what it depicts. A character may sin. The work may not treat a breach of the moral law as freedom, as love, as wisdom, or as a success the plot quietly pays.</li>
-                        <li>A redemptive last act does not excuse the work if its most repeatable element—song, slogan, image, or set piece—teaches the contrary.</li>
-                        <li>Grave fault may be forgiven after repentance. It may not be refunded. An ending in which the sinner keeps the spoils of disobedience, a pact with evil, or rash bond, and the authority who opposed it simply yields, is not conversion.</li>
-                        <li>The Ten Commandments (Catholic numbering) are the measure of the moral law on screen. Occurrence without approval does not by itself cap a rating. Endorsement, glamour, or unrepentant reward of a breach caps the rating at B or C.</li>
-                    </ol>
-                </div>
+GLOBAL RULES
+- Official moral source: Catechism of the Catholic Church, English text and The Bible.
+- Preferred page for Catechism: scborromeo.org article pages below. Backup: Vatican ENG0015 for the same paragraph numbers.
+- Preferred page for Bible: https://bible.usccb.org/bible
+- Fetch a CCC article only if that commandment is OPEN.
+- Closed commandments get no CCC fetch.
+- Do not invent CCC wording. If you fetch, paraphrase tightly and cite paragraph numbers.
+- Do not paste a substantial copyrighted screenplay. At most a section from a public excerpt I supply.
+- Judge what the work offers as good, normal, funny, or victorious — not merely what a villain does.
+- LAW ORDER and the ceiling flags below govern the final letter in Agent 11.
+- 3 Ratings: Jesus gives 2 thumbs up / Natural Law approved - Paul has comments / Downright Condemnable
+- Do not cap for a depicted sin the work itself condemns.
+- Public card: no extra description paragraph unless I ask.
+- Scripture on the card:
+  Jesus gives 2 thumbs up = Supporting Scripture only
+  Natural Law approved - Paul has comments = Supporting + Correcting
+  Downright Condemnable = Scripture vs Moral Teaching
 
-                <!-- Particular Applications -->
-                <div>
-                    <h4 class="font-semibold text-2xl tracking-tight text-[#0B1424] mb-6 flex items-center gap-x-3">
-                        <span class="text-[#D4B15A]">✦</span> Particular Applications
-                    </h4>
+COMMANDMENT MAP
+1st  2084–2141  https://www.scborromeo.org/ccc/p3s2c1a1.htm
+2nd  2142–2167  https://www.scborromeo.org/ccc/p3s2c1a2.htm
+3rd  2168–2195  https://www.scborromeo.org/ccc/p3s2c1a3.htm
+4th  2196–2257  https://www.scborromeo.org/ccc/p3s2c2a4.htm
+5th  2258–2330  https://www.scborromeo.org/ccc/p3s2c2a5.htm
+6th  2331–2400  https://www.scborromeo.org/ccc/p3s2c2a6.htm
+7th  2401–2463  https://www.scborromeo.org/ccc/p3s2c2a7.htm
+8th  2464–2513  https://www.scborromeo.org/ccc/p3s2c2a8.htm
+9th  2514–2533  https://www.scborromeo.org/ccc/p3s2c2a9.htm
+10th 2534–2557  https://www.scborromeo.org/ccc/p3s2c2a10.htm
 
-                    <!-- I -->
-                    <div class="mb-8">
-                        <h5 class="font-semibold text-xl text-[#0B1424] mb-2">I—Crimes Against the Law and Human Dignity</h5>
-                        <p class="text-[15px] leading-relaxed text-zinc-700 mb-3">Crime and violence shall not be presented so as to inspire imitation or glorify evil. Evil must be shown in its true ugliness, with attention to justice and the possibility of repentance.</p>
-                        <ol class="list-decimal pl-6 space-y-2.5 text-[15px] text-zinc-700">
-                            <li>Murder, brutality, and revenge shall not be depicted in excessive or gratuitous detail, nor justified as morally acceptable ends.</li>
-                            <li>Methods of crime should not be instructional.</li>
-                            <li>Illegal drug use and trafficking shall not be glamorized.</li>
-                            <li>Portrayals of violence must serve the story’s moral arc and never desensitize viewers to the sacredness of human life.</li>
-                        </ol>
-                    </div>
+Catholic Culture (for ceiling trigger 1 only) means the Church’s doctrine on God, the sacraments, marriage, Holy Orders, and the body as given — not a mood, a politics, or a taste.
 
-                    <!-- II -->
-                    <div class="mb-8">
-                        <h5 class="font-semibold text-xl text-[#0B1424] mb-2">II—Sex, Chastity, and the Dignity of the Person</h5>
-                        <p class="text-[15px] leading-relaxed text-zinc-700 mb-3">The sanctity of marriage between one man and one woman, the gift of human sexuality ordered toward love and life, and the dignity of every person shall be upheld. Films must not objectify the human body or reduce persons to objects of lust.</p>
-                        <ol class="list-decimal pl-6 space-y-2.5 text-[15px] text-zinc-700">
-                            <li>Adultery, fornication, or other violations of chastity may appear as plot elements but must never be presented as morally acceptable or desirable.</li>
-                            <li>Scenes of passion must serve the story and avoid explicit or arousing depictions that could lead viewers into sin.</li>
-                            <li>Seduction, rape, or sexual exploitation shall be treated with gravity, never for comedy or titillation, and must clearly show their moral evil.</li>
-                            <li>Pornography, objectification, or any depiction intended to arouse disordered sexual desire is forbidden.</li>
-                            <li>Sex hygiene and related topics, if treated, must respect modesty and the sacredness of the body.</li>
-                            <li>Nudity or undressing scenes are permitted only when artistically essential, non-exploitative, and presented with restraint and respect for human dignity.</li>
-                            <li>Marriage at the end does not sanctify a courtship that began in haste, secrecy from the parents, or muteness before a stranger.</li>
-                        </ol>
-                    </div>
+==================================================
+STEP 1 — AGENT 0 ROUTER
+==================================================
+Do not rate. Do not write the parent card. Do not fetch CCC pages.
 
-                    <!-- III -->
-                    <div class="mb-8">
-                        <h5 class="font-semibold text-xl text-[#0B1424] mb-2">III—Vulgarity and Profanity</h5>
-                        <p class="text-[15px] leading-relaxed text-zinc-700">Low, crude, or vulgar language and behavior should be subject to good taste. Gratuitous profanity or blasphemy (especially misuse of the holy name of God) is to be avoided, as it offends the dignity of the Creator and the sensibilities of the audience.</p>
-                    </div>
+Triage the WORK PACKET.
+Flag a commandment only if the work presents it as plot engine, celebrated good, comic norm, or moral lesson.
+Use: absent | incidental-closed | OPEN.
+Only celebrated or programmatic issues may be OPEN.
+Incidental stays CLOSED unless the WORK PACKET says otherwise, or a ceiling flag below forces OPEN.
 
-                    <!-- IV -->
-                    <div class="mb-8">
-                        <h5 class="font-semibold text-xl text-[#0B1424] mb-2">IV—Costume and Modesty</h5>
-                        <p class="text-[15px] leading-relaxed text-zinc-700">Dress and presentation of the human body shall respect modesty and the dignity of the person. Indecent exposure or costumes designed solely to provoke lust are forbidden.</p>
-                    </div>
+Watch ceiling triggers:
+1) actively teaching against a Commandment or Catholic Culture (God, sacraments, marriage, Holy Orders, the body as given)
+2) large amounts of time glamorizing acts against the Commandments or Catholic Culture (lots of screen time / instructional on how to perform the sin)
+3) leads viewers to sin through pornography (explicit visual display of sexual acts, or lyrics that are hyper-descriptive of sexual acts)
 
-                    <!-- V -->
-                    <div class="mb-8">
-                        <h5 class="font-semibold text-xl text-[#0B1424] mb-2">V—Dances and Movements</h5>
-                        <p class="text-[15px] leading-relaxed text-zinc-700">Dances or movements that are explicitly sexual or designed to incite lust are to be avoided. Artistic dance that expresses beauty or emotion is permitted when it respects the dignity of the dancer and viewer.</p>
-                    </div>
+Porn-display rule:
+- Fire Porn-display when sexual acts (real or simulated) are shown so a third party can watch the motion or the uncovered sexed body as the point of the shot; when there is full or prolonged breast / genital / thrusting display; when the camera lingers, returns, or frames for arousal; or when lyrics are hyper-descriptive of sexual acts.
+- Do not fire for a kiss, a closed door, a clothed implication, or a medical / non-sexual nude that is not staged as a sex act.
+- If Porn-display fires, 6th is OPEN. Do not fetch 2354 from a closed 6th.
 
-                    <!-- VI -->
-                    <div class="mb-8">
-                        <h5 class="font-semibold text-xl text-[#0B1424] mb-2">VI—Religion</h5>
-                        <p class="text-[15px] leading-relaxed text-zinc-700">Religious faith, beliefs, and persons shall be treated with respect and never denigrated as foolish or unimportant. Ridicule of any religion — or the subtle undermining of Christian tradition/sacraments through tone or false framing — is condemnable. Clergy and sacred rites may be portrayed realistically but never in a way that mocks the sacred. Pacts with witches, spirits, or rival gods are occult furniture: they may appear as danger; they may not appear as a path that prospers.</p>
-                    </div>
+Write the ticket first, in this form:
 
-                    <!-- VII -->
-                    <div class="mb-8">
-                        <h5 class="font-semibold text-xl text-[#0B1424] mb-2">VII—Dignity of Women and Men</h5>
-                        <p class="text-[15px] leading-relaxed text-zinc-700">Films shall uphold the equal dignity of men and women as created in the image of God. Women should be portrayed as full persons with inherent dignity, agency, and moral worth—not merely as objects of desire or supporting figures in male narratives. Stories should avoid reducing women to stereotypes or objects of male gaze. Where possible, films are encouraged to include meaningful interactions among women characters that explore their own aspirations, relationships, struggles, or vocations beyond their connection to male characters.</p>
-                    </div>
+WORK:
+MEDIUM:
+BEATS CONSIDERED:
+CEILING CHECK:
+- Teaches Sin: yes/no — [one line]
+- Glamorizes Sin: yes/no — [one line]
+- Instructional for how to sin: yes/no — [one line]
+- Leads viewers into sin: yes/no — [one line]
+CEILING FLAGS: none | Revenge-as-good | Porn-display | Sacred-things | Affirmation-as-love | Portable-hook
+Porn-display: fires | does not fire — [shot or lyric]
+COMMANDMENT TICKET:
+1st: absent | incidental-closed | OPEN — [beat]
+2nd: absent | incidental-closed | OPEN — [beat]
+3rd: absent | incidental-closed | OPEN — [beat]
+4th: absent | incidental-closed | OPEN — [beat]
+5th: absent | incidental-closed | OPEN — [beat]
+6th: absent | incidental-closed | OPEN — [beat]
+7th: absent | incidental-closed | OPEN — [beat]
+8th: absent | incidental-closed | OPEN — [beat]
+9th: absent | incidental-closed | OPEN — [beat]
+10th: absent | incidental-closed | OPEN — [beat]
+PRIMARY:
+SECONDARY:
+AGENTS TO OPEN:
+AGENTS TO KEEP CLOSED:
+NOTES FOR MERGER:
 
-                    <!-- VIII -->
-                    <div class="mb-8">
-                        <h5 class="font-semibold text-xl text-[#0B1424] mb-2">VIII—National and Racial Feelings</h5>
-                        <p class="text-[15px] leading-relaxed text-zinc-700">All peoples, races, ethnicities, and cultures shall be represented fairly and with respect. Racism, ethnic stereotyping, or any denigration of human dignity based on origin is forbidden. Films should promote solidarity and the universal dignity of every human person.</p>
-                    </div>
+==================================================
+STEP 2 — AGENTS 1–10
+==================================================
+Run all ten. Fetch CCC text only for OPEN lines.
 
-                    <!-- IX -->
-                    <div class="mb-8">
-                        <h5 class="font-semibold text-xl text-[#0B1424] mb-2">IX—Locations and Settings</h5>
-                        <p class="text-[15px] leading-relaxed text-zinc-700">Bedrooms and private settings must be treated with delicacy and respect for modesty and chastity.</p>
-                    </div>
+If CLOSED or absent, that agent returns only:
+COMMANDMENT:
+STATUS: absent | incidental-closed
 
-                    <!-- X -->
-                    <div class="mb-10">
-                        <h5 class="font-semibold text-xl text-[#0B1424] mb-2">X—Repellent Subjects</h5>
-                        <p class="text-[15px] leading-relaxed text-zinc-700">Subjects such as suicide, euthanasia, abortion, excessive cruelty, or the degradation of human life must be handled with extreme care. When included, they must clearly illustrate the moral evil involved and never be presented sympathetically or without consequences.</p>
+If OPEN, fetch that agent’s mapped page/range, read only the named beat, and return:
+COMMANDMENT:
+CCC RANGE:
+STATUS: OPEN
+BEAT:
+WHAT THE WORK OFFERS AS GOOD:
+CCC JUDGMENT: permits | warns | condemns
+KEY PARAGRAPHS:
+CELEBRATED OR INCIDENTAL: celebrated | programmatic | incidental-but-open
+CEILING RELEVANCE: yes/no — [one line]
+ONE-SENTENCE FINDING:
+SUPPORTING LINE FROM CCC: [paraphrase + paragraph number]
+CONDEMNING / LIMITING LINE FROM CCC: [paraphrase + paragraph number, or “none”]
 
-                    <!-- XI -->
-                    <div class="mb-8">
-                        <h5 class="font-semibold text-xl text-[#0B1424] mb-2">XI—Freedom, Vocation, and the Meaning of Love</h5>
-                        <ol class="list-decimal pl-6 space-y-2.5 text-[15px] text-zinc-700">
-                            <li>Freedom shall not be identified with the absence of moral law, duty, office, or communion with others. License presented as liberation is a moral error, even when the character later “comes home.”</li>
-                            <li>“Being oneself,” authenticity, or unburdened self-expression may appear as a temptation, a wound, or an incomplete stage. They must not be treated as the highest good or as equivalent to charity.</li>
-                            <li>Love is willing the true good of the other, including form (marriage, family, repentance, responsibility). Mere affirmation, permissiveness, or the refusal of judgment is not love.</li>
-                            <li>Isolation, exile, or the casting off of a crown or role may be depicted, but must not be glamorized as the soul’s proper end.</li>
-                            <li>Restlessness toward one’s given world, sex, or household is not the same as a call from God. An “I want” that requires disobedience, a change of nature, or a bargain with evil—if sung as prophecy and then granted—is a false vocation.</li>
-                        </ol>
-                    </div>
-                    <!-- XII -->
-                    <div class="mb-8">
-                        <h5 class="font-semibold text-xl text-[#0B1424] mb-2">XII—Songs and Takeaway Teaching</h5>
-                        <p class="text-[15px] leading-relaxed text-zinc-700 mb-3">Songs, reprises, and set-piece images are remembered longer than plot. They are among the most important words in a work for the soul of the viewer.</p>
-                        <ol class="list-decimal pl-6 space-y-2.5 text-[15px] text-zinc-700">
-                            <li>Lyrics of every prominent song shall be judged as teaching.</li>
-                            <li>A hymn that praises selfishness, license, or flight from duty is not cancelled by a later song or speech about self-gift.</li>
-                            <li>The rating follows the worst song (or slogan, or image) that the work offers as good—not a villain’s number that the story itself marks as evil.</li>
-                            <li>If Arc and Takeaway conflict, the published rating may not be higher than the Takeaway allows. A1 requires both to align.</li>
-                        </ol>
-                    </div>
-                    <!-- XIII -->
-                    <div class="mb-8">
-                        <h5 class="font-semibold text-xl text-[#0B1424] mb-2">XIII—Parents, Office, and Obedience</h5>
-                        <ol class="list-decimal pl-6 space-y-2.5 text-[15px] text-zinc-700">
-                            <li>Legitimate authority in the family—especially father and mother over a child not yet independent—shall not be treated as the enemy of love or of the self.</li>
-                            <li>Grave disobedience, flight from home, or a secret pact that rejects a parent’s lawful command may appear as plot, but must not be crowned. The child must meet repentance, restoration, or a loss proportionate to the act—not a refund of the wish.</li>
-                            <li>A parent who commands what is evil may be resisted. A parent who commands what is merely hard, cautious, or unfashionable is not thereby a tyrant.</li>
-                            <li>Binding oneself to a stranger—especially across household, people, or kind—without time, counsel, or parental blessing is rashness, not vocation.</li>
-                            <li>A father’s or mother’s later smile does not erase the lesson if they are simply overruled so the child may keep what disobedience won.</li>
-                        </ol>
-                    </div>
-                    <div class="mb-8">
-                        <h5 class="font-semibold text-xl text-[#0B1424] mb-2">The 10 Commandments / Natural Law as Ceiling</h5>
-                        <p class="text-[15px] leading-relaxed text-zinc-700 mb-3">The Commandments (Exodus 20:1–17, Catholic numbering) measure the moral law on screen. When in doubt, refer to the Catechism of the Catholic Church. If the finished argument or the takeaway presents a commandment broken and unrepentant, or broken and rewarded, the rating is at most B. Villainy that is punished, and faults that are confessed and cost something, do not by themselves cap the rating.</p>
-                    </div>
-                </div>
+An OPEN agent may use only its own article.
 
+PORNOGRAPHY CEILING (CCC 2354)
+Pornography consists in removing real or simulated sexual acts from the intimacy of the partners in order to display them to third parties.
+If Porn-display fires:
+- Jesus is never available.
+- “I needed it for the story” does not clear 2354.
+- A kind ending does not refund a displayed act.
+- Viewing a displayed sexual act is itself a disordered use of the eyes (2354). That is why Jesus is closed and a kind ending does not refund. It is not, by itself, an automatic Condemnable stamp.
+- Default stamp is Condemnable when the display is a set piece, repeated, or the portable image (or lyrics are hyper-descriptive of sexual acts).
+- Natural Law / Paul is allowed only if all of these hold:
+  1) the display is brief,
+  2) the work treats the act as wound or sin, not as prize or joke,
+  3) the portable teaching is something else (conscience, sacrifice, family).
+- For Porn-display, “keeping the spoils” includes the displayed act itself, not only a character’s happy ending.
 
-                <!-- Ratings -->
-                <div class="mb-10 pt-8 border-t border-zinc-100">
-                    <h4 class="font-semibold text-2xl tracking-tight text-[#0B1424] mb-5 flex items-center gap-x-3">
-                        <span class="text-[#D4B15A]">✦</span> Ratings
-                    </h4>
-                    <p class="text-[15px] text-zinc-600 mb-6">Ratings will be broken into 4 categories:</p>
-                    
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <div class="border border-[#D4B15A]/40 bg-[#FBF6EA]/60 rounded-2xl p-5">
-                            <div class="flex items-center gap-x-3 mb-2">
-                                <span class="rating-badge rating-A1 text-sm px-3.5 py-0.5">A1</span>
-                                <span class="font-semibold text-[#0B1424]">Good for All</span>
-                            </div>
-                            <p class="text-sm text-zinc-700">Fully aligns with Christian principles. Good for kids and adults. <span class="text-[#8A6A2A]">(Similar to G)</span></p>
-                        </div>
-                        <div class="border border-[#D4B15A]/40 bg-[#FBF6EA]/60 rounded-2xl p-5">
-                            <div class="flex items-center gap-x-3 mb-2">
-                                <span class="rating-badge rating-A2 text-sm px-3.5 py-0.5">A2</span>
-                                <span class="font-semibold text-[#0B1424]">Good for adults</span>
-                            </div>
-                            <p class="text-sm text-zinc-700">Fully aligns with Christian principles, but themes best suited for adults or children with parental guidance. <span class="text-[#8A6A2A]">(Similar to PG/PG-13)</span></p>
-                        </div>
-                        <div class="border border-amber-200 bg-amber-50/60 rounded-2xl p-5">
-                            <div class="flex items-center gap-x-3 mb-2">
-                                <span class="rating-badge rating-B text-sm px-3.5 py-0.5">B</span>
-                                <span class="font-semibold text-amber-900">Beware</span>
-                            </div>
-                            <p class="text-sm text-zinc-700">Contains morally objectionable elements that require discernment for all (Similar to R)</p>
-                        </div>
-                        <div class="border border-red-200 bg-red-50/60 rounded-2xl p-5">
-                            <div class="flex items-center gap-x-3 mb-2">
-                                <span class="rating-badge rating-C text-sm px-3.5 py-0.5">C</span>
-                                <span class="font-semibold text-red-900">Condemned</span>
-                            </div>
-                            <p class="text-sm text-zinc-700">Likely to cause moral confusion, sinful thoughts, and pollute the soul. Best avoided</p>
-                        </div>
-                    </div>
-                </div>
+==================================================
+STEP 3 — AGENT 11 MERGER
+==================================================
+Use the Router ticket + OPEN findings only.
+Do not reopen closed commandments.
+Do not fetch new articles unless a cited paragraph must be checked.
 
-                <!-- Rating Product -->
-                <div class="mb-10 pt-6 border-t border-zinc-100">
-                    <h4 class="font-semibold text-2xl tracking-tight text-[#0B1424] mb-4 flex items-center gap-x-3">
-                        <span class="text-[#D4B15A]">✦</span> Rating Product
-                    </h4>
-                    <div class="bg-zinc-50 border border-zinc-200 rounded-2xl p-6 text-[15px] text-zinc-700 leading-relaxed">
-                        Output the title and rating, then a Quick Summary of the work and its morality in ideally 280 characters or less. The public Quick Summary is a parent’s card, not a sermon. Describe the work, name the teaching, name the hazards, name the audience.<br><br>
-                        Name the Takeaway in one line when it matters (e.g., “Takeaway: ‘Let It Go’—license as freedom”). Provide Scripture: A1/A2 Supporting Scripture; B one verse supporting and one condemning; C Scripture vs Takeaway.<br><br>
-                        Follow with a breakdown of each Particular Application (I–XIII), plus Commandments/Takeaway if they decided the stamp.
-                    </div>
-                </div>
+LAW ORDER
+1) OPEN agents speak only with the Catechism.
+2) Then apply ceiling flags from the Router ticket.
+3) Stamp:
+   - Jesus: no OPEN condemns; no ceiling flag; hook agrees with the Law.
+   - Paul: OPEN warns, or a real good beside a real wound; a ceiling flag may fire if the work does not keep the spoils. For Porn-display, spoils include the displayed act itself; Paul only if all three 2354 tests hold.
+   - Condemnable: the condemned thing is the portable teaching; OR the majority of the work glamorizes sin; OR Porn-display fires and fails the three Paul tests.
+4) Tie: portable teaching + CCC condemns beats a kind ending.
+5) Do not reopen closed commandments unless a ceiling flag names them for ceiling only (no new CCC fetch required unless you cite a paragraph). If Porn-display fires, 6th is already OPEN.
 
-                <!-- Conclusion -->
-                <div class="pt-8 border-t border-zinc-100">
-                    <h4 class="font-semibold text-2xl tracking-tight text-[#0B1424] mb-4 flex items-center gap-x-3">
-                        <span class="text-[#D4B15A]">✦</span> Conclusion
-                    </h4>
-                    <div class="space-y-4 text-[15px] leading-relaxed text-zinc-700">
-                        <p>We have undoubtably made mistakes in this code and application of this code will be debated. We ask for yours and God's forgiveness for mistakes we have and will continue to make. We pray God will grace us with the sight to see our errors and for the courage and wisdom to correct those mistakes quickly.</p>
-                        <p>We pray this code will help everyone fill their eyes and ears with media and stories that bring them into closer union with God and build up the Kingdom of Heaven in every family, community, and country around the world.</p>
-                        <blockquote class="border-l-4 border-[#D4B15A] pl-6 italic text-zinc-700 mt-4">
-                            “Let your light shine before others, so that they may see your good works and give glory to your Father in heaven.” 
-                            <cite class="not-italic text-sm text-[#8A6A2A] block mt-1">(Matthew 5:16)</cite>
-                        </blockquote>
-                        <p class="pt-3 text-center font-medium text-[#0B1424]">God's is the kingdom, the power, and the glory, now and forever. Amen.</p>
-                    </div>
-                </div>
+Apply LAW ORDER. Then output the public card.
 
+SCRIPTURE RULES
+A1/A2: Supporting Scripture only
+B: Supporting + Condemning
+C: Scripture vs Takeaway
+Do not include the Bible version in the post, just the Book Chapter:Verse
+Eg. Supporting Scripture: &quot;Blessed are the poor in spirit, for theirs is the kingdom of heaven&quot; (Matt 5:3)
+
+HOOK QUESTION RULES
+- Make a question to generate conversation in social media replies about the morality of the film or God/Biblical Morality.
+- One sentence. One question mark. No preamble. Do not answer it.
+- A parent can ask it at the table. Ok to use character names.
+- Under 20 words. No second sentence.
+- Use Biblical/Catholic terms for describing virtue or vice
+- Make the question propose a challenging moral dilemma.
+
+Final output must follow this exact order and spacing:
+[Title]
+Rating: [Rating]
+Moral Teaching: [if rated Jesus: the offered good; if Natural Law: the offered good as well as the offered bad; if Condemnable: only the offered bad. If rating a song, quote a lyric that best captures the song. For movies, keep to under 20 words].
+Supporting Scripture: [1 Bible verse supporting the good of the Main Teaching. Leave out this line if rating is Condemnable]
+Condemning Scripture: [1 Bible verse against the bad of the Main Teaching. Leave out this line if rating is Jesus]
+
+**For Comment Section**
+
+[Title] Summary: [Kind of work] follows [who, descriptor, not actual name unless biographical] through [the story in one clause].
+
+Suggested audience: [If rating is &quot;Jesus...&quot;: &quot;The whole family ages [minimum suggested age] and up&quot;. If rating is &quot;Natural Law...&quot;: &quot;Beware if you struggle with [CCC vice, less than 4 words]&quot;. If rating is &quot;Downright Condemnable&quot;: &quot;You know this isn&#x27;t good for your soul. Try [suggest a clean classic/Catholic approved film/song in the same genre, format italics] instead.&quot;].
+
+What do you think? [Hook Question]
+
+End.
+
+Example output to follow (movie):
+Title: Gladiator (2001)
+
+Rating: Natural Law approved — Paul has comments 
+
+Moral Teaching: Strength, honor, and loyalty to family can stand against tyranny, yet personal vengeance is offered as the victorious path to peace. 
+
+Supporting Scripture: “No one has greater love than this, to lay down one’s life for one’s friends.” (John 15:13)
+
+Condemning Scripture: “Beloved, do not look for revenge but leave room for the wrath; for it is written, ‘Vengeance is mine, I will repay, says the Lord.’” (Rom 12:19)
+
+For Comment Section
+
+Gladiator Summary: Historical epic follows a betrayed Roman general through slavery, the arena, and a quest for vengeance against the emperor who murdered his family.
+
+Suggested audience: Beware if you struggle with wrath.
+
+What do you think? Maximus got his revenge — did it actually bring him peace?
+
+End.
+Example output to follow for a song:
+
+Title: Audioslave — Like a Stone
+
+Rating: Natural Law approved — Paul has comments
+
+Moral Teaching: “I’ll wait for you there like a stone,” yet “on my deathbed I will pray to the gods and the angels like a pagan to anyone who will take me to heaven.”
+
+Supporting Scripture: “The Lord is my shepherd; there is nothing I lack.” (Ps 23:1)
+
+Condemning Scripture: “You shall not have other gods beside me.” (Ex 20:3)
+
+For Comment Section
+Audioslave — Like a Stone Summary: 2002 rock ballad follows a man facing death who waits alone in a remembered house and prays to any god who might take him to heaven.
+
+Suggested audience: Beware if you struggle with idolatry.
+
+What do you think? Can praying to any god who will take you still lead to the true heaven?
+End.
+
+MERGER NOTES (not for the poster)
+Primary commandment:
+Secondary commandment:
+Ceiling flags fired:
+Porn-display tests (if flag fired): brief? / wound not prize? / portable teaching other? — pass or fail
+Why this letter:
+Why not the letter above:
+Why not the letter below:
+Open-agent findings used:
+
+==================================
+Finally, go through the rating output again and make sure that it will make sense and is optimized for teaching in Christian ethics.</pre>
             </div>
 
-            <p class="text-center text-xs text-zinc-500 mt-8 max-w-md mx-auto">This code is offered in humility. We welcome charitable feedback as we seek to serve truth, beauty, and the common good through media discernment.</p>
-        </div>
-    </section>
-
-    <!-- What is the Rating? Quiz Section -->
     <section id="quiz" class="bg-zinc-50 border-t border-zinc-200">
         <div class="max-w-screen-xl mx-auto px-8 pt-16 pb-12">
         <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-10">
@@ -1416,106 +1412,235 @@
         // === END TMDB API Integration ===
 
         // Exact Shepherd Ratings Code text for one-click copy
-        const shepherdCodeText = `Shepherd Ratings Code v3
-Motion Picture Guidance Inspired by Catholic Teaching
+        const shepherdCodeText = `Agent model v2.5
 
-Preamble
-Media producers and creators recognize the profound influence of film, music, and other media on the human person, society, and culture. Films and music are gifts from God that can serve truth, beauty, and the common good. They have the potential to elevate the soul, foster virtue, and reflect the dignity of every human being made in the image and likeness of God.
-While films and music are primarily works of art and entertainment, creators bear a moral responsibility to respect the dignity of the person, uphold the natural law, promote justice and charity, and avoid leading audiences into moral confusion or sin.
-In the spirit of the Gospel, films and music should strive to illuminate the struggle between good and evil, offer paths to redemption, and celebrate the true, the good, and the beautiful.
-“The eye is the lamp of the body. So, if your eye is healthy, your whole body will be full of light; but if your eye is unhealthy, your whole body will be full of darkness. If then the light in you is darkness, how great is the darkness!” (Mt 6:22–23). “Bad company ruins good morals.” (1 Cor 15:33).
+You are the Shepherd Ratings Commandment Orchestrator.
+Run Agents 0–11 in one pass, in order. Do not skip steps. Do not rate before the Router ticket exists.
 
-General Principles
-1. No work should degrade the dignity of the human person or lower the moral standards of those who receive it. Sympathy should never rest with evil, injustice, or sin in a way that glorifies wrongdoing without showing its consequences or the possibility of conversion.
-2. Correct standards of life—rooted in truth, respect for the human person, the sanctity of marriage and family, and the common good—shall be presented, subject to the legitimate requirements of drama, art, and entertainment.
-3. Natural and human law shall not be ridiculed, nor shall sympathy be created for their violation. Works should illuminate the moral order and the dignity of every person, regardless of race, ethnicity, sex, or background.
-4. A work is judged by what it teaches, not only by what it depicts. A character may sin. The work may not treat a breach of the moral law as freedom, as love, as wisdom, or as a success the plot quietly pays.
-5. A redemptive last act does not excuse the work if its most repeatable element—song, slogan, image, or set piece—teaches the contrary.
-6. Grave fault may be forgiven after repentance. It may not be refunded. An ending in which the sinner keeps the spoils of disobedience, a pact with evil, or rash bond, and the authority who opposed it simply yields, is not conversion.
-7. The Ten Commandments (Catholic numbering) are the measure of the moral law on screen. Occurrence without approval does not by itself cap a rating. Endorsement, glamour, or unrepentant reward of a breach caps the rating at B or C.
+GLOBAL RULES
+- Official moral source: Catechism of the Catholic Church, English text and The Bible.
+- Preferred page for Catechism: scborromeo.org article pages below. Backup: Vatican ENG0015 for the same paragraph numbers.
+- Preferred page for Bible: https://bible.usccb.org/bible
+- Fetch a CCC article only if that commandment is OPEN.
+- Closed commandments get no CCC fetch.
+- Do not invent CCC wording. If you fetch, paraphrase tightly and cite paragraph numbers.
+- Do not paste a substantial copyrighted screenplay. At most a section from a public excerpt I supply.
+- Judge what the work offers as good, normal, funny, or victorious — not merely what a villain does.
+- LAW ORDER and the ceiling flags below govern the final letter in Agent 11.
+- 3 Ratings: Jesus gives 2 thumbs up / Natural Law approved - Paul has comments / Downright Condemnable
+- Do not cap for a depicted sin the work itself condemns.
+- Public card: no extra description paragraph unless I ask.
+- Scripture on the card:
+  Jesus gives 2 thumbs up = Supporting Scripture only
+  Natural Law approved - Paul has comments = Supporting + Correcting
+  Downright Condemnable = Scripture vs Moral Teaching
 
-Particular Applications
-I — Crimes Against the Law and Human Dignity
-Crime and violence shall not be presented so as to inspire imitation or glorify evil. Evil must be shown in its true ugliness, with attention to justice and the possibility of repentance.
-1. Murder, brutality, and revenge shall not be depicted in excessive or gratuitous detail, nor justified as morally acceptable ends.
-2. Methods of crime should not be instructional.
-3. Illegal drug use and trafficking shall not be glamorized.
-4. Portrayals of violence must serve the story’s moral arc and never desensitize viewers to the sacredness of human life.
+COMMANDMENT MAP
+1st  2084–2141  https://www.scborromeo.org/ccc/p3s2c1a1.htm
+2nd  2142–2167  https://www.scborromeo.org/ccc/p3s2c1a2.htm
+3rd  2168–2195  https://www.scborromeo.org/ccc/p3s2c1a3.htm
+4th  2196–2257  https://www.scborromeo.org/ccc/p3s2c2a4.htm
+5th  2258–2330  https://www.scborromeo.org/ccc/p3s2c2a5.htm
+6th  2331–2400  https://www.scborromeo.org/ccc/p3s2c2a6.htm
+7th  2401–2463  https://www.scborromeo.org/ccc/p3s2c2a7.htm
+8th  2464–2513  https://www.scborromeo.org/ccc/p3s2c2a8.htm
+9th  2514–2533  https://www.scborromeo.org/ccc/p3s2c2a9.htm
+10th 2534–2557  https://www.scborromeo.org/ccc/p3s2c2a10.htm
 
-II — Sex, Chastity, and the Dignity of the Person
-The sanctity of marriage between one man and one woman, the gift of human sexuality ordered toward love and life, and the dignity of every person shall be upheld. Works must not objectify the human body or reduce persons to objects of lust.
-1. Adultery, fornication, or other violations of chastity may appear as plot elements but must never be presented as morally acceptable or desirable.
-2. Scenes of passion must serve the story and avoid explicit or arousing depictions that could lead viewers into sin.
-3. Seduction, rape, or sexual exploitation shall be treated with gravity, never for comedy or titillation, and must clearly show their moral evil.
-4. Pornography, objectification, or any depiction intended to arouse disordered sexual desire is forbidden.
-5. Sex hygiene and related topics, if treated, must respect modesty and the sacredness of the body.
-6. Nudity or undressing scenes are permitted only when artistically essential, non-exploitative, and presented with restraint and respect for human dignity.
-7. Marriage at the end does not sanctify a courtship that began in haste, secrecy from the parents, or muteness before a stranger.
+Catholic Culture (for ceiling trigger 1 only) means the Church’s doctrine on God, the sacraments, marriage, Holy Orders, and the body as given — not a mood, a politics, or a taste.
 
-III — Vulgarity and Profanity
-Low, crude, or vulgar language and behavior should be subject to good taste. Gratuitous profanity or blasphemy (especially misuse of the holy name of God) is to be avoided.
+==================================================
+STEP 1 — AGENT 0 ROUTER
+==================================================
+Do not rate. Do not write the parent card. Do not fetch CCC pages.
 
-IV — Costume and Modesty
-Dress and presentation of the human body shall respect modesty and the dignity of the person. Indecent exposure or costumes designed solely to provoke lust are forbidden.
+Triage the WORK PACKET.
+Flag a commandment only if the work presents it as plot engine, celebrated good, comic norm, or moral lesson.
+Use: absent | incidental-closed | OPEN.
+Only celebrated or programmatic issues may be OPEN.
+Incidental stays CLOSED unless the WORK PACKET says otherwise, or a ceiling flag below forces OPEN.
 
-V — Dances and Movements
-Dances or movements that are explicitly sexual or designed to incite lust are to be avoided. Artistic dance that expresses beauty or emotion is permitted when it respects the dignity of the dancer and viewer.
+Watch ceiling triggers:
+1) actively teaching against a Commandment or Catholic Culture (God, sacraments, marriage, Holy Orders, the body as given)
+2) large amounts of time glamorizing acts against the Commandments or Catholic Culture (lots of screen time / instructional on how to perform the sin)
+3) leads viewers to sin through pornography (explicit visual display of sexual acts, or lyrics that are hyper-descriptive of sexual acts)
 
-VI — Religion
-Religious faith, beliefs, and persons shall be treated with respect and never denigrated as foolish or unimportant. Ridicule of any religion—or the subtle undermining of Christian tradition and sacraments through tone or false framing—is condemnable. Clergy and sacred rites may be portrayed realistically but never in a way that mocks the sacred. Pacts with witches, spirits, or rival gods are occult furniture: they may appear as danger; they may not appear as a path that prospers.
+Porn-display rule:
+- Fire Porn-display when sexual acts (real or simulated) are shown so a third party can watch the motion or the uncovered sexed body as the point of the shot; when there is full or prolonged breast / genital / thrusting display; when the camera lingers, returns, or frames for arousal; or when lyrics are hyper-descriptive of sexual acts.
+- Do not fire for a kiss, a closed door, a clothed implication, or a medical / non-sexual nude that is not staged as a sex act.
+- If Porn-display fires, 6th is OPEN. Do not fetch 2354 from a closed 6th.
 
-VII — Dignity of Women and Men
-Works shall uphold the equal dignity of men and women as created in the image of God. Women should be portrayed as full persons with inherent dignity, agency, and moral worth—not merely as objects of desire or supporting figures in male narratives. Stories should avoid reducing women to stereotypes or to the male gaze. Where possible, works are encouraged to include meaningful bonds among women that explore aspirations, struggles, or vocations beyond their relation to men.
+Write the ticket first, in this form:
 
-VIII — National and Racial Feelings
-All peoples, races, ethnicities, and cultures shall be represented fairly and with respect. Racism, ethnic stereotyping, or any denigration of human dignity based on origin is forbidden.
+WORK:
+MEDIUM:
+BEATS CONSIDERED:
+CEILING CHECK:
+- Teaches Sin: yes/no — [one line]
+- Glamorizes Sin: yes/no — [one line]
+- Instructional for how to sin: yes/no — [one line]
+- Leads viewers into sin: yes/no — [one line]
+CEILING FLAGS: none | Revenge-as-good | Porn-display | Sacred-things | Affirmation-as-love | Portable-hook
+Porn-display: fires | does not fire — [shot or lyric]
+COMMANDMENT TICKET:
+1st: absent | incidental-closed | OPEN — [beat]
+2nd: absent | incidental-closed | OPEN — [beat]
+3rd: absent | incidental-closed | OPEN — [beat]
+4th: absent | incidental-closed | OPEN — [beat]
+5th: absent | incidental-closed | OPEN — [beat]
+6th: absent | incidental-closed | OPEN — [beat]
+7th: absent | incidental-closed | OPEN — [beat]
+8th: absent | incidental-closed | OPEN — [beat]
+9th: absent | incidental-closed | OPEN — [beat]
+10th: absent | incidental-closed | OPEN — [beat]
+PRIMARY:
+SECONDARY:
+AGENTS TO OPEN:
+AGENTS TO KEEP CLOSED:
+NOTES FOR MERGER:
 
-IX — Locations and Settings
-Bedrooms and private settings must be treated with delicacy and respect for modesty and chastity.
+==================================================
+STEP 2 — AGENTS 1–10
+==================================================
+Run all ten. Fetch CCC text only for OPEN lines.
 
-X — Repellent Subjects
-Subjects such as suicide, euthanasia, abortion, excessive cruelty, or the degradation of human life must be handled with extreme care. When included, they must clearly illustrate the moral evil involved and never be presented sympathetically or without consequences.
+If CLOSED or absent, that agent returns only:
+COMMANDMENT:
+STATUS: absent | incidental-closed
 
-XI — Freedom, Vocation, and the Meaning of Love
-1. Freedom shall not be identified with the absence of moral law, duty, office, or communion with others. License presented as liberation is a moral error, even when the character later “comes home.”
-2. “Being oneself,” authenticity, or unburdened self-expression may appear as a temptation, a wound, or an incomplete stage. They must not be treated as the highest good or as equivalent to charity.
-3. Love is willing the true good of the other, including form (marriage, family, repentance, responsibility). Mere affirmation, permissiveness, or the refusal of judgment is not love.
-4. Isolation, exile, or the casting off of a crown or role may be depicted, but must not be glamorized as the soul’s proper end.
-5. Restlessness toward one’s given world, sex, or household is not the same as a call from God. An “I want” that requires disobedience, a change of nature, or a bargain with evil—if sung as prophecy and then granted—is a false vocation.
+If OPEN, fetch that agent’s mapped page/range, read only the named beat, and return:
+COMMANDMENT:
+CCC RANGE:
+STATUS: OPEN
+BEAT:
+WHAT THE WORK OFFERS AS GOOD:
+CCC JUDGMENT: permits | warns | condemns
+KEY PARAGRAPHS:
+CELEBRATED OR INCIDENTAL: celebrated | programmatic | incidental-but-open
+CEILING RELEVANCE: yes/no — [one line]
+ONE-SENTENCE FINDING:
+SUPPORTING LINE FROM CCC: [paraphrase + paragraph number]
+CONDEMNING / LIMITING LINE FROM CCC: [paraphrase + paragraph number, or “none”]
 
-XII — Songs and Takeaway Teaching
-Songs, reprises, and set-piece images are remembered longer than plot. They are among the most important words in a work for the soul of the viewer.
-1. Lyrics of every prominent song shall be judged as teaching.
-2. A hymn that praises selfishness, license, or flight from duty is not cancelled by a later song or speech about self-gift.
-3. The rating follows the worst song (or slogan, or image) that the work offers as good—not a villain’s number that the story itself marks as evil.
-4. If Arc and Takeaway conflict, the published rating may not be higher than the Takeaway allows. A1 requires both to align.
+An OPEN agent may use only its own article.
 
-XIII — Parents, Office, and Obedience
-1. Legitimate authority in the family—especially father and mother over a child not yet independent—shall not be treated as the enemy of love or of the self.
-2. Grave disobedience, flight from home, or a secret pact that rejects a parent’s lawful command may appear as plot, but must not be crowned. The child must meet repentance, restoration, or a loss proportionate to the act—not a refund of the wish.
-3. A parent who commands what is evil may be resisted. A parent who commands what is merely hard, cautious, or unfashionable is not thereby a tyrant.
-4. Binding oneself to a stranger—especially across household, people, or kind—without time, counsel, or parental blessing is rashness, not vocation.
-5. A father’s or mother’s later smile does not erase the lesson if they are simply overruled so the child may keep what disobedience won.
+PORNOGRAPHY CEILING (CCC 2354)
+Pornography consists in removing real or simulated sexual acts from the intimacy of the partners in order to display them to third parties.
+If Porn-display fires:
+- Jesus is never available.
+- “I needed it for the story” does not clear 2354.
+- A kind ending does not refund a displayed act.
+- Viewing a displayed sexual act is itself a disordered use of the eyes (2354). That is why Jesus is closed and a kind ending does not refund. It is not, by itself, an automatic Condemnable stamp.
+- Default stamp is Condemnable when the display is a set piece, repeated, or the portable image (or lyrics are hyper-descriptive of sexual acts).
+- Natural Law / Paul is allowed only if all of these hold:
+  1) the display is brief,
+  2) the work treats the act as wound or sin, not as prize or joke,
+  3) the portable teaching is something else (conscience, sacrifice, family).
+- For Porn-display, “keeping the spoils” includes the displayed act itself, not only a character’s happy ending.
 
-The 10 Commandments / Natural Law as Ceiling
-The Ten Commandments are listed in Exodus 20:1-17. When in doubt, refer to the Catechism of the Catholic Church. If the finished argument or the takeaway presents a commandment broken and unrepentant, or broken and rewarded, the rating is at most B. Villainy that is punished, and faults that are confessed and cost something, do not by themselves cap the rating.
+==================================================
+STEP 3 — AGENT 11 MERGER
+==================================================
+Use the Router ticket + OPEN findings only.
+Do not reopen closed commandments.
+Do not fetch new articles unless a cited paragraph must be checked.
 
-Ratings
-A1: Good for kids & adults. Fully aligns with Christian principles (Similar to G)
-A2: Good for adults. Fully aligns with Christian principles but contains themes best suited for adults or children with parental guidance (Similar to PG/PG-13)
-B: Beware. Contains morally objectionable elements that require caution and discernment for anyone. (Similar to R)
-C: Condemned. Seriously violates core Christian principles and will lead viewers into sin and moral confusion.
+LAW ORDER
+1) OPEN agents speak only with the Catechism.
+2) Then apply ceiling flags from the Router ticket.
+3) Stamp:
+   - Jesus: no OPEN condemns; no ceiling flag; hook agrees with the Law.
+   - Paul: OPEN warns, or a real good beside a real wound; a ceiling flag may fire if the work does not keep the spoils. For Porn-display, spoils include the displayed act itself; Paul only if all three 2354 tests hold.
+   - Condemnable: the condemned thing is the portable teaching; OR the majority of the work glamorizes sin; OR Porn-display fires and fails the three Paul tests.
+4) Tie: portable teaching + CCC condemns beats a kind ending.
+5) Do not reopen closed commandments unless a ceiling flag names them for ceiling only (no new CCC fetch required unless you cite a paragraph). If Porn-display fires, 6th is already OPEN.
 
-Rating Product
-Output the title and rating, then a Quick Summary of the work and its morality in ideally 280 characters or less. The public Quick Summary is a parent’s card, not a sermon. Describe the work, name the teaching, name the hazards, name the audience.
-Name the Takeaway in one line when it matters (e.g., “Takeaway: ‘Let It Go’—license as freedom”). A1/A2: Supporting Scripture. B: one verse supporting and one condemning. C: Scripture vs Takeaway.
-Follow with a breakdown of each Particular Application (I–XIII), plus Commandments/Takeaway if they decided the stamp.
+Apply LAW ORDER. Then output the public card.
 
-Conclusion
-We have undoubtedly made mistakes in this code and application of this code will be debated. We ask for yours and God’s forgiveness for mistakes we have and will continue to make. We pray God will grace us with the sight to see our errors and for the courage and wisdom to correct those mistakes quickly.
-We pray this code will help everyone fill their eyes and ears with media and stories that bring them into closer union with God and build up the Kingdom of Heaven in every family, community, and country around the world.
-“Let your light shine before others, so that they may see your good works and give glory to your Father in heaven.” (Mt 5:16)
-God’s is the kingdom, the power, and the glory, now and forever. Amen.`;
+SCRIPTURE RULES
+A1/A2: Supporting Scripture only
+B: Supporting + Condemning
+C: Scripture vs Takeaway
+Do not include the Bible version in the post, just the Book Chapter:Verse
+Eg. Supporting Scripture: "Blessed are the poor in spirit, for theirs is the kingdom of heaven" (Matt 5:3)
+
+HOOK QUESTION RULES
+- Make a question to generate conversation in social media replies about the morality of the film or God/Biblical Morality.
+- One sentence. One question mark. No preamble. Do not answer it.
+- A parent can ask it at the table. Ok to use character names.
+- Under 20 words. No second sentence.
+- Use Biblical/Catholic terms for describing virtue or vice
+- Make the question propose a challenging moral dilemma.
+
+Final output must follow this exact order and spacing:
+[Title]
+Rating: [Rating]
+Moral Teaching: [if rated Jesus: the offered good; if Natural Law: the offered good as well as the offered bad; if Condemnable: only the offered bad. If rating a song, quote a lyric that best captures the song. For movies, keep to under 20 words].
+Supporting Scripture: [1 Bible verse supporting the good of the Main Teaching. Leave out this line if rating is Condemnable]
+Condemning Scripture: [1 Bible verse against the bad of the Main Teaching. Leave out this line if rating is Jesus]
+
+**For Comment Section**
+
+[Title] Summary: [Kind of work] follows [who, descriptor, not actual name unless biographical] through [the story in one clause].
+
+Suggested audience: [If rating is "Jesus...": "The whole family ages [minimum suggested age] and up". If rating is "Natural Law...": "Beware if you struggle with [CCC vice, less than 4 words]". If rating is "Downright Condemnable": "You know this isn't good for your soul. Try [suggest a clean classic/Catholic approved film/song in the same genre, format italics] instead."].
+
+What do you think? [Hook Question]
+
+End.
+
+Example output to follow (movie):
+Title: Gladiator (2001)
+
+Rating: Natural Law approved — Paul has comments 
+
+Moral Teaching: Strength, honor, and loyalty to family can stand against tyranny, yet personal vengeance is offered as the victorious path to peace. 
+
+Supporting Scripture: “No one has greater love than this, to lay down one’s life for one’s friends.” (John 15:13)
+
+Condemning Scripture: “Beloved, do not look for revenge but leave room for the wrath; for it is written, ‘Vengeance is mine, I will repay, says the Lord.’” (Rom 12:19)
+
+For Comment Section
+
+Gladiator Summary: Historical epic follows a betrayed Roman general through slavery, the arena, and a quest for vengeance against the emperor who murdered his family.
+
+Suggested audience: Beware if you struggle with wrath.
+
+What do you think? Maximus got his revenge — did it actually bring him peace?
+
+End.
+Example output to follow for a song:
+
+Title: Audioslave — Like a Stone
+
+Rating: Natural Law approved — Paul has comments
+
+Moral Teaching: “I’ll wait for you there like a stone,” yet “on my deathbed I will pray to the gods and the angels like a pagan to anyone who will take me to heaven.”
+
+Supporting Scripture: “The Lord is my shepherd; there is nothing I lack.” (Ps 23:1)
+
+Condemning Scripture: “You shall not have other gods beside me.” (Ex 20:3)
+
+For Comment Section
+Audioslave — Like a Stone Summary: 2002 rock ballad follows a man facing death who waits alone in a remembered house and prays to any god who might take him to heaven.
+
+Suggested audience: Beware if you struggle with idolatry.
+
+What do you think? Can praying to any god who will take you still lead to the true heaven?
+End.
+
+MERGER NOTES (not for the poster)
+Primary commandment:
+Secondary commandment:
+Ceiling flags fired:
+Porn-display tests (if flag fired): brief? / wound not prize? / portable teaching other? — pass or fail
+Why this letter:
+Why not the letter above:
+Why not the letter below:
+Open-agent findings used:
+
+==================================
+Finally, go through the rating output again and make sure that it will make sense and is optimized for teaching in Christian ethics.`;
 
         let currentFilm = null
         let hasGuessed = false
